@@ -13,5 +13,6 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Rappresentazione dei livelli d'astrazione utilizzati per descrivere il sistema }}{5}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Rappresentazione del sistema come black box }}{6}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Rappresentazione del sistema in sottosistemi }}{7}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ambiguit\IeC {\`a} nella georeferenziazione del nodo utilizzando soltanto la distanza con il precedente }}{9}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ambiguit\IeC {\`a} nella georeferenziazione di un secondo nodo utilizzando soltanto la distanza dal precedente }}{9}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Rappresentazione del sistema come composizione di moduli}}{10}{figure.2.5}
 \addvspace {10\p@ }

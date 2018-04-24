@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.17)  23 APR 2018 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.17)  24 APR 2018 18:28
 entering extended mode
 **./main.tex
 (main.tex
@@ -374,94 +374,36 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.st
+y"
+\wrapoverhang=\dimen124
+\WF@size=\dimen125
+\c@WF@wrappedlines=\count127
+\WF@box=\box32
+\WF@everypar=\toks30
+Package: wrapfig 2003/01/31  v 3.6
+)
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\lscape.st
+y"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\rotating.
 sty"
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
-s
-\f@nch@headwidth=\skip50
-\f@nch@O@elh=\skip51
-\f@nch@O@erh=\skip52
-\f@nch@O@olh=\skip53
-\f@nch@O@orh=\skip54
-\f@nch@O@elf=\skip55
-\f@nch@O@erf=\skip56
-\f@nch@O@olf=\skip57
-\f@nch@O@orf=\skip58
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfigure\subfigur
-e.sty"
-Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip59
-\subfigcapskip=\skip60
-\subfigcaptopadj=\dimen124
-\subfigbottomskip=\skip61
-\subfigcapmargin=\dimen125
-\subfiglabelskip=\skip62
-\c@subfigure=\count127
-\c@lofdepth=\count128
-\c@subtable=\count129
-\c@lotdepth=\count130
-
-****************************************
-* Local config file subfigure.cfg used *
-****************************************
-
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfigure\subfigur
-e.cfg")
-\subfig@top=\skip63
-\subfig@bottom=\skip64
+\c@r@tfl@t=\count128
+\rotFPtop=\skip50
+\rotFPbot=\skip51
+\rot@float@box=\box33
+\rot@mess@toks=\toks31
 )
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.sty
-"
-Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks30
-\verbatim@line=\toks31
-\verbatim@in@stream=\read1
-)
-Package color Info: Redefining color cyan on input line 144.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 145.
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.
+sty"
+Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
-File: t1txtt.fd 2000/12/15 v3.1
-) (main.aux)
-\openout1 = `main.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 230.
-LaTeX Font Info:    ... okay on input line 230.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 230.
-
-
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
-ii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count131
-\scratchdimen=\dimen126
-\scratchbox=\box32
-\nofMPsegments=\count132
-\nofMParguments=\count133
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count134
-\MPscratchDim=\dimen127
-\MPnumerator=\count135
-\makeMPintoPDFobject=\count136
-\everyMPtoPDFconversion=\toks33
-)
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -475,9 +417,97 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
+))
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.
+sty"
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
 )
-\AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 230.
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfigure\subfigur
+e.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip61
+\subfigcapskip=\skip62
+\subfigcaptopadj=\dimen126
+\subfigbottomskip=\skip63
+\subfigcapmargin=\dimen127
+\subfiglabelskip=\skip64
+\c@subfigure=\count129
+\c@lofdepth=\count130
+\c@subtable=\count131
+\c@lotdepth=\count132
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfigure\subfigur
+e.cfg")
+\subfig@top=\skip65
+\subfig@bottom=\skip66
+)
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\verbatim.sty
+"
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks32
+\verbatim@line=\toks33
+\verbatim@in@stream=\read1
+)
+Package color Info: Redefining color cyan on input line 148.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 149.
+
+
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
+File: t1txtt.fd 2000/12/15 v3.1
+) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 234.
+LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 234.
+
+
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
+ii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count133
+\scratchdimen=\dimen128
+\scratchbox=\box34
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen129
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks35
+)
+\AtBeginShipoutBox=\box35
+Package hyperref Info: Link coloring OFF on input line 234.
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -487,17 +517,17 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count137
+\c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 230.
-LaTeX Info: Redefining \pageref on input line 230.
-LaTeX Info: Redefining \nameref on input line 230.
+LaTeX Info: Redefining \ref on input line 234.
+LaTeX Info: Redefining \pageref on input line 234.
+LaTeX Info: Redefining \nameref on input line 234.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Info: Redefining \it@ocap on input line 230.
-LaTeX Info: Redefining \it@ccap on input line 230.
+LaTeX Info: Redefining \it@ocap on input line 234.
+LaTeX Info: Redefining \it@ccap on input line 234.
 
 
 File italian.ldf warning: 
@@ -505,14 +535,14 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 230.
+italian.ldf    on input line 234.
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\c@lstlisting=\count138
+\c@lstlisting=\count140
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 249.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 253.
 
 (main.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -546,7 +576,7 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<Introduzione/piantina1.png, id=89, 530.58224pt x 361.35pt>
+<Introduzione/piantina1.png, id=91, 530.58224pt x 361.35pt>
 File: Introduzione/piantina1.png Graphic file (type png)
 <use Introduzione/piantina1.png>
 Package pdftex.def Info: Introduzione/piantina1.png  used on input line 14.
@@ -556,7 +586,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 14--15
  [][] 
  []
 
-<Introduzione/piantina2.png, id=91, 530.58224pt x 360.74776pt>
+<Introduzione/piantina2.png, id=93, 530.58224pt x 360.74776pt>
 File: Introduzione/piantina2.png Graphic file (type png)
 <use Introduzione/piantina2.png>
 Package pdftex.def Info: Introduzione/piantina2.png  used on input line 21.
@@ -581,7 +611,7 @@ figure.0.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.27 \newpage
               <./Introduzione/piantina1.png> <./Introduzione/piantina2.png>]
-<Introduzione/intervento_step_1.png, id=99, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_1.png, id=101, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_1.png Graphic file (type png)
 <use Introduzione/intervento_step_1.png>
 Package pdftex.def Info: Introduzione/intervento_step_1.png  used on input line
@@ -592,7 +622,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 34--35
  [][] 
  []
 
-<Introduzione/intervento_step_2.png, id=100, 532.389pt x 360.74776pt>
+<Introduzione/intervento_step_2.png, id=102, 532.389pt x 360.74776pt>
 File: Introduzione/intervento_step_2.png Graphic file (type png)
 <use Introduzione/intervento_step_2.png>
 Package pdftex.def Info: Introduzione/intervento_step_2.png  used on input line
@@ -603,7 +633,7 @@ Overfull \hbox (15.6224pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
-<Introduzione/intervento_step_3.png, id=101, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_3.png, id=103, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_3.png Graphic file (type png)
 <use Introduzione/intervento_step_3.png>
 Package pdftex.def Info: Introduzione/intervento_step_3.png  used on input line
@@ -614,7 +644,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 51--52
  [][] 
  []
 
-<Introduzione/intervento_step_4.png, id=102, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_4.png, id=104, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_4.png Graphic file (type png)
 <use Introduzione/intervento_step_4.png>
 Package pdftex.def Info: Introduzione/intervento_step_4.png  used on input line
@@ -625,7 +655,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 58--59
  [][] 
  []
 
-<Introduzione/intervento_step_5.png, id=103, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_5.png, id=105, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_5.png Graphic file (type png)
 <use Introduzione/intervento_step_5.png>
 Package pdftex.def Info: Introduzione/intervento_step_5.png  used on input line
@@ -636,7 +666,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 67--68
  [][] 
  []
 
-<Introduzione/intervento_step_6.png, id=104, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_6.png, id=106, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_6.png Graphic file (type png)
 <use Introduzione/intervento_step_6.png>
 Package pdftex.def Info: Introduzione/intervento_step_6.png  used on input line
@@ -701,7 +731,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--1
 
 ]
 Capitolo 2.
-<DescrizioneDelSistema/livelli_astrazione.png, id=124, 732.48656pt x 476.53032p
+<DescrizioneDelSistema/livelli_astrazione.png, id=126, 732.48656pt x 476.53032p
 t>
 File: DescrizioneDelSistema/livelli_astrazione.png Graphic file (type png)
 <use DescrizioneDelSistema/livelli_astrazione.png>
@@ -726,7 +756,7 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
-<DescrizioneDelSistema/requisitiSistema.png, id=132, 747.54282pt x 365.11406pt>
+<DescrizioneDelSistema/requisitiSistema.png, id=134, 747.54282pt x 365.11406pt>
 
 File: DescrizioneDelSistema/requisitiSistema.png Graphic file (type png)
 <use DescrizioneDelSistema/requisitiSistema.png>
@@ -738,68 +768,85 @@ put line 20.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.31 \newpage
+l.30 \newpage
               <./DescrizioneDelSistema/requisitiSistema.png>]
-<DescrizioneDelSistema/sistema_liv1.png, id=142, 1267.73625pt x 554.82281pt>
+<DescrizioneDelSistema/sistema_liv1.png, id=143, 1267.73625pt x 554.82281pt>
 File: DescrizioneDelSistema/sistema_liv1.png Graphic file (type png)
 <use DescrizioneDelSistema/sistema_liv1.png>
 Package pdftex.def Info: DescrizioneDelSistema/sistema_liv1.png  used on input 
-line 42.
+line 40.
 (pdftex.def)             Requested size: 380.3238pt x 166.44812pt.
  [7pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.50 
-      <./DescrizioneDelSistema/sistema_liv1.png>]
+l.53 \begin{itemize}
+                     <./DescrizioneDelSistema/sistema_liv1.png>]
 <DescrizioneDelSistema/ambiguitDistanza.png, id=151, 582.67688pt x 682.80093pt>
 
 File: DescrizioneDelSistema/ambiguitDistanza.png Graphic file (type png)
 <use DescrizioneDelSistema/ambiguitDistanza.png>
 Package pdftex.def Info: DescrizioneDelSistema/ambiguitDistanza.png  used on in
-put line 66.
-(pdftex.def)             Requested size: 291.33772pt x 341.39963pt.
- [8])
-(tecnologie_utilizzate.tex [9pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.2.4}) has been already used, duplicate ignored
+put line 62.
+(pdftex.def)             Requested size: 233.06662pt x 273.11552pt.
+ [8] [9pdfTeX warning (ext4): destination with the same identifier (name{figure
+.2.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.67 ...ivi agli angoli lungo il percorso.\newpage
+                                                   <./DescrizioneDelSistema/amb
+iguitDistanza.png>]
+<DescrizioneDelSistema/sistema_liv2.png, id=162, 1486.80469pt x 689.57625pt>
+File: DescrizioneDelSistema/sistema_liv2.png Graphic file (type png)
+<use DescrizioneDelSistema/sistema_liv2.png>
+Package pdftex.def Info: DescrizioneDelSistema/sistema_liv2.png  used on input 
+line 75.
+(pdftex.def)             Requested size: 446.04485pt x 206.87447pt.
+
+Overfull \hbox (47.70627pt too wide) in paragraph at lines 75--76
+[][]
+ []
+
+) (tecnologie_utilizzate.tex [10pdfTeX warning (ext4): destination with the sam
+e identifier (name{figure.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Tecnologie utilizzate} <./DescrizioneDelSistema/ambiguitDistanza.p
-ng>]
+            {Tecnologie utilizzate} <./DescrizioneDelSistema/sistema_liv2.png>]
 Capitolo 3.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 286.
- [10
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
+ [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 286.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 286.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 286.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 290.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: DCD6BD218BB4F96364787C8D58C3340C;535.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 286.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
  ) 
 Here is how much of TeX's memory you used:
- 9853 strings out of 493305
- 142497 string characters out of 3129802
- 237084 words of memory out of 3000000
- 13178 multiletter control sequences out of 15000+200000
+ 10050 strings out of 493305
+ 145530 string characters out of 3129802
+ 239522 words of memory out of 3000000
+ 13357 multiletter control sequences out of 15000+200000
  19688 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,11n,43p,915b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,12n,43p,915b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
 }<C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
 /times/utmb8a.pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /urw/times/utmr8a.pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 1412138 bytes).
+Output written on main.pdf (13 pages, 1453865 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
