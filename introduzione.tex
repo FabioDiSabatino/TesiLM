@@ -4,8 +4,8 @@
 \addcontentsline{toc}{chapter}{Introduzione}
 \thispagestyle{empty}
 
-Il lavoro di questa tesi si colloca nel progetto aziendale Tekne per la realizzazione di un sistema di geolocalizzazione di operatori in contesti privi di segnale GPS.
-Il sistema permette ad un “esploratore” di creare dinamicamente una rete di nodi all’interno di zone nelle quali il segnale GPS è assente o comunque debole. Questa rete verrà poi ampliata ed utilizzata dagli operatori successivi ad esso per geolocalizzarsi all’interno della zona ed intervenire in maniera ottimale. \\
+Il lavoro di questa tesi si colloca in un progetto finalizzato alla realizzazione di un sistema di geolocalizzazione di operatori in contesti privi di segnale GPS.
+Quest'ultimo permetterà ad un “esploratore” di creare dinamicamente una rete di nodi all’interno di zone nelle quali il segnale GPS è assente o comunque debole. Questa rete verrà poi ampliata ed utilizzata dagli operatori successivi ad esso per geolocalizzarsi all’interno della zona ed intervenire in maniera ottimale. \\
 Uno scenario esemplificativo è quello di un vigile del fuoco che interviene in un edificio per soccorrere una persona. Tale operatore è considerato un esploratore, poiché è il primo ad intervenire e la planimetria dell’edificio risulta essere ignota e/o cambiata a seguito dell’evento disastroso (Fig.\ref{fig:planOriginale} e Fig.\ref{fig:planAlterata}). 
 
 \begin{figure}[h]
@@ -26,7 +26,7 @@ Uno scenario esemplificativo è quello di un vigile del fuoco che interviene in 
 
 \newpage
 I rettangoli in grigio (Fig.\ref{fig:planAlterata}) rappresentano aree non più accessibili dell’edificio, mentre le mura interrotte nuovi percorsi creati a causa dei crolli. 
-Durante tutta la fase di scouting, l’esploratore posizionerà un’ancora (nodo) ogni 20 metri approsimativamente e ogni qualvolta la precedente risulti non essere più in line-of-sight (linea visiva). Così facendo si “lascerà dietro una scia di briciole” che gli permetteranno di orientarsi all’interno dell’edificio, di eseguire il percorso all’inverso o di ricevere supporto da un’ulteriore operatore. Nelle figure seguenti, si può notare come la rete cresca man mano che l'esploratore avanza all'interno dell'edificio.
+Durante tutta la fase di \textit{scouting} (esplorazione, ricerca, indagine), l’esploratore posizionerà un’ancora (nodo) ogni 20 metri approsimativamente e ogni qualvolta la precedente risulti non essere più in line-of-sight (linea visiva). Così facendo si “lascerà dietro una scia di briciole” che gli permetteranno di orientarsi all’interno dell’edificio, di eseguire il percorso all’inverso o di ricevere supporto da un’ulteriore operatore. Osservando dalla Fig.\ref{fig:step1} alla Fig.\ref{fig:step6}, si può notare come la rete cresca man mano che l'esploratore avanza all'interno dell'edificio.
 
 \begin{figure}[h]
 	\begin{minipage}[b]{6cm}
