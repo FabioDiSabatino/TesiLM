@@ -41,11 +41,11 @@ Organization for Standardization and the International Electro Technical Commiss
 \begin{quotation}
 	\textit{“ I Real time locating system sono sistemi wireless con l'abilità di localizzare la posizione di oggetti ovunque essi siano in uno spazio definito in un certo momento che è, o si avvicina, real time. La posizione è derivata dalla misurazione delle proprietà fisiche del collegamento radio."}
 \end{quotation}
-La differenza tra RTLS e IPS è che i primi sono stati pensati per le compagnie che vogliono tracciare i propri oggetti e le persone, fornendo uno storico di dove sono stati e dove si trovano ora. Mentre gli IPS sono pensati per essere utilizzati da utenti su dispositivi mobili per navigare ed orientarsi all'interno di edifici.
+La differenza tra RTLS e IPS è che i primi sono stati pensati per le compagnie che vogliono tracciare i propri oggetti e le persone, fornendo uno storico di dove sono stati e dove si trovano ora, mentre gli IPS sono pensati per essere utilizzati da utenti su dispositivi mobili per navigare ed orientarsi all'interno di edifici.
 Come già accennato, gli IPS \cite{IPS2} permettono di creare una vasta gamma di servizi, ad esempio:
 \begin{itemize}
-	\item\textbf{ Way-Finding}: permettere di navigare in edifici complessi, come ad esempio aeroporti, seguendo il percorso indicato.
-	\item\textbf{ Ricerca dei punti d'interesse}, aumentare la customer experience facendo trovare all’utente ciò che desidera.
+	\item\textbf{Way-Finding}: permettere di navigare in edifici complessi, come ad esempio aeroporti, seguendo il percorso indicato.
+	\item\textbf{Ricerca dei punti d'interesse}, aumentare la customer experience facendo trovare all’utente ciò che desidera.
 	\item \textbf{Multi-Dot}: visualizzare in una mappa le posizioni degli utenti per tracciare persone potenzialmente in pericolo (bambini, anziani).
 	\item \textbf{Marketing di prossimità}: realizzare marketing mirati, inviando annunci sulle ultime offerte.
 \end{itemize}
@@ -63,10 +63,10 @@ Un'ulteriore spinta è data dal fatto che, al contrario del GPS per gli OPS (ved
 
 
 
-\section{Metodi di stima della distanza}
+\section{Stima della distanza}
 \label{metodi_distanza}
 Gli IPS possono essere classificati sulla base di diversi fattori, uno di questi è su come determinano la distanza tra due nodi.\\
-Stimare \cite{IPS2} la distanza tra dispositivi wireless è utile perché attraverso questa informazione è possibile determinarne (con un certo errore) la posizione rispetto ad un sistema di riferimento. I metodi che permettono di stimare la distanza emettitore-ricevitore [\cite{alg1}, \cite{alg2}]si distinguono in:
+Stimare \cite{IPS2} la distanza tra dispositivi wireless è utile perché attraverso questa informazione è possibile determinarne (con un certo errore) la posizione di un ricevitore rispetto ad un trasmettitore (\cite{alg1}, \cite{alg2}), queste tecniche si distinguono in:
 
 	\begin{itemize}
 	\item \textbf{Range based}:
@@ -93,7 +93,7 @@ Si dicono:
 
  L’obiettivo del posizionamento è assegnare le giuste coordinate agli Unknown rispetto ad un sistema di riferimento. Questo è strettamente legato all'implementazione dell'IPS e così anche la codifica delle posizioni all'interno del sistema di riferimento, le coordinate potrebbero essere restituite all'utente in maniera relativa ("vicino alla cucina") oppure assoluta ("tre  metri in direzione ovest dal nodo 1").
 
-\subsection{Stime della distanza Range based}
+\subsection{Range based}
 Nel posizionamento dei nodi basato sulla distanza la stima della posizione del target dipende dai seguenti parametri:
 	\begin{itemize}
 	\item il tempo trascorso tra l’emissione e la ricezione del segnale radio;
@@ -181,28 +181,62 @@ d_{ToA} = t_d * c
 \label{eq:toa}
 \end{equation}
 
-dove $c$ è la velocità di propagazione della luce nel vuoto pari a 299792458 m/s. Questa tecnica viene solitamente completata dalla tecnica di trilaterazione (sez. \ref{trilaterazione}) come per le misure RSSI viste precedentemente. I sistemi che usano questa tecnica generalmente hanno bisogno un complesso meccanismo di sincronizzazione per mantenere una fonte affidabile di tempo per i sensori\cite{toaProblem}
+dove $c$ è la velocità di propagazione della luce nel vuoto pari a 299792458 m/s. Per identificare in modo univoco un target, questa tecnica viene completata dalla tecnica di posizionamento nota come \textbf{Trilaterazione} (sez. \ref{trilaterazione}), come per le misure RSSI viste precedentemente.\\
+Il difetto principale di questa tecnica consiste nel fatto che sistemi utilizzati devono avere un complesso meccanismo di sincronizzazione per mantenere una fonte affidabile di tempo per i sensori\cite{toaProblem}.
 
 \subsubsection{Time Difference Of Arrival}
 \label{tdoa}
-E' una versione migliorata del ToA(sez.\ref{toa}). Permette di 
-
-
+Questa tecnica è basata sulla differenza nel tempo di arrivo di un segnale emesso da due sorgenti diverse verso un altro nodo, come mostrato in Fig.\ref{fig:tdoa}).
 
 \begin{figure}[H]  
 	\centering 
-	\includegraphics[scale=0.4]{ContestoApplicativo/toa.png}
+	\includegraphics[scale=0.4]{ContestoApplicativo/tdoa.png}
 	\caption{TDoA - Principio di funzionamento}
 	\label{fig:tdoa}
 \end{figure}
+Se si suppongono note le posizioni dei nodi \textit{A} e \textit{B} rispetto ad un sistema di riferimento, indicate rispettivamente dalle tuple $(x_B,y_B)$ e $(x_A,y_A)$, la distanza del nodo \textit{Target} può essere stimata dalla seguente equazione:
+ 
+\begin{equation}
+\Delta d = \Delta t_d * c
+\label{eq:tdoa}
+\end{equation}
+
+Dove:
+\begin{itemize}
+	\item $c$ è la velocità di propagazione della luce nel vuoto
+	\item $ \Delta t$ è la differenza del tempo di arrivo dei segnali emessi dai nodi \textit{A} e \textit{B}
+	\item $\Delta d$ è la distanza in due dimensioni: $(\sqrt{(x_B-x)^2 + (y_B-y)^2}- \sqrt{(x_A-x)^2 + (y_A-y)^2})$ 
+\end{itemize}
+
+In questo modo, la posizione del \textit{target} viene stimata all'interno del luogo geometrico dei punti del piano aventi come costante la differenza delle distanze tra i nodi, ovvero dall'iperbole avente come fuochi i nodi \textit{A} e \textit{B}. Come mostrato in Fig.
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{ContestoApplicativo/tdoa1.png}
+	\caption{TDoA - Stima della posizione lungo l'iperbole identificata da due nodi}
+	\label{fig:tdoa1}
+\end{figure}
+
+	Tuttavia così facendo la posizione del \textit{target} rimane stimata in un'insieme di punti infinito, quindi come per le tecniche viste precedentemente (\ref{rssi} e \ref{toa}) per identificare in modo univoco il target questa tecnica ha bisogno di essere completata dalla tecnica di posizionamento nota come \textbf{Multilaterazione} \ref{multilaterazione}.
+
+\subsection{Angle Based}
+
+\subsubsection{Angle of Arrival}
+Con questa tecnica la posizione del \textit{target} viene stimata misurando gli angoli di incidenza del segnale trasmesso ad altri nodi. \cite{AoA}.\\
+In un piano bidimensionale, sono necessari almeno due ricevitori per stimare la posizione, come mostrato in Fig.\ref{fig:AoA}. 
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.8]{ContestoApplicativo/aoa.png}
+	\caption{AoA - Principio di funzionamento }
+	\label{fig:AoA}
+\end{figure}
+Gli angoli dei nodi sono espressi in senso orario a partire da una direzione nord fissata nel sistema di riferimento utilizzato.\\
+Il vantaggio dell’AoA risiede nella possibilità di ottenere un risultato attendibile senza la necessità di informazioni riguardanti i tempi di trasmissione. A fronte del risparmio dal punto di vista computazionale, la tecnica presenta alcuni svantaggi pratici, dovuti al costo dell’hardware, che al fine di restituire informazioni precise, deve essere di alta qualità; rischiando altrimenti di incorrere in fenomeni che comprometterebbero la misurazione. Per questo motivo solitamente questa tecnica viene completata dalla tecnica di posizionamento nota come \textit{Triangolazione} (\ref{triangolazione}).
 
 
-
-
-
-
-\section{Metodi di posizionamento}
-
+\section{Tecniche di posizionamento}
+Utilizzando le differenti metodologie di stima della distanza viste precedentemente (vedi \ref{metodi_distanza}) si possono realizzare una moltitudine di algoritmi per stimare la posizione di un \textit{target} all'interno del sistema di riferimento. In questo paragrafo vengono illustrate le tecniche di posizionamento più conosciute e basilari utilizzate negli IPS.
 
 \subsection{Trilaterazione}
 \label{trilaterazione}
@@ -223,9 +257,27 @@ Quindi le coordinate dell'Unknown sono la soluzione del seguente sistema:
 \end{equation}
 Essendo un sistema 
 
+\subsection{Multilaterazione}
+\label{multilaterazione}
 
 
 
+\subsection{Triangolazione}
+\label{triangolazione}
+
+
+
+
+
+\section{Sensor Fusion}
+
+Con Sensor Fusion si indicano tutte quelle tecniche che permettono di combinare dati sensoriali forniti da fonti diverse al fine di ottenere delle informazioni risultanti migliori in confronto a quanto sarebbe stato possibile ottenere utilizzando le stesse fonti singolarmente. Questo può significare ottenere valori più precisi, più completi e più affidabili.
+Nel contesto dell’indoor positioning la sensor fusion permette di unire ogni fonte
+di dati legate alla posizione per ottenere un posizionamento universale ancora più preciso
+e veloce, ottimizzando i tempi di stima e la precisione.
+Molti dei dati che possono essere registrati dai sensori integrati negli smartphone
+sono: le alterazioni dei campi magnetici; i segnaliWi-Fi; i pacchetti Beacon Bluetooth; la
+pressione atmosferica; le variazioni di posizione mediante accelerometro e/o giroscopio.
 
 
 

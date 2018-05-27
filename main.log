@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.17)  25 MAY 2018 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.17)  27 MAY 2018 21:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -573,13 +573,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `main.lof'.
 
  [4] (introduzione.tex
-("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-<Introduzione/piantina1.png, id=211, 530.58224pt x 361.35pt>
+("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+<Introduzione/piantina1.png, id=231, 530.58224pt x 361.35pt>
 File: Introduzione/piantina1.png Graphic file (type png)
 <use Introduzione/piantina1.png>
 Package pdftex.def Info: Introduzione/piantina1.png  used on input line 14.
@@ -589,7 +589,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 14--15
  [][] 
  []
 
-<Introduzione/piantina2.png, id=213, 530.58224pt x 360.74776pt>
+<Introduzione/piantina2.png, id=233, 530.58224pt x 360.74776pt>
 File: Introduzione/piantina2.png Graphic file (type png)
 <use Introduzione/piantina2.png>
 Package pdftex.def Info: Introduzione/piantina2.png  used on input line 21.
@@ -614,7 +614,7 @@ figure.0.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.27 \newpage
               <./Introduzione/piantina1.png> <./Introduzione/piantina2.png>]
-<Introduzione/intervento_step_1.png, id=223, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_1.png, id=243, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_1.png Graphic file (type png)
 <use Introduzione/intervento_step_1.png>
 Package pdftex.def Info: Introduzione/intervento_step_1.png  used on input line
@@ -625,7 +625,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 34--35
  [][] 
  []
 
-<Introduzione/intervento_step_2.png, id=224, 532.389pt x 360.74776pt>
+<Introduzione/intervento_step_2.png, id=244, 532.389pt x 360.74776pt>
 File: Introduzione/intervento_step_2.png Graphic file (type png)
 <use Introduzione/intervento_step_2.png>
 Package pdftex.def Info: Introduzione/intervento_step_2.png  used on input line
@@ -636,7 +636,7 @@ Overfull \hbox (15.6224pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
-<Introduzione/intervento_step_3.png, id=225, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_3.png, id=245, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_3.png Graphic file (type png)
 <use Introduzione/intervento_step_3.png>
 Package pdftex.def Info: Introduzione/intervento_step_3.png  used on input line
@@ -647,7 +647,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 51--52
  [][] 
  []
 
-<Introduzione/intervento_step_4.png, id=226, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_4.png, id=246, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_4.png Graphic file (type png)
 <use Introduzione/intervento_step_4.png>
 Package pdftex.def Info: Introduzione/intervento_step_4.png  used on input line
@@ -658,7 +658,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 58--59
  [][] 
  []
 
-<Introduzione/intervento_step_5.png, id=227, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_5.png, id=247, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_5.png Graphic file (type png)
 <use Introduzione/intervento_step_5.png>
 Package pdftex.def Info: Introduzione/intervento_step_5.png  used on input line
@@ -669,7 +669,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 67--68
  [][] 
  []
 
-<Introduzione/intervento_step_6.png, id=228, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_6.png, id=248, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_6.png Graphic file (type png)
 <use Introduzione/intervento_step_6.png>
 Package pdftex.def Info: Introduzione/intervento_step_6.png  used on input line
@@ -732,7 +732,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-<ContestoApplicativo/bilancia.jpg, id=246, 755.07094pt x 451.6875pt>
+<ContestoApplicativo/bilancia.jpg, id=267, 755.07094pt x 451.6875pt>
 File: ContestoApplicativo/bilancia.jpg Graphic file (type jpg)
 <use ContestoApplicativo/bilancia.jpg>
 Package pdftex.def Info: ContestoApplicativo/bilancia.jpg  used on input line 1
@@ -756,7 +756,7 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 l.31 	\item \textbf
                    {IPSs}: Indoor Positioning System Service, ovvero servizi...
  <./ContestoApplicativo/bilancia.jpg>] [6]
-<ContestoApplicativo/application.png, id=269, 202.356pt x 150.5625pt>
+<ContestoApplicativo/application.png, id=290, 202.356pt x 150.5625pt>
 File: ContestoApplicativo/application.png Graphic file (type png)
 <use ContestoApplicativo/application.png>
 Package pdftex.def Info: ContestoApplicativo/application.png  used on input lin
@@ -780,7 +780,7 @@ LaTeX Warning: Reference `aoa' on page 8 undefined on input line 82.
 [8]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
-<ContestoApplicativo/signal.PNG, id=292, 178.86826pt x 145.14224pt>
+<ContestoApplicativo/signal.PNG, id=313, 178.86826pt x 145.14224pt>
 File: ContestoApplicativo/signal.PNG Graphic file (type png)
 <use ContestoApplicativo/signal.PNG>
 Package pdftex.def Info: ContestoApplicativo/signal.PNG  used on input line 111
@@ -798,7 +798,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--151
  []
 
 [10]
-<ContestoApplicativo/toa.png, id=316, 697.8572pt x 585.68813pt>
+<ContestoApplicativo/toa.png, id=337, 697.8572pt x 585.68813pt>
 File: ContestoApplicativo/toa.png Graphic file (type png)
 <use ContestoApplicativo/toa.png>
 Package pdftex.def Info: ContestoApplicativo/toa.png  used on input line 166.
@@ -808,27 +808,64 @@ Package pdftex.def Info: ContestoApplicativo/toa.png  used on input line 166.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.185 
+l.186 
        <./ContestoApplicativo/toa.png>]
-File: ContestoApplicativo/toa.png Graphic file (type png)
-<use ContestoApplicativo/toa.png>
-Package pdftex.def Info: ContestoApplicativo/toa.png  used on input line 194.
-(pdftex.def)             Requested size: 279.13792pt x 234.27109pt.
-<ContestoApplicativo/trilaterazione.png, id=331, 165.0165pt x 146.34676pt>
-File: ContestoApplicativo/trilaterazione.png Graphic file (type png)
-<use ContestoApplicativo/trilaterazione.png>
-Package pdftex.def Info: ContestoApplicativo/trilaterazione.png  used on input 
-line 212.
-(pdftex.def)             Requested size: 132.01335pt x 117.07755pt.
+<ContestoApplicativo/tdoa.png, id=352, 596.98032pt x 589.4522pt>
+File: ContestoApplicativo/tdoa.png Graphic file (type png)
+<use ContestoApplicativo/tdoa.png>
+Package pdftex.def Info: ContestoApplicativo/tdoa.png  used on input line 193.
+(pdftex.def)             Requested size: 238.78789pt x 235.7767pt.
  [12pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.216 Q
+l.208 	\item $
+              \Delta d$ è la distanza in due dimensioni: $(\sqrt{(x_B-x)^2 ...
+ <./ContestoApplicativo/tdoa.png>]
+Overfull \hbox (64.0161pt too wide) in paragraph at lines 208--209
+[]$\OT1/cmr/m/n/12 \OML/cmm/m/it/12 d$ []\OT1/ptm/m/n/12 e la di-stan-za in du
+e di-men-sio-ni: $\OT1/cmr/m/n/12 ([] \OMS/cmsy/m/n/12   []\OT1/cmr/m/n/12 )$ 
+ []
+
+<ContestoApplicativo/tdoa1.png, id=360, 567.62062pt x 354.57469pt>
+File: ContestoApplicativo/tdoa1.png Graphic file (type png)
+<use ContestoApplicativo/tdoa1.png>
+Package pdftex.def Info: ContestoApplicativo/tdoa1.png  used on input line 215.
+
+(pdftex.def)             Requested size: 227.04422pt x 141.82736pt.
+
+LaTeX Warning: Reference `multilaterazione' on page 13 undefined on input line 
+220.
+
+<ContestoApplicativo/aoa.png, id=365, 217.41225pt x 242.70676pt>
+File: ContestoApplicativo/aoa.png Graphic file (type png)
+<use ContestoApplicativo/aoa.png>
+Package pdftex.def Info: ContestoApplicativo/aoa.png  used on input line 230.
+(pdftex.def)             Requested size: 173.93001pt x 194.16565pt.
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.1.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.234 
+       <./ContestoApplicativo/tdoa1.png>]
+<ContestoApplicativo/trilaterazione.png, id=374, 165.0165pt x 146.34676pt>
+File: ContestoApplicativo/trilaterazione.png Graphic file (type png)
+<use ContestoApplicativo/trilaterazione.png>
+Package pdftex.def Info: ContestoApplicativo/trilaterazione.png  used on input 
+line 246.
+(pdftex.def)             Requested size: 132.01335pt x 117.07755pt.
+ [14pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.250 Q
        uindi le coordinate dell'Unknown sono la soluzione del seguente sistema:
-]) (descrizione_del_sistema.tex [13pdfTeX warning (ext4): destination with the 
-same identifier (name{figure.1.6}) has been already used, duplicate ignored
+ <./ContestoApplicativo/aoa.png>]) (descrizione_del_sistema.tex [15pdfTeX warni
+ng (ext4): destination with the same identifier (name{figure.1.8}) has been alr
+eady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -836,14 +873,14 @@ l.1 \chapter
             {Descrizione del lavoro} <./ContestoApplicativo/trilaterazione.png>
 ]
 Capitolo 2.
-<DescrizioneDelSistema/livelli_astrazione.png, id=344, 732.48656pt x 476.53032p
+<DescrizioneDelSistema/livelli_astrazione.png, id=387, 732.48656pt x 476.53032p
 t>
 File: DescrizioneDelSistema/livelli_astrazione.png Graphic file (type png)
 <use DescrizioneDelSistema/livelli_astrazione.png>
 Package pdftex.def Info: DescrizioneDelSistema/livelli_astrazione.png  used on 
 input line 6.
 (pdftex.def)             Requested size: 292.98943pt x 190.60875pt.
-[14
+[16
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) 
 has been already used, duplicate ignored
@@ -852,27 +889,27 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.10 \newpage
               <./DescrizioneDelSistema/livelli_astrazione.png>]
-<DescrizioneDelSistema/requisitiSistema.png, id=351, 747.54282pt x 365.11406pt>
+<DescrizioneDelSistema/requisitiSistema.png, id=394, 747.54282pt x 365.11406pt>
 
 File: DescrizioneDelSistema/requisitiSistema.png Graphic file (type png)
 <use DescrizioneDelSistema/requisitiSistema.png>
 Package pdftex.def Info: DescrizioneDelSistema/requisitiSistema.png  used on in
 put line 20.
 (pdftex.def)             Requested size: 224.26457pt x 109.53505pt.
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.30 \newpage
               <./DescrizioneDelSistema/requisitiSistema.png>]
-<DescrizioneDelSistema/sistema_liv1.png, id=360, 1267.73625pt x 554.82281pt>
+<DescrizioneDelSistema/sistema_liv1.png, id=402, 1267.73625pt x 554.82281pt>
 File: DescrizioneDelSistema/sistema_liv1.png Graphic file (type png)
 <use DescrizioneDelSistema/sistema_liv1.png>
 Package pdftex.def Info: DescrizioneDelSistema/sistema_liv1.png  used on input 
 line 41.
 (pdftex.def)             Requested size: 380.3238pt x 166.44812pt.
- [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -880,22 +917,22 @@ line 41.
 l.55 	\item L
              a distanza tra i due nodi <./DescrizioneDelSistema/sistema_liv1.pn
 g>]
-<DescrizioneDelSistema/ambiguitDistanza.png, id=368, 582.67688pt x 682.80093pt>
+<DescrizioneDelSistema/ambiguitDistanza.png, id=410, 582.67688pt x 682.80093pt>
 
 File: DescrizioneDelSistema/ambiguitDistanza.png Graphic file (type png)
 <use DescrizioneDelSistema/ambiguitDistanza.png>
 Package pdftex.def Info: DescrizioneDelSistema/ambiguitDistanza.png  used on in
 put line 63.
 (pdftex.def)             Requested size: 203.93996pt x 238.9839pt.
- [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.69 ...eoreferenziazione appena esposto. \newpage
                                                    <./DescrizioneDelSistema/amb
-iguitDistanza.png>] [18]
-<DescrizioneDelSistema/sistema_liv2.png, id=380, 1487.5575pt x 765.6103pt>
+iguitDistanza.png>] [20]
+<DescrizioneDelSistema/sistema_liv2.png, id=422, 1487.5575pt x 765.6103pt>
 File: DescrizioneDelSistema/sistema_liv2.png Graphic file (type png)
 <use DescrizioneDelSistema/sistema_liv2.png>
 Package pdftex.def Info: DescrizioneDelSistema/sistema_liv2.png  used on input 
@@ -906,13 +943,13 @@ Overfull \hbox (47.93211pt too wide) in paragraph at lines 76--77
 [][]
  []
 
-<DescrizioneDelSistema/flusso1.png, id=382, 1487.5575pt x 766.36313pt>
+<DescrizioneDelSistema/flusso1.png, id=424, 1487.5575pt x 766.36313pt>
 File: DescrizioneDelSistema/flusso1.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso1.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso1.png  used on input line 
 84.
 (pdftex.def)             Requested size: 371.88846pt x 191.59032pt.
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -920,13 +957,13 @@ Package pdftex.def Info: DescrizioneDelSistema/flusso1.png  used on input line
 l.88 I
        dati acquisiti sono "grezzi" e devono essere elaborati (vedi cap.\ref...
  <./DescrizioneDelSistema/sistema_liv2.png>]
-<DescrizioneDelSistema/flusso2.png, id=391, 1487.5575pt x 765.6103pt>
+<DescrizioneDelSistema/flusso2.png, id=434, 1487.5575pt x 765.6103pt>
 File: DescrizioneDelSistema/flusso2.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso2.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso2.png  used on input line 
 96.
 (pdftex.def)             Requested size: 371.88846pt x 191.4021pt.
- [20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -934,13 +971,13 @@ Package pdftex.def Info: DescrizioneDelSistema/flusso2.png  used on input line
 l.100 P
        oiché per ipotesi si è scelto di settare la linea di comando sul va...
  <./DescrizioneDelSistema/flusso1.png>]
-<DescrizioneDelSistema/flusso3.png, id=397, 1487.5575pt x 765.6103pt>
+<DescrizioneDelSistema/flusso3.png, id=440, 1487.5575pt x 765.6103pt>
 File: DescrizioneDelSistema/flusso3.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso3.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso3.png  used on input line 
 103.
 (pdftex.def)             Requested size: 371.88846pt x 191.4021pt.
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -955,15 +992,15 @@ l.107 \newpage
                <./DescrizioneDelSistema/flusso2.png> <./DescrizioneDelSistema/f
 lusso3.png>]
 
-LaTeX Warning: Reference `quaternioni' on page 22 undefined on input line 112.
+LaTeX Warning: Reference `quaternioni' on page 24 undefined on input line 112.
 
-<DescrizioneDelSistema/flusso4.png, id=408, 1487.5575pt x 765.6103pt>
+<DescrizioneDelSistema/flusso4.png, id=450, 1487.5575pt x 765.6103pt>
 File: DescrizioneDelSistema/flusso4.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso4.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso4.png  used on input line 
 117.
 (pdftex.def)             Requested size: 371.88846pt x 191.4021pt.
-) (tecnologie_utilizzate.tex [22pdfTeX warning (ext4): destination with the sam
+) (tecnologie_utilizzate.tex [24pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.2.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -971,23 +1008,23 @@ e identifier (name{figure.2.9}) has been already used, duplicate ignored
 l.1 \chapter
             {Tecnologie utilizzate} <./DescrizioneDelSistema/flusso4.png>]
 Capitolo 3.
-) (raffinamento_dei_dati.tex [23
+) (raffinamento_dei_dati.tex [25
 
 ]
 Capitolo 4.
-) (Implementazione.tex [24
+) (Implementazione.tex [26
 
 ]
 Capitolo 5.
-) (analisi_dati.tex [25
+) (analisi_dati.tex [27
 
 ]
 Capitolo 6.
-) (conclusioni.tex [26
+) (conclusioni.tex [28
 
 ]
 Capitolo 7.
-) (bibliography.tex [27
+) (bibliography.tex [29
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 7.
@@ -1024,11 +1061,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--40
 45 /
  []
 
-[28
+[30
 
-])
+]
+Underfull \hbox (badness 1859) in paragraph at lines 53--56
+[]\OT1/ptm/m/n/12 Ugur Be-k-ci-ba-si, "In-crea-sing RS-SI Lo-ca-li-za-tion Ac-c
+u-ra-cy with Di-stan-
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 53--56
+\OT1/ptm/m/n/12 ce Re-fe-ren-ce An-chor in Wi-re-less Sen-sor Net-works", 2014,
+ []$\OT1/pcr/m/n/12 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--56
+\OT1/pcr/m/n/12 / / kom . aau . dk / group / 10gr891 / methods / Triangulation 
+/
+ []
+
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 295.
- [29pdfTeX warning (ext4): destination with the same identifier (name{cite.toaP
+ [31pdfTeX warning (ext4): destination with the same identifier (name{cite.toaP
 roblem}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1040,7 +1095,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 295.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 295.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 295.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1A3608250BAE589C249B3335EA114B86;1835.
+(rerunfilecheck)             Checksum: 1E11A67F83F2315AAD072F683C4DF121;2014.
 
 
 LaTeX Warning: There were undefined references.
@@ -1051,10 +1106,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 295.
  ) 
 Here is how much of TeX's memory you used:
- 10278 strings out of 493305
- 149452 string characters out of 3129802
- 243915 words of memory out of 3000000
- 13485 multiletter control sequences out of 15000+200000
+ 10310 strings out of 493305
+ 150079 string characters out of 3129802
+ 244148 words of memory out of 3000000
+ 13505 multiletter control sequences out of 15000+200000
  22336 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,12n,43p,915b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1071,9 +1126,9 @@ b><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8
 a.pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/u
 tmr8a.pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on main.pdf (33 pages, 2174350 bytes).
+Output written on main.pdf (35 pages, 2236288 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 566 PDF objects out of 1000 (max. 8388607)
+ 115 named destinations out of 1000 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
 
