@@ -63,9 +63,9 @@ Un'ulteriore spinta è data dal fatto che, al contrario del GPS per gli OPS (ved
 
 
 
-\section{Stima della distanza}
+\section{Stima della posizione}
 \label{metodi_distanza}
-Gli IPS possono essere classificati sulla base di diversi fattori, uno di questi è su come determinano la distanza tra due nodi.\\
+Gli IPS possono essere classificati sulla base di diversi fattori, uno di questi è su come determinano la posizione dei.\\
 Stimare \cite{IPS2} la distanza tra dispositivi wireless è utile perché attraverso questa informazione è possibile determinarne (con un certo errore) la posizione di un ricevitore rispetto ad un trasmettitore (\cite{alg1}, \cite{alg2}), queste tecniche si distinguono in:
 
 	\begin{itemize}
@@ -223,21 +223,57 @@ In questo modo, la posizione del \textit{target} viene stimata all'interno del l
 \label{angle}
 \subsubsection{Angle of Arrival}
 \label{aoa}
-Con questa tecnica la posizione del \textit{target} viene stimata misurando gli angoli di incidenza del segnale trasmesso ad altri nodi. \cite{AoA}.\\
-In un piano bidimensionale, sono necessari almeno due ricevitori per stimare la posizione, come mostrato in Fig.\ref{fig:AoA}. 
+Con questa tecnica la posizione del \textit{target} viene stimata misurando gli angoli di incidenza del segnale trasmesso ad altri nodi.\\
+Si consideri \cite{aoa} un antenna in un canale di propagazione, la tensione del segnale ricevuto (\ref{fig:aoa}) è data dalla seguente equazione:\\
+\begin{equation}
+ V = \int_{0}^{2\pi} AoA(\varphi) G(\varphi)d\varphi 
+\end{equation}
+
+Dove:
+\begin{itemize}
+	\item $AoA(\varphi)$ rappresenta l'ampiezza e la fase dell'onda incidente
+	\item $G(\varphi)$ è il campo elettrico del nodo target 
+	\item $C$ valore proporzionale constante
+\end{itemize}
+
+Se si ruota l'antenna di un angolo $\alpha$ intorno a se stessa nel piano cartesiano la precedente equazione diventa:
+\begin{equation}
+\label{eq:2}
+V (\alpha) = \int_{0}^{2\pi} AoA(\alpha-\varphi) G(\varphi)d\varphi 
+\end{equation}
+
+Possiamo notare che l'Eq.\ref{eq:2} è la convoluzione di $AoA$ e $G$ e può essere scritta nel seguente modo:
+\begin{equation}
+\label{eq:3}
+V (\alpha) = C AoA(\alpha) * G(\alpha)
+\end{equation}
+
+Si è scelto di normalizzare l'Eq.\ref{eq:3} con il valore constante $C$. Quindi, utilizzando la transformata di Fourier l'Eq.\ref{eq:3} diventa:
+
+\begin{equation}
+\label{eq:4}
+F(V(\alpha)) = F(AoA(\alpha)) F(G(\alpha))
+\end{equation}
+
+Da cui è possibile calcolare l'angolo di incidenza desiderato:
+
+\begin{equation}
+\label{eq:5}
+AoA(\alpha) = F^{-1} \dfrac{F(V(\alpha))}{F(G(\alpha))} \quad se \quad F(G(\alpha))\neq 0
+\end{equation}
 
 \begin{figure}[H]  
 	\centering 
-	\includegraphics[scale=0.8]{ContestoApplicativo/aoa.png}
-	\caption{AoA - Principio di funzionamento }
-	\label{fig:AoA}
+	\includegraphics[scale=0.4]{ContestoApplicativo/aoa.png}
+	\caption{AoA - Stima della posizione attraverso l'angolo di incidenza}
+	\label{fig:aoa}
 \end{figure}
-Gli angoli dei nodi sono espressi in senso orario a partire da una direzione nord fissata nel sistema di riferimento utilizzato.\\
+
 Il vantaggio dell’AoA risiede nella possibilità di ottenere un risultato attendibile senza la necessità di informazioni riguardanti i tempi di trasmissione. A fronte del risparmio dal punto di vista computazionale, la tecnica presenta alcuni svantaggi pratici, dovuti al costo dell’hardware, che al fine di restituire informazioni precise, deve essere di alta qualità; rischiando altrimenti di incorrere in fenomeni che comprometterebbero la misurazione. Per questo motivo solitamente questa tecnica viene completata dalla tecnica di posizionamento nota come \textit{Triangolazione} (\ref{triangolazione}).
 
 
-\section{Tecniche di posizionamento}
-Per tecniche di posizionamento si intendono tutte quelle tecniche che, combinate alle differenti metodologie di stima della distanza viste precedentemente (vedi \ref{metodi_distanza}), permettono di individuare la posizione di un nodo \textit{target} all'interno di un sistema di riferimento.\\
+\section{Tecniche di localizzazione}
+Per tecniche di localizzazione si intendono tutte quelle tecniche che, combinate alle differenti metodologie di stima della posizione viste precedentemente (vedi \ref{metodi_distanza}), permettono di localizzare un nodo \textit{target} all'interno di un sistema di riferimento.\\
 In questo paragrafo vengono illustrate quelle più conosciute e basilari nell'ambito degli IPS.
 
 \subsection{MIN-MAX}
@@ -326,7 +362,7 @@ Dove $\Phi_R$ rappresenta l'orientamento del nodo target, come mostrato in Fig.\
 
 \section{Sensor Fusion}
 
-Con Sensor Fusion si indicano tutte quelle tecniche che permettono di combinare dati sensoriali forniti da fonti diverse al fine di ottenere delle informazioni risultanti migliori in confronto a quanto sarebbe stato possibile ottenere utilizzando le stesse fonti singolarmente. Questo può significare ottenere valori più precisi, più completi e più affidabili.
+Con Sensor Fusion \cite{IPS2} si indicano tutte quelle tecniche che permettono di combinare dati sensoriali forniti da fonti diverse al fine di ottenere delle informazioni risultanti migliori in confronto a quanto sarebbe stato possibile ottenere utilizzando le stesse fonti singolarmente. Questo può significare ottenere valori più precisi, più completi e più affidabili.
 Nel contesto dell’indoor positioning la sensor fusion permette di unire ogni fonte
 di dati legate alla posizione per ottenere un posizionamento universale ancora più preciso
 e veloce, ottimizzando i tempi di stima e la precisione.

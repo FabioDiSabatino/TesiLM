@@ -15,20 +15,20 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces ToA - Principio di funzionamento}}{11}{figure.1.4}
 \contentsline {figure}{\numberline {1.5}{\ignorespaces TDoA - Principio di funzionamento}}{12}{figure.1.5}
 \contentsline {figure}{\numberline {1.6}{\ignorespaces TDoA - Stima della posizione lungo l'iperbole identificata da due nodi}}{13}{figure.1.6}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces AoA - Principio di funzionamento }}{14}{figure.1.7}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces MIN-MAX - Tecnica di posizionamento }}{15}{figure.1.8}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces AoA - Stima della posizione attraverso l'angolo di incidenza}}{14}{figure.1.7}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces MIN-MAX - Tecnica di posizionamento }}{16}{figure.1.8}
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Trilaterazione - Esempio esplicativo}}{16}{figure.1.9}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Triangolazione - Esempio esplicativo}}{17}{figure.1.10}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Triangolazione - Esempio esplicativo}}{18}{figure.1.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Rappresentazione dei livelli d'astrazione utilizzati per descrivere il sistema }}{19}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Rappresentazione del sistema come black box }}{20}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Rappresentazione del sistema in sottosistemi }}{21}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ambiguit\IeC {\`a} nella georeferenziazione di un secondo nodo utilizzando soltanto la distanza dal precedente }}{22}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Rappresentazione dei sottosistemi in moduli}}{24}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 1}}{25}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 2}}{26}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 3}}{26}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 4}}{27}{figure.2.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Rappresentazione dei livelli d'astrazione utilizzati per descrivere il sistema }}{20}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Rappresentazione del sistema come black box }}{21}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Rappresentazione del sistema in sottosistemi }}{22}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ambiguit\IeC {\`a} nella georeferenziazione di un secondo nodo utilizzando soltanto la distanza dal precedente }}{23}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Rappresentazione dei sottosistemi in moduli}}{25}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 1}}{26}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 2}}{27}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 3}}{27}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 4}}{28}{figure.2.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
