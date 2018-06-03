@@ -88,7 +88,7 @@ delle coordinate note) dai nodi senza posizione nota a cui assegnare delle coord
 Si dicono:
 \begin{itemize}
 	\item \textbf{Anchor}: i nodi le cui coordinate sono note
-	\item \textbf{Unknown}: i nodi di cui non si conosce la posizione.
+	\item \textbf{Target}: il nodo di cui non si conosce la posizione.
 \end{itemize}
 
  L’obiettivo del posizionamento è assegnare le giuste coordinate agli Unknown rispetto ad un sistema di riferimento. Questo è strettamente legato all'implementazione dell'IPS e così anche la codifica delle posizioni all'interno del sistema di riferimento, le coordinate potrebbero essere restituite all'utente in maniera relativa ("vicino alla cucina") oppure assoluta ("tre  metri in direzione ovest dal nodo 1").
@@ -217,11 +217,12 @@ In questo modo, la posizione del \textit{target} viene stimata all'interno del l
 	\label{fig:tdoa1}
 \end{figure}
 
-	Tuttavia così facendo la posizione del \textit{target} rimane stimata in un'insieme di punti infinito, quindi come per le tecniche viste precedentemente (\ref{rssi} e \ref{toa}) per identificare in modo univoco il target questa tecnica ha bisogno di essere completata dalla tecnica di posizionamento nota come \textbf{Multilaterazione} \ref{multilaterazione}.
+	Tuttavia così facendo la posizione del \textit{target} rimane stimata in un'insieme di punti infinito, quindi come per le tecniche viste precedentemente (\ref{rssi} e \ref{toa}) per identificare in modo univoco il target questa tecnica ha bisogno di essere completata dalla tecnica di posizionamento nota come \textbf{Trilaterazione} \ref{trilaterazione}.
 
 \subsection{Angle Based}
-
+\label{angle}
 \subsubsection{Angle of Arrival}
+\label{aoa}
 Con questa tecnica la posizione del \textit{target} viene stimata misurando gli angoli di incidenza del segnale trasmesso ad altri nodi. \cite{AoA}.\\
 In un piano bidimensionale, sono necessari almeno due ricevitori per stimare la posizione, come mostrato in Fig.\ref{fig:AoA}. 
 
@@ -236,7 +237,29 @@ Il vantaggio dell’AoA risiede nella possibilità di ottenere un risultato atte
 
 
 \section{Tecniche di posizionamento}
-Utilizzando le differenti metodologie di stima della distanza viste precedentemente (vedi \ref{metodi_distanza}) si possono realizzare una moltitudine di algoritmi per stimare la posizione di un \textit{target} all'interno del sistema di riferimento. In questo paragrafo vengono illustrate le tecniche di posizionamento più conosciute e basilari utilizzate negli IPS.
+Per tecniche di posizionamento si intendono tutte quelle tecniche che, combinate alle differenti metodologie di stima della distanza viste precedentemente (vedi \ref{metodi_distanza}), permettono di individuare la posizione di un nodo \textit{target} all'interno di un sistema di riferimento.\\
+In questo paragrafo vengono illustrate quelle più conosciute e basilari nell'ambito degli IPS.
+
+\subsection{MIN-MAX}
+Combina le stime della distanza di più \textit{anchor}, ottenute attraverso tecnica \textit{RSSI} (\ref{rssi}), nel seguente modo:
+
+\begin{itemize}
+	\item Stimare la distanza $d_i$ di ogni nodo i-esimo in base al valore RSSI
+	\item Traccia due linee orizzontali e verticali a distanza $d_i$ dallo nodo \textit{target}
+	\item Identifica un quadrato di lato 2  $d_i$ i cui estremi saranno: \\
+			$[max(x_i-d:i),max(y_i-d_i)] * [min(x_i+d_i),min(y_i+d_i))]$
+	\item Calcola le intersezioni dei quadrati
+\end{itemize}
+
+Il centro del quadrato (Fig.\ref{fig:minmax}) rappresenta la posizione stimata del \textit{target}. Più piccola sarà l’area e maggiore sarà l’accuratezza della posizione stimata.
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{ContestoApplicativo/minmax.png}
+	\caption{MIN-MAX - Tecnica di posizionamento }
+	\label{fig:minmax}
+\end{figure}
+
+
 
 \subsection{Trilaterazione}
 \label{trilaterazione}
@@ -255,15 +278,47 @@ Quindi le coordinate dell'Unknown sono la soluzione del seguente sistema:
 (x-x_3)^2 + (y-y_3)^2 = r_3^2
 \end{cases}
 \end{equation}
-Essendo un sistema 
-
-\subsection{Multilaterazione}
-\label{multilaterazione}
+In base alla soluzione del sistema si può avere una delle seguenti situazioni:
+\begin{itemize}
+	\item La soluzione non è unica, si hanno tre cerchi che si sovrappongono
+	\item Il sistema non ammette soluzione, i raggi vanno aumentati
+	\item La soluzione esiste ed è unica, i tre cerchi si intersecano in un solo punto
+\end{itemize}
 
 
 
 \subsection{Triangolazione}
 \label{triangolazione}
+A differenza delle Trilaterazione (\ref{trilaterazione}), queste tecniche identificano la posizione del nodo \textit{target} a partire dagli angoli stimati da tre anchors attraverso una delle teniche Angle Based (\ref{angle}).\\
+In \cite{triangolazione} si descrive la triangolazione geometrica attraverso il seguente algoritmo:\\
+
+\begin{enumerate}
+   \item Siano \textit{1,2 e 3} le anchor in grado di stimare l'angolo, rispetto ad una circonferenza concentrica all'anchor stessa, del nodo target
+   \item siano $L_{12}$ e $L_{31}$ rispettivamente le distanze tra l'anchor 1 e 2 e l'anchor 3 e 1
+   \item Siano gli angoli compresi tra \textit{1} e \textit{2} e tra \textit{1} e \textit{3}, indicati rispettivamente con $\lambda_{12} e \lambda_{13}$, minori di 180°
+   \item sia $\phi$ l'angolo tra l'asse x positivo e la linea formata dall'anchor \textit{1} e \textit{2}
+   \item sia $\sigma$ l'angoolo tra l'asse x positivo, l'anchor \textit{1} e l'anchor \textit{3} più $\phi$
+   \item sia $\gamma= \sigma - \lambda_{31}$
+   \item sia $p= \dfrac{L_{31} \sin\lambda_{12}}{L_{12} \sin\lambda_{31}}$
+   \item sia $\tau= \tan^{-1} \dfrac{\sin\lambda{12}-p \sin\gamma}{p \cos\gamma-\cos\lambda{12}}$
+   \item sia $L_1 = \dfrac{L_{12} sin(\tau+\lambda_{12})}{\sin\lambda_{12}}$
+\end{enumerate}
+
+Allora le coordinate $x$ e $y$ del target sono date da:
+\begin{itemize}
+	\item $x_R = x_1 - L_1  \cos(\phi + \tau)$
+	\item $y_R = y_1 - L_1  \sin(\phi + \tau)$
+	\item $\Phi_R = \phi + \tau - \lambda_1$
+\end{itemize}
+Dove $\Phi_R$ rappresenta l'orientamento del nodo target, come mostrato in Fig.\ref{fig:triangolazione}.
+
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{ContestoApplicativo/triangolazione.png}
+	\caption{Triangolazione - Esempio esplicativo}
+	\label{fig:triangolazione}
+\end{figure}
 
 
 
