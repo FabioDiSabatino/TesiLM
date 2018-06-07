@@ -1,5 +1,5 @@
 \chapter{Contesto applicativo }
---Aggiungere motivazioni del lavoro, stato  dell’arte della geolocalizzazione indoor e quali problemi si vogliono risolvere-- \\
+Nella parte iniziale di questo capitolo viene esplicato il contesto applicativo di questa tesi, una volta delineato vengono illustrate le tecniche basilari più utilizzate in questo ambito.
 
 \section{Context-aware computing}
 \label{context-aware}
@@ -36,6 +36,7 @@ Il sistema realizzato nell'ambito di questa tesi si colloca nell'ambito degli IP
 
 
 \section{Indoor Positioning System Service}
+\label{IPS}
 Un sistema di posizionamento indoor (in inglese: Indoor positioning system o IPS) è un sistema in grado di localizzare \textit{oggetti} o \textit{persone} all'interno di edifici utilizzando onde radio, campi magnetici, segnali acustici e/o altre informazioni raccolte dai sensori all'interno di dispositivi mobili \cite{IPS} o da altri  appositamente installati nell'ambiente. Questi sono una specializzazione dei più generici sistemi \textbf{RTLS}, standardizzati dall'\textit{International
 Organization for Standardization and the International Electro Technical Commission} (ISO/IEC 24730). Lo standard definisce i sistemi RTLS come:
 \begin{quotation}
@@ -360,15 +361,27 @@ Dove $\Phi_R$ rappresenta l'orientamento del nodo target, come mostrato in Fig.\
 
 
 
-\section{Sensor Fusion}
+\section{Sensor Data Fusion}
 
-Con Sensor Fusion \cite{IPS2} si indicano tutte quelle tecniche che permettono di combinare dati sensoriali forniti da fonti diverse al fine di ottenere delle informazioni risultanti migliori in confronto a quanto sarebbe stato possibile ottenere utilizzando le stesse fonti singolarmente. Questo può significare ottenere valori più precisi, più completi e più affidabili.
-Nel contesto dell’indoor positioning la sensor fusion permette di unire ogni fonte
-di dati legate alla posizione per ottenere un posizionamento universale ancora più preciso
-e veloce, ottimizzando i tempi di stima e la precisione.
-Molti dei dati che possono essere registrati dai sensori integrati negli smartphone
-sono: le alterazioni dei campi magnetici; i segnaliWi-Fi; i pacchetti Beacon Bluetooth; la
-pressione atmosferica; le variazioni di posizione mediante accelerometro e/o giroscopio.
+In generale con Sensor Data Fusion si indicano tutte quelle tecniche che \cite{sensorfusion} combinano dati provenienti da sensori o derivate da altre risorse tali che l'informazione risultante ha una minore incertezza rispetto a quella ottenuta utilizzando le risorse individualmente. \\
+Nel contesto degli IPS (\ref{IPS}), il Sensor Fusion ha come scopo quello di determinare informazioni riguardanti la posizione di oggetti e/o persone. Le risorse delle informazioni grezze sono le più svariate, tra le quali:
+\begin{itemize}
+	\item Accelerometro
+	\item Giroscopio
+	\item Magnetometro
+	\item Infrarossi
+	\item RFID 
+	\item Sensori ottici
+	\item Sensori di pressione
+	\item Bluetooth
+	\item WiFi
+	\item Telecamera
+	\item UWB
+\end{itemize}
+
+Come e quali risorse utilizzare per stimare la posizione di un oggetto è una sfida ingegneristica non banale, ma grazie alla crescente richiesta di IPSs la ricerca di nuove tecnologie e algoritmi in questo settore ha permesso di raggiungere risultati incredibili fino a qualche anno. \\
+
+
 
 
 

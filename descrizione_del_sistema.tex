@@ -21,10 +21,10 @@ Considerando il sistema in questione come una black box (Fig.\ref{fig:requisitiF
 	\caption{Rappresentazione del sistema come black box }
 	\label{fig:requisitiFunzionali}
 \end{figure}
-Nelle fasi primordiali del progetto, si è scelto di allocare la maggior parte delle risorse lavorative nel completamento di \textbf{R1} lasciando ad una fase successiva lo sviluppo di \textbf{R2}, per questo motivo d'ora in avanti si considereranno come unico requisito la geolocalizzazione dell'operatore. \textit{R1} può essere suddiviso in due requisiti più specifici:
+Nelle fasi primordiali del progetto, si è scelto di allocare la maggior parte delle risorse lavorative nel completamento di \textbf{R1} lasciando ad una fase successiva lo sviluppo di \textbf{R2}. \textit{R1} può essere suddiviso in due requisiti più specifici:
 \begin{itemize}
 	\item \textbf{R1.1}: Determinare la posizione di un operatore all'interno della rete
-	\item \textbf{R1.2}: Identificare il cammino minimo da un nodo ad un altro
+	\item \textbf{R1.2}: Identificare il cammino minimo da un operatore ad un altro
 \end{itemize}
 Quest'ultimo rappresenta sia la possibilità da parte dell'operatore di eseguire il percorso all'inverso, sia la possibilità che venga raggiunto da una squadra di supporto. A questo punto si può scendere al livello d'astrazione successivo (\ref{fig:livelliAstrazione}).
 \newpage 
@@ -32,30 +32,11 @@ Quest'ultimo rappresenta sia la possibilità da parte dell'operatore di eseguire
 
 \section{Livello sottosistemi}
 \label{livello_sottosistemi}
-Come già accennato nell'introduzione, la rete verrà costruita dinamicamente da un'esploratore e man mano che egli avanza verrà ampliata aggiungendo nuovi nodi.
-Realizzare una rete del genere introduce numerose problematiche, alcune strettamente legate alla tecnologia utilizzata (vedi cap.\ref{tecnologie}) altre alle caratteristiche richieste.\\
-Nello specifico la problematica sulla quale il lavoro di questi tesi si è concentrato è la progettazione e lo sviluppo dei sottosistemi destinati alla georeferenziazione della rete, ovvero l'attribuzione dell'informazione riguardante la dislocazione geografica dei nodi all'interno della rete.\\
-In questo contesto i sottosistemi individuati nella fase di progettazione sono rappresentati dalla seguente figura: 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.3]{DescrizioneDelSistema/sistema_liv1.png}
-	\caption{Rappresentazione del sistema in sottosistemi }
-	\label{fig:sistema_liv1}
-\end{figure}
-
-Ognuno dei quali con la propria responsabilità:
-\begin{itemize}
-	\item \textbf{S1}: ha il compito di ricavare tramite la rete e altri sensori i dati necessari
-	\item \textbf{App}: ha il compito di ricevere i dati da S1, elaborarli e infine fornire la posizione del nuovo nodo rispetto alla rete
-\end{itemize}
-
-La soluzione al problema si costruisce per iterazione georeferenziando i singoli nodi nel momento in cui vengono aggiunti dall'operatore. Con riferimento all'esempio illustrato precedentemente (vedi Fig.\ref{fig:step1}- Fig.\ref{fig:step6}), si consideri lo step 2.\\
-Per ipotesi si supponga che il primo nodo sia già georeferenziato, nel momento in cui l'operatore risulti essere al limite della line-of-sight e/o della distanza di sicurezza (20 mt) piazzerà il secondo nodo. Per georeferenziarlo (rispetto al primo) sono necessarie due informazioni fondamentali:
-\begin{itemize}
-	\item La distanza tra i due nodi
-	\item L'angolo tra i due nodi
-\end{itemize} 
-Per mantenere il livello d'astrazione attuale ci basta sapere che le caratteristiche della tecnologia utilizzata nell'implementazione della rete, fa si che le singole celle abbiano un raggio d'azione all'interno del quale il sottosistema \textit{S1} può calcolare la distanza tra l'operatore e il centro della cella di appartenenza.\\
+Per soddisfare il requisito \textbf{R1.1} è necessario che l'operatore si trovi all'interno di una zona \textit{infrastrutturata}, ovvero una zona dove i nodi della rete siano georeferenziati rispetto ad un sistema di riferimento comune. Considerata la modalità con la quale la rete è costruita, ovvero dinamicamente da un'esploratore,  garantire tale situazione non è un compito banale.\\
+La soluzione si costruisce per iterazione georeferenziando i singoli nodi nel momento in cui vengono aggiunti dall'esploratore.\\
+Con riferimento all'esempio illustrato precedentemente (Fig.\ref{fig:step1}- Fig.\ref{fig:step6}), si consideri lo step 2.
+Per ipotesi si supponga che il primo nodo sia già georeferenziato, nel momento in cui l'operatore risulti essere al limite della line-of-sight e/o della distanza di sicurezza piazzerà il secondo nodo. \\
+Per mantenere il livello d'astrazione attuale ci basta sapere che le caratteristiche della tecnologia utilizzata nell'implementazione della rete, fa si che le singole celle abbiano un raggio d'azione all'interno del quale il sottosistema \textit{S1} (Fig.\ref{fig:sistema_liv1}) può calcolare la distanza tra l'operatore e il centro della cella di appartenenza.\\
 Tale informazione non è però sufficiente, infatti ci sono infiniti punti sulla circonferenza con centro nel primo nodo e raggio pari alla distanza. Per poter georeferenziare in modo univoco il secondo nodo si deve trovare anche l'angolo in riferimento al primo nodo, tale compito non è banale e tanto meno le metodologie univoche e perfette.\\
 La figura seguente rappresenta un tentativo di georeferenziare il secondo nodo utilizzando soltanto la distanza tra i due nodi.
 \begin{figure}[H]
@@ -65,39 +46,57 @@ La figura seguente rappresenta un tentativo di georeferenziare il secondo nodo u
 	\label{fig:ambiguitDistanz}
 \end{figure}
 Nell'esempio appena proposto, si sono mostrate solo tre delle possibili infinite posizioni del secondo nodo. Si assuma che il punto corretto sia l'intersezione tra il vettore in blu e la circonferenza. In tal caso un'ambiguità con il vettore in verde potrebbe essere accettata in quanto si discosta di pochi metri dalla reale posizione, ben diversa sarebbe un'ambiguità con il vettore in giallo che renderebbe l'informazione del tutto errata e il sistema disinformante.\\
-Per il momento è sufficiente sapere che l'algoritmo utilizzato nel contesto di questa tesi (vedi cap.\ref{data_fusion}), esegue un campionamento durante il tragitto tra un nodo e l'altro combinando i dati inerenti alla distanza dell'operatore con quelli relativi agli angoli lungo il percorso.
-Nel prossimo paragrafo si raggiungerà il livello d'astrazione più basso della piramide (vedi \ref{fig:livelliAstrazione}) dettagliando i moduli che compongono i due sottosistemi e illustrando come questi intendono risolvere il problema di georeferenziazione appena esposto. \newpage
+In conclusione per georeferenziare in maniera univoca il nuovo nodo (rispetto al primo) sono necessarie le seguenti informazioni:
+\begin{itemize}
+	\item La distanza tra i due nodi
+	\item L'angolo tra i due nodi
+\end{itemize} 
+Per ricavare queste informazioni si sono ideati due sottosistemi, rappresentati dalla Fig.\ref{fig:sistema_liv1}:
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{DescrizioneDelSistema/sistema_liv1.png}
+	\caption{Rappresentazione dei sottosistemi necessari per georeferenziare i nodi della rete }
+	\label{fig:sistema_liv1}
+\end{figure}
+Ognuno dei quali con la propria responsabilità:
+\begin{itemize}
+	\item \textbf{S1}: ha il compito di ricavare tramite i sensori (cap.\ref{tecnologie}) le informazioni riguardanti gli angoli assunti dall'esploratore lungo il tragitto
+	\item \textbf{S2}: ha il compito di ricevere i dati da S1 e la distanza dal nodo precedente, elaborarli e infine determinare la posizione del nuovo nodo
+\end{itemize}
+
+Relativamente alla rappresentazione del sistema mostrata in Fig.\ref{fig:sistema_liv1}, il lavoro di questi tesi si colloca nella progettazione e nello sviluppo del sottosistema S1.\\
+Nel prossimo paragrafo si raggiungerà il livello d'astrazione più basso della piramide (vedi \ref{fig:livelliAstrazione}) dettagliando i moduli che compongono il sottosistema realizzato.\newpage
 
 
 \section{Livello moduli}
 
-Prima di "aprire" i due sottosistemi è bene specificare che si utilizzerà il termine \textit{modulo} per riferirsi sia a componenti hardware che software. Questo abuso di notazione permetterà di mostrare con un unico livello d'astrazione tutti i moduli progettati e realizzati al fine di risolvere il problema della georeferenziazione dei nodi.
+Prima di "aprire" il sottosistema è bene specificare che si utilizzerà il termine \textit{modulo} per riferirsi sia a componenti hardware che software. Questo abuso di notazione permetterà di mostrare con un unico livello d'astrazione tutti i moduli progettati e realizzati al fine di stimare gli angoli assunti dall'esploratore lungo il tragitto (si veda \ref{livello_sottosistemi}).
 \begin{figure}[H]  
 \includegraphics[scale=0.3 ]{DescrizioneDelSistema/sistema_liv2.png}
 \caption{Rappresentazione dei sottosistemi in moduli}
 \label{fig:sistema_liv2}
 \end{figure}
 Per esplicare al meglio i compiti dei singoli moduli e mantenere l'attuale livello d'astrazione, fermo restando che tutti i dettagli tecnici verranno forniti nei capitoli successivi, si mostrerà il flusso di dati generato in uno qualsiasi degli intervalli di campionamento lungo il tragitto dell'operatore tra un nodo e l'altro.\\ 
-Il flusso inizia nel momento in cui il \textit{driver} acquisisce le informazioni dai moduli \textit{MEMS} e \textit{UWB} riguardanti la distanza, la velocità angolare e l'accelerazione lineare dell'operatore. Come mostrato dalla Fig.\ref{fig:flusso1}. 
+Il flusso inizia nel momento in cui il modulo \textit{driver} acquisisce le informazioni dall'unità \textit{MEMS} (cap.\ref{tecnologie}) riguardanti la velocità angolare, l'accelerazione e il campo magnetico relativi all'operatore. Come mostrato in Fig.\ref{fig:flusso1}. 
 \begin{figure}[H] 
 	\centering 
 	\includegraphics[scale=0.25 ]{DescrizioneDelSistema/flusso1.png}
 	\caption{Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 1}
 	\label{fig:flusso1}
 \end{figure}
-I dati acquisiti sono "grezzi" e devono essere elaborati (vedi cap.\ref{rumore}). Quando e da chi questa computazione verrà eseguita durante il flusso, viene stabilito attraverso il comando Low/High. Da questo ne consegue anche la modalità di funzionamento del driver in:
+I dati acquisiti sono "grezzi" e devono essere elaborati (vedi cap.\ref{elaborazione}). Quando e da chi questa computazione verrà eseguita durante il flusso, viene stabilito attraverso il comando Low/High. Da questo ne consegue anche la modalità di funzionamento del driver in:
 \begin{itemize}
 	\item \textbf{HCM}: High Computation mode, i dati vengono elaborati dal microcontrollore
 	\item \textbf{LCM}: Low Computation mode, i dati verranno elaborati in seguito dal sottosistema \textit{App} 
 \end{itemize}
-La scelta tra quale di queste due modalità utilizzare verrà motivata nel capitolo riguardante l'analisi dei risultati (cap.\ref{elaborazione}), per il momento si ipotizzi di settare la linea di comando al valore "Low" e quindi di utilizzare il driver in \textit{LCM}. Con queste impostazioni i dati grezzi vengono impacchettati ed etichettati con un timestep relativo, prima di essere inviati dal modulo \textit{Serial driver} e ricevuti dal sottosistema \textit{App} mediante il modulo \textit{Serial communicator}, quest'ultimo li inoltra all'ingresso del multiplexer \textit{Computation mode} come mostrato in Fig.\ref{fig:flusso2}:
+La scelta tra quale di queste due modalità utilizzare verrà motivata nel capitolo riguardante l'analisi dei risultati (cap.\ref{elaborazione}), per il momento si ipotizzi di settare la linea di comando al valore "Low" e quindi di utilizzare il driver in \textit{LCM}. Con queste impostazioni i dati grezzi vengono impacchettati ed etichettati con un timestamp relativo, prima di essere inviati dal modulo \textit{Serial driver} e ricevuti dal modulo \textit{App} mediante il modulo \textit{Serial communicator}, quest'ultimo li inoltra all'ingresso del multiplexer \textit{Computation mode} come mostrato in Fig.\ref{fig:flusso2}:
 \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.25 ]{DescrizioneDelSistema/flusso2.png}
 	\caption{Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 2}
 	\label{fig:flusso2}
 \end{figure}
-Poiché per ipotesi si è scelto di settare la linea di comando sul valore \textbf{Low}, la sua negazione sul ramo del sottosistema \textit{App} fa si che il multiplexer devii il flusso di dati verso il modulo \textit{Data processor} come mostrato in figura:
+Poiché per ipotesi si è scelto di settare la linea di comando sul valore \textbf{Low}, il multiplexer devia il flusso di dati verso il modulo \textit{Sensor Fusion} come mostrato in figura:
  \begin{figure}[H]  
  	\centering 
  	\includegraphics[scale=0.25 ]{DescrizioneDelSistema/flusso3.png}
@@ -105,16 +104,10 @@ Poiché per ipotesi si è scelto di settare la linea di comando sul valore \text
  	\label{fig:flusso3}
  \end{figure}
 \newpage
-A questo punto il modulo \textit{Data processor} elabora i dati grezzi (vedi cap.\ref{elaborazione}) fornendo in uscita le seguenti informazioni:
+A questo punto il modulo \textit{Sensor Fusion} elabora i dati grezzi (vedi cap.\ref{elaborazione}) fornendo in uscita gli angoli di Eulero (si veda Appendice \ref{eulero}) relativi all'operatore:
 \begin{itemize}
-	\item \textbf{d}: la distanza in metri tra il centro della cella e l'operatore
-	\item \textbf{acc}: l'accelerazione lineare dell'operatore lungo gli assi X,Y e Z
-	\item \textbf{rot}: i quaternioni (vedi Appendice.\ref{quaternioni}) di rotazione dell'operatore
+	\item \textbf{Roll}
+	\item \textbf{Pitch}
+	\item \textbf{Yaw} 
 \end{itemize}
-Infine questi dati verranno usati come input dal modulo \textit{Data fusion algorithm} (vedi \ref{data_fusion}) che provvederà, una volta terminato il tragitto da parte dell'operatore, a determinare l'angolo del nuovo nodo rispetto al precedente e quindi a risolvere il problema di georeferenziazione emerso precedentemente (vedi \ref{livello_sottosistemi}).
- \begin{figure}[H]  
-	\centering 
-	\includegraphics[scale=0.25 ]{DescrizioneDelSistema/flusso4.png}
-	\caption{Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 4}
-	\label{fig:flusso4}
-\end{figure}
+Questi dati verranno usati come input dal sottosistema S2 (si veda \ref{fig:sistema_liv1}) che provvederà, insieme all'informazione relativa alla distanza dal nodo precedente, a determinare l'angolo del nuovo nodo rispetto e quindi a risolvere il problema di georeferenziazione emerso nel livello di astrazione precedente (si veda \ref{livello_sottosistemi}).
