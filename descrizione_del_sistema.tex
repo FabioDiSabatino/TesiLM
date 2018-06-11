@@ -37,7 +37,7 @@ La soluzione si costruisce per iterazione georeferenziando i singoli nodi nel mo
 Con riferimento all'esempio illustrato precedentemente (Fig.\ref{fig:step1}- Fig.\ref{fig:step6}), si consideri lo step 2.
 Per ipotesi si supponga che il primo nodo sia già georeferenziato, nel momento in cui l'operatore risulti essere al limite della line-of-sight e/o della distanza di sicurezza piazzerà il secondo nodo. \\
 Per mantenere il livello d'astrazione attuale ci basta sapere che le caratteristiche della tecnologia utilizzata nell'implementazione della rete, fa si che le singole celle abbiano un raggio d'azione all'interno del quale il sottosistema \textit{S1} (Fig.\ref{fig:sistema_liv1}) può calcolare la distanza tra l'operatore e il centro della cella di appartenenza.\\
-Tale informazione non è però sufficiente, infatti ci sono infiniti punti sulla circonferenza con centro nel primo nodo e raggio pari alla distanza. Per poter georeferenziare in modo univoco il secondo nodo si deve trovare anche l'angolo in riferimento al primo nodo, tale compito non è banale e tanto meno le metodologie univoche e perfette.\\
+Tale informazione non è però sufficiente, infatti ci sono infiniti punti sulla circonferenza con centro nel primo nodo e raggio pari alla distanza. Per poter georeferenziare in modo univoco il secondo nodo si deve trovare anche l'angolo in riferimento al primo nodo.\\
 La figura seguente rappresenta un tentativo di georeferenziare il secondo nodo utilizzando soltanto la distanza tra i due nodi.
 \begin{figure}[H]
 	\centering
@@ -110,4 +110,4 @@ A questo punto il modulo \textit{Sensor Fusion} elabora i dati grezzi (vedi cap.
 	\item \textbf{Pitch}
 	\item \textbf{Yaw} 
 \end{itemize}
-Questi dati verranno usati come input dal sottosistema S2 (si veda \ref{fig:sistema_liv1}) che provvederà, insieme all'informazione relativa alla distanza dal nodo precedente, a determinare l'angolo del nuovo nodo rispetto e quindi a risolvere il problema di georeferenziazione emerso nel livello di astrazione precedente (si veda \ref{livello_sottosistemi}).
+Questi dati verranno usati come input dal sottosistema S2 (si veda \ref{fig:sistema_liv1}) che provvederà, insieme all'informazione relativa alla distanza dal nodo precedente, a determinare l'angolo del nuovo nodo e quindi a risolvere il problema di georeferenziazione emerso nel livello di astrazione precedente (si veda \ref{livello_sottosistemi}).
