@@ -24,6 +24,7 @@
 
 \usepackage[dvips]{graphicx,color}
 
+
 \usepackage{caption,subcaption}% http://ctan.org/pkg/{caption,subcaption}
 % \usepackage{psfig}
 % \usepackage{epsfig}
@@ -142,7 +143,7 @@ pdfkeywords={Modello, tesi, LaTeX, PDF, Howto, pdflatex, dvipdfm},
 % Per far inserire anche le subsubsection nella Table Of Contents:
 \setcounter{tocdepth}{3}    % il default è 2 e quindi comprende fino alle subsection
 \usepackage[normal]{subfigure}
-
+\usepackage{appendix}
 \usepackage{verbatim}
 
 %%MY STYLES
@@ -278,15 +279,14 @@ pdfkeywords={Modello, tesi, LaTeX, PDF, Howto, pdflatex, dvipdfm},
 \input{Implementazione}
 \input{analisi_dati}
 \input{conclusioni}
+\newpage
 
-%\input{OpenStreetMap/OpenStreetMap}
+\pagenumbering{roman}
+\appendix
 
-%\input{client_side}
+	\input{rotazioni}
 
 
-%\input{implementazione}
-
-%\input{conclusioni}
 
 
 

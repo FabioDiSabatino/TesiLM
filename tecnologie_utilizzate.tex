@@ -49,10 +49,53 @@ A seguito del movimento della massa centrale, la distanza $d2$ in Fig.\ref{fig:a
 
 \section{Giroscopio}
 \label{giroscopi}
+In generale, un giroscopio è un dispositivo in grado di misurare la velocità angolare a cui è sottoposto il dispositivo. I giroscopi realizzati mediante tecnologia MEMS si basano sulla forza di \textit{Coriolis}. In fisica \cite{corolois}, la forza di Coriolis è una forza apparente a cui risulta soggetto un corpo quando si osserva il suo moto da un sistema di riferimento che sia in moto circolare rispetto ad un sistema di riferimento inerziale. \\
+I giroscopi di questo tipo sono composti \cite{gyroMems} da una \textit{massa} \textbf{m}, due \textit{molle} e due ammortizzatori come mostrato in Fig.\ref{fig:gyro}. Si assuma  l'asse x come l'asse di direzione (drive mode) e l'asse y come l'asse di rilevamento(sensing mode). Quando la massa è sottoposta ad una vibrazione armonica applicata da una forza elettrostatica, elettromagnetica o elettrotermica, lo spostamento lungo l'asse x è dato da:
+\begin{equation}
+x(t) = A_x \cos(\omega_x t)
+\end{equation}
+Dove $A_x$ è l'ampiezza e $\omega_x$ è la frequenza angolare.  Una velocità angolare $\Omega_z$ in input intorno all'asse z causa un'accelerazione di Coriolis lungo l'asse y data dalla seguente equazione:
+\begin{equation}
+a_y= 2\Omega_z \times \frac{d_x}{d_t}= -2\Omega_z A_x \omega_x \sin(\omega_x t)
+\end{equation}
+
+La massa quindi inizierà a vibrare lungo l'asse y a causa della forza di Coriolis e la velocità angolare $\Omega_z$ può essere calcolata misurando lo spostamento lungo l'asse vibrante. \\
+Quando il \textit{drive mode} e il \textit{sense mode} sono perfettamente uguali ($\omega_x = \omega_y$), l'ampiezza lungo l'asse y raggiunge il massimo mentre la larghezza di banda raggiunge il minimo. In generale, questi due parametri dovrebbero essere uguali al fine di ottimizzare la sensibilità e la larghezza di banda.
+ \begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=1]{tecnologie/gyro.png}
+	\caption{Rappresentazione di un giroscopio vibrante per la misura della velocità angolare lungo l'asse z}
+	\label{fig:gyro}
+\end{figure}
+
+
 
 
 \section{Magnetometro}
 \label{magnetometro}
+In generale, un magnetometro è un dispositivo in grado di rilevare l'intensità e la direzione del campo magnetico presente. Questi si basano sulla ben nota forza di Lorentz.\\
+Se si eroga una certa corrente in un conduttore posto in un campo magnetico trasversale al flusso, si genera una forza proporzionale alla velocità dei portatori, alla carica ed al valore del campo magnetico, diretta nella direzione ortogonale ad entrambi, secondo la  relazione:
+\begin{equation}
+\overrightarrow{F_L} = q \overrightarrow{v} \times \overrightarrow{B}
+\end{equation}
+Dove:
+\begin{itemize}
+	\item $q$ è la carica elementare
+	\item $F$ è la forza di Lorentz
+	\item $B$ è il campo magnetico nel vuoto
+\end{itemize}
+Indicando con $l$ la lunghezza del conduttore si ha:
+\begin{equation}
+\overrightarrow{F_L} = l \overrightarrow{i} \times \overrightarrow{B}
+\end{equation}
+Questa forza viene quindi sfruttata per misurare il campo magnetico esterno agente sul dispositivo. Una delle realizzazioni più comuni nell'ambito dei sensori realizzati mediante tecnologia MEMS sono i magnetometri capacitivi.\\
+In Fig.\ref{fig:magnet} è mostrata una semplice implementazione di un magnetometro capacitivo. Questo è composto da due \textit{molle} i cui terminali sono ancorati al substrato del dispositivo dove viene fatta circolare una corrente elettrica. Nel punto centrale le molle mantengono sospeso un \textit{rotore} dove idealmente non scorre corrente e al cui interno sono ancorati degli \textit{statori}. In presenza di una forza di Lorentz, le \textit{molle} si deformano dando origine ad uno spostamento rigido del \textit{rotore}. Poiché lo \textit{statore} non si muove, la capacità tra il \textit{rotore} e lo \textit{statore} cambia in maniera proporzionale all'intensità del campo magnetico esterno.
+ \begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4 ]{tecnologie/magnet.png}
+	\caption{Rappresentazione esemplificativa di un magnetometro capacitivo lungo l'asse \textit{z}}
+	\label{fig:magnet}
+\end{figure}
 
 
 \section{Modello di misura}

@@ -31,9 +31,12 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo a riposo}}{30}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo che subisce una forza esterna}}{31}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces in \ref {fig:framesa} il \textit {b-frame} nell'istante $t_1$ e $t_2$ relativamente al \textit {n-frame}, in \ref {fig:framesb} l'\textit {n-frame} in latitudine $\varphi $ e longitudine $\lambda $, l'\textit {e-frame} all'angolo $\alpha (t)= \omega _{ie}t$ e l'\textit {i-frame}}}{32}{figure.3.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{32}{figure.3.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{32}{figure.3.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Rappresentazione di un giroscopio vibrante per la misura della velocit\IeC {\`a} angolare lungo l'asse z}}{32}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Rappresentazione esemplificativa di un magnetometro capacitivo lungo l'asse \textit {z}}}{33}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces in \ref {fig:framesa} il \textit {b-frame} nell'istante $t_1$ e $t_2$ relativamente al \textit {n-frame}, in \ref {fig:framesb} l'\textit {n-frame} in latitudine $\varphi $ e longitudine $\lambda $, l'\textit {e-frame} all'angolo $\alpha (t)= \omega _{ie}t$ e l'\textit {i-frame}}}{35}{figure.3.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}{figure.3.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}{figure.3.5}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
