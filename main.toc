@@ -29,8 +29,24 @@
 \contentsline {section}{\numberline {4.1}Rumore dei dati grezzi}{37}{section.4.1}
 \contentsline {section}{\numberline {4.2}Tecniche di elaborazione}{37}{section.4.2}
 \contentsline {section}{\numberline {4.3}Algoritmo di data fusion}{37}{section.4.3}
-\contentsline {chapter}{\numberline {5}L'implementazione}{38}{chapter.5}
+\contentsline {chapter}{\numberline {5}Implementazione}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{38}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{38}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{38}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{38}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Canali di comunicazione}{38}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}I2C}{38}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}USB CDC}{38}{subsection.5.2.2}
 \contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{39}{chapter.6}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{40}{chapter.7}
-\contentsline {chapter}{\numberline {A}Rotazioni nello spazio}{i}{appendix.Alph1}
-\contentsline {chapter}{Bibliografia}{ii}{appendix*.4}
+\contentsline {section}{\numberline {6.1}Analisi temporale}{39}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{40}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{41}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{42}{subsection.6.1.3}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{44}{chapter.7}
+\contentsline {chapter}{\numberline {A}Quaternioni e rotazioni nello spazio}{45}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Filtro di Kalman}{46}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Script}{47}{appendix.Alph3}
+\contentsline {section}{\numberline {C.1}Testing}{47}{section.Alph3.1}
+\contentsline {subsection}{\numberline {C.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{47}{subsection.Alph3.1.1}
+\contentsline {subsection}{\numberline {C.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{48}{subsection.Alph3.1.2}
+\contentsline {chapter}{Bibliografia}{49}{appendix*.4}
