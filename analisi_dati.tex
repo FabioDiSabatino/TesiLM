@@ -2,7 +2,7 @@
 \label{analisi}
 
 \section{Analisi temporale}
-Questo tipo di analisi è stata effettuata al fine di determinare la frequenza massima entro la quale il microcontrollore è in grado di eseguire tutte le operazioni basilari, rappresentate in Fig.\ref{fig:temp}. Ovvero per rispondere alla seguente domanda:
+Questo tipo di analisi è stata effettuata al fine di determinare la frequenza massima entro la quale il microcontrollore è in grado di eseguire tutte le operazioni basilari, rappresentate in Fig.\ref{fig:op}. Ovvero per rispondere alla seguente domanda:
 \begin{quotation}
 	\textit{Qual'è la finestra temporale minima sufficiente a garantire 
 		che il microcontrollore sia in grado di eseguire correttamente le funzioni basilari? }
@@ -10,15 +10,17 @@ Questo tipo di analisi è stata effettuata al fine di determinare la frequenza m
 Dove per funzioni basilari si intendono le operazioni di:
 \begin{itemize}
 	\item \textbf{Lettura} dei dati grezzi dall'IMU tramite, indicato con $T_{RX\_I2C}$
+	\item \textbf{Elaborazione} dei dati grezzi (solo per le modalità \textit{HCM} e \textit{TCM}), indicato con $T_{MotionFX}$
 	\item \textbf{Trasmissione} dei dati verso il modulo \textit{App} (si veda\ref{livello_moduli}), indicato con $T_{TX\_USB}$
 \end{itemize}
 
 
- \begin{figure}[H]  
-	\centering 
-	\includegraphics[scale=0.35 ]{analisi/temp1.png}
-	\caption{Rappresentazione della finestra temporale minima per eseguire le operazioni basilari}
-	\label{fig:temp}
+\begin{figure}[H]
+	\centering
+	\label{fig:op}    
+	\subfigure[]{\label{fig:op1}\includegraphics[width=60mm]{analisi/op1.png}}
+	\subfigure[]{\label{fig:op2}\includegraphics[width=60mm]{analisi/op2.png}}
+	\caption{In \ref{fig:op1} le operazioni basilari per la modalità \textbf{LCM}, in \ref{fig:op2} le operazioni basilari per le modalità \textbf{HCM} e \textbf{TCM}}
 \end{figure}
 
 Per far ciò è opportuno analizzare singolarmente i due tempi, considerando le relative informazioni e la velocità del mezzo di comunicazione.\\
@@ -127,6 +129,28 @@ Sommando i tempi stimati nei paragrafi precedenti (Cap.\ref{analisii2c} e Cap.\r
 		\item \textit{9DOF} : $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,56 ms = 2,36 ms $
 	\end{enumerate}
 \end{enumerate}
+
+ Da notare che tali stime non tengono conto di alcune latenze legate all'esecuzione del codice all'interno del microprocessore, per questo motivo si ritiene opportuno sovrastimare le finestre temporali e sottostimare le frequenze massime, in modo da avere margini di sicurezza e stabilità maggiori.\\
+Per le modalità \textit{HCM} e \textit{TCM} si deve tener conto anche del tempo di computazione della libreria \textit{Motion FX} per la stima della dell'assetto a partire dai dati grezzi che, nel caso peggiore è dichiarato essere $3,2 ms$ \cite{motion} per il microcontrollore utilizzato nell'ambito di questa tesi.\\
+Quindi le stime aggiornate risultano essere:
+\begin{enumerate}
+	\item \textbf{LCM}:
+	\begin{enumerate}
+		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,32 ms = 1,52 ms $
+		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,42 ms = 2,22 ms $
+	\end{enumerate}
+	\item \textbf{HCM} :
+	\begin{enumerate}
+		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX}  = 1,2 ms + 0,16 ms + 3,2ms = 4,56 ms $
+		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,8 ms + 0,16 ms + 3,2ms = 5,16 ms $
+	\end{enumerate}
+	\item \textbf{TCM}:
+	\begin{enumerate}
+		\item \textit{6DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,2 ms + 0,42 ms + 3,2ms = 4,82 ms $
+		\item \textit{9DOF} : $T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,8 ms + 0,56 ms + 3,2 ms = 5,56 ms $
+	\end{enumerate}
+\end{enumerate}
+
  
 Che corrispondono alle seguenti frequenze di lavoro massime:
 
@@ -138,15 +162,15 @@ Che corrispondono alle seguenti frequenze di lavoro massime:
 	\end{enumerate}
 	\item \textbf{HCM} :
 	\begin{enumerate}
-		\item \textit{6DOF}: $f = 735 Hz $
-		\item \textit{9DOF} : $f = 510 Hz $
+		\item \textit{6DOF}: $f = 219 Hz $
+		\item \textit{9DOF} : $f = 193 Hz $
 	\end{enumerate}
 	\item \textbf{TCM}:
 	\begin{enumerate}
-		\item \textit{6DOF} : $f = 617 Hz $
-		\item \textit{9DOF} : $f = 423 Hz $
+		\item \textit{6DOF} : $f = 207 Hz $
+		\item \textit{9DOF} : $f = 179 Hz $
 	\end{enumerate}
 \end{enumerate}
 
- Da notare che tali stime non tengono conto di alcune latenze legate all'esecuzione del codice all'interno del microprocessore, per questo motivo si ritiene opportuno sovrastimare le finestre temporali e sottostimare le frequenze massime, in modo da avere margini di sicurezza e stabilità maggiori.
+
 

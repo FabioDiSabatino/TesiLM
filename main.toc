@@ -42,11 +42,11 @@
 \contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{40}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{41}{subsection.6.1.2}
 \contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{42}{subsection.6.1.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{44}{chapter.7}
-\contentsline {chapter}{\numberline {A}Quaternioni e rotazioni nello spazio}{45}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Filtro di Kalman}{46}{appendix.Alph2}
-\contentsline {chapter}{\numberline {C}Script}{47}{appendix.Alph3}
-\contentsline {section}{\numberline {C.1}Testing}{47}{section.Alph3.1}
-\contentsline {subsection}{\numberline {C.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{47}{subsection.Alph3.1.1}
-\contentsline {subsection}{\numberline {C.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{48}{subsection.Alph3.1.2}
-\contentsline {chapter}{Bibliografia}{49}{appendix*.4}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{45}{chapter.7}
+\contentsline {chapter}{\numberline {A}Quaternioni e rotazioni nello spazio}{46}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Filtro di Kalman}{47}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Script}{48}{appendix.Alph3}
+\contentsline {section}{\numberline {C.1}Testing}{48}{section.Alph3.1}
+\contentsline {subsection}{\numberline {C.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{48}{subsection.Alph3.1.1}
+\contentsline {subsection}{\numberline {C.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{49}{subsection.Alph3.1.2}
+\contentsline {chapter}{Bibliografia}{50}{appendix*.4}
