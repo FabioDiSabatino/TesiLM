@@ -84,7 +84,7 @@ Il flusso inizia nel momento in cui il modulo \textit{driver} acquisisce le info
 	\caption{Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 1}
 	\label{fig:flusso1}
 \end{figure}
-I dati acquisiti sono "grezzi" e devono essere elaborati (vedi cap.\ref{elaborazione}). Quando e da chi questa computazione verrà eseguita durante il flusso, viene stabilito attraverso il comando Low/High. Da questo ne consegue anche la modalità di funzionamento del driver in:
+I dati acquisiti sono "grezzi" e devono essere elaborati (Cap.\ref{elaborazione}). Quando e da chi questa computazione verrà eseguita durante il flusso, viene stabilito attraverso il comando Low/High. Da questo ne consegue anche la modalità di funzionamento del driver in:
 \begin{itemize}
 	\item \textbf{HCM}: High Computation mode, i dati vengono elaborati dal microcontrollore
 	\item \textbf{LCM}: Low Computation mode, i dati verranno elaborati in seguito dal sottosistema \textit{App} 
@@ -104,7 +104,7 @@ Poiché per ipotesi si è scelto di settare la linea di comando sul valore \text
  	\label{fig:flusso3}
  \end{figure}
 \newpage
-A questo punto il modulo \textit{Sensor Fusion} elabora i dati grezzi (vedi cap.\ref{elaborazione}) fornendo in uscita gli angoli di Eulero (si veda Appendice \ref{eulero}) relativi all'operatore:
+A questo punto il modulo \textit{Sensor Fusion} elabora i dati grezzi (vedi cap.\ref{sensor_fusion}) fornendo in uscita gli angoli di Eulero (Cap.\ref{assetto}) relativi all'operatore:
 \begin{itemize}
 	\item \textbf{Roll}
 	\item \textbf{Pitch}

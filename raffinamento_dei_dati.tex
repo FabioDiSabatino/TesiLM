@@ -1,10 +1,38 @@
-\chapter{Elaborazione dei dati acquisiti e algoritmo di data fusion}
+\chapter{Stima dell'assetto tramite sensor fusion}
 \label{elaborazione}
-\section{Rumore dei dati grezzi}
-\label{rumore}
-
-\section{Tecniche di elaborazione}
+In questo capitolo vengono inizialmente illustrati gli strumenti matematici utilizzati per rappresentare l'assetto di un corpo rigido nello spazio,
+successivamente viene illustrato l'algoritmo di fusione dei dati, provenienti dall'unità di misura inerziale, utilizzato per la stima dell'assetto dell'operatore.
 
 
-\section{Algoritmo di data fusion}
-\label{data_fusion}
+\section{Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}
+\label{assetto}
+Con \textit{"assetto di un corpo rigido"} si intende l'orientamento di un corpo rigido rispetto ad un particolare sistema di riferimento. Tale condizione può essere rappresentata attraverso numerosi strumenti matematici, tra i più utilizzati si hanno:
+\begin{itemize}
+	\item \textbf{Angoli di Eulero}
+	\item \textbf{Quaternioni unitari}
+\end{itemize}
+
+Nella Tab.\ref{rappresentazioni} vengono riportate sinteticamente le caratteristiche delle rappresentazioni appena enunciate \cite{assetto}:
+
+\begin{table}[]
+	\centering
+
+	\label{rappresentazioni}
+	\begin{tabular}{lllll}
+		\cline{1-3}
+		\multicolumn{1}{|l|}{\textbf{Rappresentazione}} & \multicolumn{1}{l|}{\textbf{\#Parametri}} & \multicolumn{1}{l|}{\textbf{Caratteristiche}}                                                                                                                                                                                                                                                    &  &  \\ \cline{1-3}
+		\multicolumn{1}{|l|}{Angoli di Eulero}          & \multicolumn{1}{c|}{3}                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}- facilmente interpretabili \\ dall'essere umano\\ \\ - funzioni trigonometriche nelle \\ relazioni cinematiche\\ \\ -presentato singolarità in \\ alcune situazioni\\ \\ - meno accurati dei quaternioni\end{tabular}}                           &  &  \\ \cline{1-3}
+		\multicolumn{1}{|l|}{Quaternioni unitari}       & \multicolumn{1}{c|}{4}                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}- non interpretabili facilmente\\ dall'essere umano\\ \\ - equazioni della cinematica \\ lineari\\ \\ - costo computazione di \\ elaborazione minore degli\\ angoli di Eulero\\ \\ - necessitano di un vincolo di \\ norma unitaria\end{tabular}} &  &  \\ \cline{1-3}
+		&                                           &                                                                                                                                                                                                                                                                                                  &  & 
+	\end{tabular}
+	\caption{Tabella comparativa delle rappresentazioni d’assetto}
+\end{table}
+
+
+
+\subsection{Angoli di Eulero}
+
+\subsection{Quaternioni }
+
+\section{Sensor fusion mediante un filtro di Kalman}
+\label{sensor_fusion}

@@ -161,6 +161,7 @@
 \newlabel{modello_di_misura}{{3.4}{34}{Modello di misura}{section.3.4}{}}
 \citation{gyromodel}
 \citation{gyromodel}
+\newlabel{fig:frames}{{3.4}{35}{Modello di misura}{equation.3.4.6}{}}
 \newlabel{fig:framesa}{{3.5(a)}{35}{Subfigure 3 3.5(a)}{subfigure.3.5.1}{}}
 \newlabel{sub@fig:framesa}{{(a)}{35}{Subfigure 3 3.5(a)\relax }{subfigure.3.5.1}{}}
 \newlabel{fig:framesb}{{3.5(b)}{35}{Subfigure 3 3.5(b)}{subfigure.3.5.2}{}}
@@ -169,71 +170,75 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{35}{figure.3.5}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{35}{figure.3.5}}
 \newlabel{accelModel}{{3.9}{36}{Modello di misura}{equation.3.4.9}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Elaborazione dei dati acquisiti e algoritmo di data fusion}{37}{chapter.4}}
+\citation{assetto}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Stima dell'assetto tramite sensor fusion}{37}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{elaborazione}{{4}{37}{Elaborazione dei dati acquisiti e algoritmo di data fusion}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Rumore dei dati grezzi}{37}{section.4.1}}
-\newlabel{rumore}{{4.1}{37}{Rumore dei dati grezzi}{section.4.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Tecniche di elaborazione}{37}{section.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Algoritmo di data fusion}{37}{section.4.3}}
-\newlabel{data_fusion}{{4.3}{37}{Algoritmo di data fusion}{section.4.3}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementazione}{38}{chapter.5}}
+\newlabel{elaborazione}{{4}{37}{Stima dell'assetto tramite sensor fusion}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}{37}{section.4.1}}
+\newlabel{assetto}{{4.1}{37}{Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}{section.4.1}{}}
+\newlabel{rappresentazioni}{{4.1}{38}{Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}{section.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Tabella comparativa delle rappresentazioni d\IeC {\textquoteright }assetto}}{38}{table.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Angoli di Eulero}{39}{subsection.4.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Quaternioni }{39}{subsection.4.1.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Sensor fusion mediante un filtro di Kalman}{39}{section.4.2}}
+\newlabel{sensor_fusion}{{4.2}{39}{Sensor fusion mediante un filtro di Kalman}{section.4.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementazione}{40}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{implementazione}{{5}{38}{Implementazione}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{38}{section.5.1}}
-\newlabel{computationMode}{{5.1}{38}{Modalità di computazione}{section.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{38}{subsection.5.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{38}{subsection.5.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{38}{subsection.5.1.3}}
-\newlabel{tcm}{{5.1.3}{38}{Testing Computation mode}{subsection.5.1.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Canali di comunicazione}{38}{section.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}I2C}{38}{subsection.5.2.1}}
-\newlabel{imp_i2c}{{5.2.1}{38}{I2C}{subsection.5.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}USB CDC}{38}{subsection.5.2.2}}
-\newlabel{imp_usbcdc}{{5.2.2}{38}{USB CDC}{subsection.5.2.2}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{39}{chapter.6}}
+\newlabel{implementazione}{{5}{40}{Implementazione}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{40}{section.5.1}}
+\newlabel{computationMode}{{5.1}{40}{Modalità di computazione}{section.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{40}{subsection.5.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{40}{subsection.5.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{40}{subsection.5.1.3}}
+\newlabel{tcm}{{5.1.3}{40}{Testing Computation mode}{subsection.5.1.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Canali di comunicazione}{40}{section.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}I2C}{40}{subsection.5.2.1}}
+\newlabel{imp_i2c}{{5.2.1}{40}{I2C}{subsection.5.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}USB CDC}{40}{subsection.5.2.2}}
+\newlabel{imp_usbcdc}{{5.2.2}{40}{USB CDC}{subsection.5.2.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{41}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{analisi}{{6}{39}{Analisi e validazione dei risultati}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Analisi temporale}{39}{section.6.1}}
-\newlabel{fig:op}{{6.1}{40}{Analisi temporale}{section.6.1}{}}
-\newlabel{fig:op1}{{6.1(a)}{40}{Subfigure 6 6.1(a)}{subfigure.6.1.1}{}}
-\newlabel{sub@fig:op1}{{(a)}{40}{Subfigure 6 6.1(a)\relax }{subfigure.6.1.1}{}}
-\newlabel{fig:op2}{{6.1(b)}{40}{Subfigure 6 6.1(b)}{subfigure.6.1.2}{}}
-\newlabel{sub@fig:op2}{{(b)}{40}{Subfigure 6 6.1(b)\relax }{subfigure.6.1.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref  {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf  {LCM}, in \ref  {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf  {HCM} e \textbf  {TCM}}}{40}{figure.6.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{40}{figure.6.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{40}{figure.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{40}{subsection.6.1.1}}
-\newlabel{analisii2c}{{6.1.1}{40}{Analisi del tempo di lettura dei dati grezzi dall'IMU}{subsection.6.1.1}{}}
-\newlabel{eq:ti2c}{{6.1}{40}{Analisi del tempo di lettura dei dati grezzi dall'IMU}{equation.6.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{41}{subsection.6.1.2}}
-\newlabel{analisiusb}{{6.1.2}{41}{Analisi del tempo di trasmissione dei dati tramite USB}{subsection.6.1.2}{}}
-\newlabel{tx_usb}{{6.5}{41}{Analisi del tempo di trasmissione dei dati tramite USB}{equation.6.1.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{42}{subsection.6.1.3}}
+\newlabel{analisi}{{6}{41}{Analisi e validazione dei risultati}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Analisi temporale}{41}{section.6.1}}
+\newlabel{fig:op}{{6.1}{42}{Analisi temporale}{section.6.1}{}}
+\newlabel{fig:op1}{{6.1(a)}{42}{Subfigure 6 6.1(a)}{subfigure.6.1.1}{}}
+\newlabel{sub@fig:op1}{{(a)}{42}{Subfigure 6 6.1(a)\relax }{subfigure.6.1.1}{}}
+\newlabel{fig:op2}{{6.1(b)}{42}{Subfigure 6 6.1(b)}{subfigure.6.1.2}{}}
+\newlabel{sub@fig:op2}{{(b)}{42}{Subfigure 6 6.1(b)\relax }{subfigure.6.1.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref  {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf  {LCM}, in \ref  {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf  {HCM} e \textbf  {TCM}}}{42}{figure.6.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{42}{figure.6.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{42}{figure.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{42}{subsection.6.1.1}}
+\newlabel{analisii2c}{{6.1.1}{42}{Analisi del tempo di lettura dei dati grezzi dall'IMU}{subsection.6.1.1}{}}
+\newlabel{eq:ti2c}{{6.1}{42}{Analisi del tempo di lettura dei dati grezzi dall'IMU}{equation.6.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{43}{subsection.6.1.2}}
+\newlabel{analisiusb}{{6.1.2}{43}{Analisi del tempo di trasmissione dei dati tramite USB}{subsection.6.1.2}{}}
+\newlabel{tx_usb}{{6.5}{43}{Analisi del tempo di trasmissione dei dati tramite USB}{equation.6.1.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{44}{subsection.6.1.3}}
 \citation{motion}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{45}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{47}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{conclusioni}{{7}{45}{Conclusioni e prospettive future}{chapter.7}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Quaternioni e rotazioni nello spazio}{46}{appendix.Alph1}}
+\newlabel{conclusioni}{{7}{47}{Conclusioni e prospettive future}{chapter.7}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Quaternioni e rotazioni nello spazio}{48}{appendix.Alph1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{app:rotazioni}{{A}{46}{Quaternioni e rotazioni nello spazio}{appendix.Alph1}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Filtro di Kalman}{47}{appendix.Alph2}}
+\newlabel{app:rotazioni}{{A}{48}{Quaternioni e rotazioni nello spazio}{appendix.Alph1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Filtro di Kalman}{49}{appendix.Alph2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{app:kalman}{{B}{47}{Filtro di Kalman}{appendix.Alph2}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Script}{48}{appendix.Alph3}}
+\newlabel{app:kalman}{{B}{49}{Filtro di Kalman}{appendix.Alph2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Script}{50}{appendix.Alph3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {C.1}Testing}{48}{section.Alph3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{48}{subsection.Alph3.1.1}}
-\newlabel{app:stimai2c}{{C.1.1}{48}{Script per la stima del tempo di lettura di dati provenienti dall'IMU}{subsection.Alph3.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{49}{subsection.Alph3.1.2}}
-\newlabel{app:stimausb}{{C.1.2}{49}{Script per la stima del tempo di trasmissione di dati al modulo App}{subsection.Alph3.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.1}Testing}{50}{section.Alph3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{50}{subsection.Alph3.1.1}}
+\newlabel{app:stimai2c}{{C.1.1}{50}{Script per la stima del tempo di lettura di dati provenienti dall'IMU}{subsection.Alph3.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{51}{subsection.Alph3.1.2}}
+\newlabel{app:stimausb}{{C.1.2}{51}{Script per la stima del tempo di trasmissione di dati al modulo App}{subsection.Alph3.1.2}{}}
 \bibcite{context}{1}
 \bibcite{gps}{2}
 \bibcite{IPS}{3}
@@ -243,7 +248,7 @@
 \bibcite{indoorThesis}{7}
 \bibcite{market}{8}
 \bibcite{rssi}{9}
-\@writefile{toc}{\contentsline {chapter}{Bibliografia}{50}{appendix*.4}}
+\@writefile{toc}{\contentsline {chapter}{Bibliografia}{52}{appendix*.4}}
 \bibcite{toaProblem}{10}
 \bibcite{aoa}{11}
 \bibcite{triangolazione}{12}
@@ -254,5 +259,6 @@
 \bibcite{gyromodel}{17}
 \bibcite{corolois}{18}
 \bibcite{gyroMems}{19}
-\bibcite{trackingThesis}{20}
-\bibcite{motion}{21}
+\bibcite{assetto}{20}
+\bibcite{trackingThesis}{21}
+\bibcite{motion}{22}
