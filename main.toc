@@ -27,27 +27,29 @@
 \contentsline {section}{\numberline {3.4}Modello di misura}{34}{section.3.4}
 \contentsline {chapter}{\numberline {4}Stima dell'assetto tramite sensor fusion}{37}{chapter.4}
 \contentsline {section}{\numberline {4.1}Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}{37}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Angoli di Eulero}{39}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Quaternioni }{39}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Sensor fusion mediante un filtro di Kalman}{39}{section.4.2}
-\contentsline {chapter}{\numberline {5}Implementazione}{40}{chapter.5}
-\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{40}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{40}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{40}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{40}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Canali di comunicazione}{40}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}I2C}{40}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}USB CDC}{40}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{41}{chapter.6}
-\contentsline {section}{\numberline {6.1}Analisi temporale}{41}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{42}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{43}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{44}{subsection.6.1.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{47}{chapter.7}
-\contentsline {chapter}{\numberline {A}Quaternioni e rotazioni nello spazio}{48}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Filtro di Kalman}{49}{appendix.Alph2}
-\contentsline {chapter}{\numberline {C}Script}{50}{appendix.Alph3}
-\contentsline {section}{\numberline {C.1}Testing}{50}{section.Alph3.1}
-\contentsline {subsection}{\numberline {C.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{50}{subsection.Alph3.1.1}
-\contentsline {subsection}{\numberline {C.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{51}{subsection.Alph3.1.2}
+\contentsline {subsection}{\numberline {4.1.1}Matrice di rotazione}{39}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Angoli di Eulero}{39}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Quaternioni }{41}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Sensor fusion mediante filtro di Kalman}{41}{section.4.2}
+\contentsline {chapter}{\numberline {5}Implementazione}{42}{chapter.5}
+\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{42}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{42}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{42}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{42}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Canali di comunicazione}{42}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}I2C}{42}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}USB CDC}{42}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Analisi temporale}{43}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{44}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{45}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{46}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Analisi dell'errore}{48}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Condizione statica}{48}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Condizione dinamica}{48}{subsection.6.2.2}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{49}{chapter.7}
+\contentsline {chapter}{\numberline {A}Script}{50}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Testing}{50}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{50}{subsection.Alph1.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{51}{subsection.Alph1.1.2}
 \contentsline {chapter}{Bibliografia}{52}{appendix*.4}

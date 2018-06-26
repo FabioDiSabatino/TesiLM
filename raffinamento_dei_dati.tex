@@ -6,7 +6,9 @@ successivamente viene illustrato l'algoritmo di fusione dei dati, provenienti da
 
 \section{Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}
 \label{assetto}
-Con \textit{"assetto di un corpo rigido"} si intende l'orientamento di un corpo rigido rispetto ad un particolare sistema di riferimento. Tale condizione può essere rappresentata attraverso numerosi strumenti matematici, tra i più utilizzati si hanno:
+Con \textit{"assetto di un corpo rigido"} si intende l'orientamento di un corpo rigido rispetto ad un particolare sistema di riferimento.\\
+Tale orientamento è rappresentato da una matrice di rotazione che, applicata ad un qualsiasi vettore nel sistema di riferimento mobile, ne fornisce una rappresentazione nel sistema di riferimento fisso (\ref{modello_di_misura}). 
+Tale rotazione può essere espressa attraverso numerosi strumenti matematici, tra i più utilizzati si hanno:
 \begin{itemize}
 	\item \textbf{Angoli di Eulero}
 	\item \textbf{Quaternioni unitari}
@@ -14,7 +16,7 @@ Con \textit{"assetto di un corpo rigido"} si intende l'orientamento di un corpo 
 
 Nella Tab.\ref{rappresentazioni} vengono riportate sinteticamente le caratteristiche delle rappresentazioni appena enunciate \cite{assetto}:
 
-\begin{table}[]
+\begin{table}[H]
 	\centering
 
 	\label{rappresentazioni}
@@ -27,12 +29,104 @@ Nella Tab.\ref{rappresentazioni} vengono riportate sinteticamente le caratterist
 	\end{tabular}
 	\caption{Tabella comparativa delle rappresentazioni d’assetto}
 \end{table}
+Nell'algoritmo di fusione dei dati, dettagliato nei paragrafi successivi, si è adottato un approccio ibrido molto comune nei contesti applicativi dei sistemi IPS(\ref{IPS}). Tale approccio consiste nell'utilizzare la rappresentazione mediante \textit{quaternioni} per le computazioni mentre la rappresentazione mediante gli \textit{angoli di Eulero} per la visualizzazione.\\
 
+\subsection{Matrice di rotazione}
+Di seguito si fornisce una definizione generale di matrice di assetto\cite{assetto2}. Si supponga di avere due sistemi di riferimento cartesiani in tre dimensioni $F$ e $G$, una matrice ortogonale $A_{FG}$, detta di rotazione ed un vettore $x_G$ espresso nel sistema di riferimento $G$.\\
+La matrice $A_{FG}$ permette di esprimere il vettore $x_G$ rispetto al sistema di riferimento $F$ secondo la seguente equazione:
 
+\begin{equation}
+x_F = A_{FG}x_G
+\end{equation}
+Essendo per ipotesi la matrice $A_{FG}$ ortogonale, l'operazione di inversione corrisponde al calcolo della sua trasposta:
+ \begin{equation}
+ x_G = A_{FG}^Tx_F
+ \end{equation}
+ Quindi determinare l'assetto significa definire la matrice di rotazione che permette, attraverso una semplice moltiplicazione, di ruotare i vettori da un sistema di riferimento mobile ad uno fisso.\\
+ 
 
 \subsection{Angoli di Eulero}
+Si consideri \cite{assetto2} un sistema di riferimento cartesiano $F$  fisso (con assi $x_F$,$y_F$ e $z_F$) ed un sistema di riferimento cartesiano $G$ mobile (con assi $x_G$,$y_G$ e $z_G$). \\
+Affinché l'orientamento degli assi del sistema mobile $G$ coincida con quelli del sistema fisso $F$, si devono eseguire almeno tre rotazioni successive attorno ai tre assi.\\
+Tale vincolo è posto dal teorema di Eulero che è alla base di tutte le matrici di rotazioni. Il teorema afferma che:
+\begin{itemize}
+	\item Per ogni rotazione, esiste sempre un vettore che avrà la medesima rappresentazione nei due sistemi di riferimento
+	\item ogni rotazione avviene sempre attorno ad un asse fisso
+\end{itemize} 
+L'idea è quella di ruotare ogni volta il sistema attorno ad uno dei suoi tre assi, così facendo l'asse attorno al quale è avvenuta la rotazione rimane fisso, mentre gli altri due cambiano orientamento. La rotazione successiva verrà fatta attorno ad uno dei due precedenti assi che hanno mutato l'orientamento. Con sistemi cartesiani a tre assi è possibile quindi scegliere tra dodici differenti sequenze di rotazioni per un totale eguale di possibili rappresentazioni della matrice di rotazione.\\
+Nell'ambito di questa tesi e più comunemente in quello aeronautico, si è utilizzata la sequenza di rotazioni $z$-$y$-$x$ e gli angoli $\psi$,$\vartheta$ e $\varphi$ chiamati rispettivamente \textit{imbardata,beccheggio e rollio} (in inglese \textit{yaw,pitch e roll}) mostrati in Fig.\ref{fig:rpy}:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.5]{elaborazione/rpy.png}
+	\caption{Rappresentazione degli angoli di roll, pitch e yaw per un velivolo \cite{wikiRoll}}
+	\label{fig:rpy}
+\end{figure}
+Le tre rotazioni in questione sono:
+
+\begin{equation}
+A(z,\psi)= \begin{bmatrix}
+\cos\psi   &-\sin\psi & 0 \\
+\sin\psi     & \cos\psi  & 0 \\
+0      & 0 & 1
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+A(y,\vartheta)= \begin{bmatrix}
+\cos\vartheta   &0 & \sin\vartheta \\
+0    & 1  & 0 \\
+-\sin\vartheta     & 0 & \cos\vartheta
+\end{bmatrix}
+\end{equation}
+
+
+\begin{equation}
+A(x,\varphi)= \begin{bmatrix}
+1   &0 & 0 \\
+0    & \cos\varphi  & -\sin\varphi\\
+0     & \sin\varphi & \cos\varphi
+\end{bmatrix}
+\end{equation}
+
+Andando a moltiplicare le precedenti matrici si ottiene la matrice di rotazione cercata:
+
+\begin{eqnarray}
+A(\psi,\vartheta,\varphi)= \begin{bmatrix}
+\cos\psi \cos\vartheta  & \cos\psi \sin\vartheta \sin\varphi-\sin\psi \cos\varphi & \cos\psi \sin\vartheta \cos\varphi + \sin\psi \sin\varphi \\
+\sin\psi \cos\vartheta    & \sin\psi \sin\vartheta \sin\varphi+\cos\psi \cos\varphi & \sin\psi \sin\vartheta \sin\varphi - \cos\psi \sin\varphi\\
+-\sin\vartheta    & \cos\vartheta\sin\varphi & \cos\vartheta\cos\varphi
+\end{bmatrix}
+\end{eqnarray}
+
+Il significato geometrico si ha osservando la Fig.\ref{fig:eulero}, dove:
+\begin{itemize}
+	\item la linea dei nodi è definita come l'intersezione tra il piano individuato dagli assi $x_Fy_F$ e quello individuato dagli assi $y_Bz_B$
+	\item $\psi$ è l'angolo tra $y_F$ e la linea dei nodi
+	\item $\vartheta$ è l'angolo tra $x_B$ e la sua proiezione sul piano $x_Fy_F$
+	\item $\varphi$ è l'angolo tra $y_B$ e la linea dei nodi
+\end{itemize}
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.8]{elaborazione/eulero.png}
+	\caption{Significato geometrico degli angoli di Eulero \cite{assetto2}}
+	\label{fig:eulero}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Quaternioni }
 
-\section{Sensor fusion mediante un filtro di Kalman}
+\section{Sensor fusion mediante  filtro di Kalman}
 \label{sensor_fusion}
