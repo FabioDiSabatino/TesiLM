@@ -44,5 +44,14 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{44}{figure.6.1}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{44}{figure.6.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{44}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{49}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{49}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{50}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{50}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{52}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

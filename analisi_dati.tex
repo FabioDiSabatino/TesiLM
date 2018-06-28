@@ -173,11 +173,82 @@ Che corrispondono alle seguenti frequenze di lavoro massime:
 	\end{enumerate}
 \end{enumerate}
 
-\section{Analisi dell'errore}
+\section{Analisi dello zero-offset}
+Quest'analisi è stata effettuata al fine di stimare lo \textbf{zero-offset} dell'accelerometro e del giroscopi. Tale fenomeno consiste nella deviazione dei dati in output dai sensori (\ref{imp_i2c}) rispetto al valore ideale atteso quando il sensore non subisce forze esterne. L'origine di questo errore è strettamente legata agli stress meccanici subiti dall'IMU nei processi di realizzazione.\\
+Relativamente ai sopra citati sensori, si hanno le seguenti definizioni di zero-offset:
+\begin{itemize}
+	\item \textbf{zero-g offset}: nel caso ideale un accelerometro posto in posizione orizzontale e immobile misura \textit{0 g} sugli assi X e Y mentre \textit{1 g} sull'asse Z. Lo \textit{zero-g} è la deviazione del valore letto in uscita rispetto al valore ideale.
+	\item \textbf{zero-rate offset}: nel caso ideale un giroscopio immobile misura \textit{0 dps} su tutti gli assi. Lo \textit{zero-g} è la deviazione del valore letto in uscita rispetto al valore ideale.
+\end{itemize}
 
-\subsection{Condizione statica}
+\subsection{Stima dello zero-g offset}
+Per stimare lo zero-g offset si è posto immobile l'IMU e si sono raccolti i dati letti dall'accelerometro per un totale di due minuti. Tale procedura è stata ripetuta tre volte ponendo ogni volta l'IMU parallelo rispetto ad un'asse (Cap.\ref{modello_di_misura}), come mostrato in Fig.\ref{fig:zero-g}:
+\begin{figure}[H]
+	\centering    
+	\label{fig:zero-g}
+	\subfigure[]{\label{fig:x}\includegraphics[width=40mm]{analisi/x.jpg}}
+	\subfigure[]{\label{fig:y}\includegraphics[width=40mm]{analisi/y.jpg}}
+	\subfigure[]{\label{fig:z}\includegraphics[width=40mm]{analisi/z.jpg}}
+	\caption{in \ref{fig:x} l'IMU posto parallelamente all'asse \textit{X}, in \ref{fig:y} l'IMU posto parallelamente all'asse \textit{Y} e infine in \ref{fig:z} l'IMU posto parallelamente all'asse \textit{Z}}
+\end{figure}
+Quindi per ogni lettura si è determinata la norma euclidea, dalla quale banalmente si ottiene il modulo dello zero-g offset sottraendo 1. Tale valore è da considerarsi come modulo e non sui singoli assi in quanto il dispositivo potrebbe non essere stato posizionato perfettamente parallelo all'asse in questione. In Fig.\ref{fig:andamentizero-g} vengono mostrati i valori degli zero-offset per i campioni catturati nei primi 7 secondi per ognuno dei tre assi:
 
-\subsection{Condizione dinamica}
+\begin{figure}[H]
+	\centering    
+	\subfigure[]{\label{fig:zgx}\includegraphics[width=80mm]{analisi/x-offset.jpg}}
+	\subfigure[]{\label{fig:zgy}\includegraphics[width=80mm]{analisi/y-offset.jpg}}
+	\subfigure[]{\label{fig:zgz}\includegraphics[width=80mm]{analisi/z-offset.jpg}}
+	\label{fig:andamentizero-g}
+	\caption{valori degli zero-g offset calcolati rispettivamente sull'asse X \ref{fig:zgx}, sull'asse Y  \ref{fig:zgy} e sull'asse \ref{fig:zgz}}
+\end{figure}
+
+Nella Tab.\ref{tab:zero-g} si riportano i valori di \textit{Media, Max} e le percentuali di occorrenze dei valori compresi nell'intervallo (0,1) e maggiori di 1.
+
+\begin{table}[H]
+	\centering
+	\label{tab:zero-g}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\textbf{Asse} & \multicolumn{1}{l|}{\textbf{Media (G)}} & \multicolumn{1}{l|}{\textbf{Max (G)}} & \textbf{ val>1} & \textbf{ 0<val>1} \\ \hline
+			x             & 1,0096                                  & 1,0233                                & 99               & 1                  \\ \hline
+			y             & 1,0036                                  & 1,0266                                & 99               & 1                  \\ \hline
+			z             & 0,9936                                  & 1,0037                                & 0,02             & 99,08              \\ \hline
+		\end{tabular}
+	\caption{Media, Max e percentuali di occorrenze dei valori compresi nell'intervallo (0,1) e maggiori di 1 dei dati mostrati in Fig.\ref{fig:zgx} }
+	\end{table}
+
+
+\subsection{Stima dello zero-rate offset}
+Per stimare lo zero-rate offset si è posto immobile l'IMU (come in Fig.\ref{fig:zero-g}) e si sono raccolti i dati letti dal giroscopio per un totale di due minuti. I valori ottenuti, per ognuno dei tre assi, sono mostrati in Fig.\ref{fig:zero-rate}:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.6]{analisi/zero-rate.jpg}
+	\caption{valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}
+	\label{fig:zero-rate}
+\end{figure}
+Dai valori mostrati in Fig.\ref{fig:zero-rate} si evince facilmente la presenza di un offset significativo sull'asse Z da cui ne consegue che, pur rimanendo immobile il giroscopio ha \textit{"la sensazione"} di essere ruotato intorno all'asse in questione con una velocità angolare significativa.\\
+Nella Tab.\ref{tab:zero-rate} si riportano invece i valori di \textit{media} e \textit{varianza} per i campioni mostrati in Fig.\ref{fig:zero-rate}:
+\begin{table}[H]
+	\centering
+	\label{tab:zero-rate}
+	\begin{tabular}{|c|c|c|l}
+		\cline{1-3}
+		\textbf{Asse} & \multicolumn{1}{l|}{\textbf{Media (dps)}} & \multicolumn{1}{l|}{\textbf{Varianza}} &  \\ \cline{1-3}
+		x             & 0,9055                                    & 0,0079                                 &  \\ \cline{1-3}
+		y             & -0,7203                                   & 0,0091                                 &  \\ \cline{1-3}
+		z             & 3,1291                                    & 0,0064                                 &  \\ \cline{1-3}
+	\end{tabular}
+	\caption{Media e varianza per i valori di zero-rate offset mostrati in Fig.\ref{fig:zero-rate}}
+\end{table}
+\subsection{Conclusioni stima dello zero-g offset}
+
+
+
+
+
+
+
+\section{Analisi qualitativa dell'assetto stimato}
 
 
 
