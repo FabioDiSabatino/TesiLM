@@ -3,7 +3,7 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Planimetria originale}}{1}{figure.0.1}
 \contentsline {figure}{\numberline {2}{\ignorespaces Planimetria alterata}}{1}{figure.0.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Rete allo step 1 dell'esploratore}}{2}{figure.0.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Rete allo step 1 dell'esploratore}}{2}{figure.0.4}
+\contentsline {figure}{\numberline {4}{\ignorespaces Rete allo step 2 dell'esploratore}}{2}{figure.0.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Rete allo step 3 dell'esploratore}}{2}{figure.0.5}
 \contentsline {figure}{\numberline {6}{\ignorespaces Rete allo step 4 dell'esploratore}}{2}{figure.0.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces Rete allo step 5 dell'esploratore}}{3}{figure.0.7}
@@ -32,26 +32,27 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo a riposo}}{30}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo che subisce una forza esterna}}{31}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Rappresentazione di un giroscopio vibrante per la misura della velocit\IeC {\`a} angolare lungo l'asse z}}{32}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Rappresentazione esemplificativa di un magnetometro capacitivo lungo l'asse \textit {z}}}{33}{figure.3.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Rappresentazione esemplificativa di un magnetometro capacitivo lungo l'asse \textit {z}}}{34}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces in \ref {fig:framesa} il \textit {b-frame} nell'istante $t_1$ e $t_2$ relativamente al \textit {n-frame}, in \ref {fig:framesb} l'\textit {n-frame} in latitudine $\varphi $ e longitudine $\lambda $, l'\textit {e-frame} all'angolo $\alpha (t)= \omega _{ie}t$ e l'\textit {i-frame}}}{35}{figure.3.5}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}{figure.3.5}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}{figure.3.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rappresentazione degli angoli di roll, pitch e yaw per un velivolo \cite {wikiRoll}}}{40}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Significato geometrico degli angoli di Eulero \cite {assetto2}}}{41}{figure.4.2}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rappresentazione degli angoli di roll, pitch e yaw per un velivolo \cite {wikiRoll}}}{41}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Significato geometrico degli angoli di Eulero \cite {assetto2}}}{42}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Rappresentazione del fenomeno di \textit {gimbal lock} \cite {gimbal}}}{43}{figure.4.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{44}{figure.6.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{44}{figure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{44}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{49}{figure.6.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}{figure.6.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}{figure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{49}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{50}{figure.6.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}{figure.6.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}{figure.6.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{50}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{52}{figure.6.4}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{47}{figure.6.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{47}{figure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{47}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{52}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{52}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{52}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{52}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{53}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{53}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{55}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

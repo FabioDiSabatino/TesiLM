@@ -1,6 +1,6 @@
 \chapter{Descrizione del lavoro}
 \label{scenario}
-Per comprendere la soluzione proposta e il sistema ideato si utilizzerà un approccio top-down. Partendo da un livello d'astrazione tale in cui emergono solo i requisiti funzionali e il sistema è rappresentato da una \textit{black box}, si raggiunge un livello che permetterà di affinare i requisiti iniziali e mostrare i \textit{sottosistemi} che lo costituiscono. Infine nell'ultimo livello avremo una visione dei \textit{moduli} che compongono i sottosistemi e che sono stati realizzati nel contesto di questa tesi.
+Per comprendere la soluzione proposta e il sistema ideato si utilizzerà un approccio top-down. Partendo da un livello d'astrazione tale in cui emergono solo i requisiti funzionali e il sistema è rappresentato da una \textit{black box}, si raggiunge un livello che permetterà di affinare i requisiti iniziali e mostrare i \textit{sottosistemi} che lo costituiscono. Infine nell'ultimo livello si avrà una visione dei \textit{moduli} che compongono i sottosistemi e che sono stati realizzati nel contesto di questa tesi.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{DescrizioneDelSistema/livelli_astrazione.png}
@@ -36,9 +36,9 @@ Per soddisfare il requisito \textbf{R1.1} è necessario che l'operatore si trovi
 La soluzione si costruisce per iterazione georeferenziando i singoli nodi nel momento in cui vengono aggiunti dall'esploratore.\\
 Con riferimento all'esempio illustrato precedentemente (Fig.\ref{fig:step1}- Fig.\ref{fig:step6}), si consideri lo step 2.
 Per ipotesi si supponga che il primo nodo sia già georeferenziato, nel momento in cui l'operatore risulti essere al limite della line-of-sight e/o della distanza di sicurezza piazzerà il secondo nodo. \\
-Per mantenere il livello d'astrazione attuale ci basta sapere che le caratteristiche della tecnologia utilizzata nell'implementazione della rete, fa si che le singole celle abbiano un raggio d'azione all'interno del quale il sottosistema \textit{S1} (Fig.\ref{fig:sistema_liv1}) può calcolare la distanza tra l'operatore e il centro della cella di appartenenza.\\
+Per mantenere il livello d'astrazione attuale basta sapere che le caratteristiche della tecnologia utilizzata nell'implementazione della rete, fa si che le singole celle abbiano un raggio d'azione all'interno del quale il sottosistema \textit{S1} (Fig.\ref{fig:sistema_liv1}) può calcolare la distanza tra l'operatore e il centro della cella di appartenenza.\\
 Tale informazione non è però sufficiente, infatti ci sono infiniti punti sulla circonferenza con centro nel primo nodo e raggio pari alla distanza. Per poter georeferenziare in modo univoco il secondo nodo si deve trovare anche l'angolo in riferimento al primo nodo.\\
-La figura seguente rappresenta un tentativo di georeferenziare il secondo nodo utilizzando soltanto la distanza tra i due nodi.
+La figura \ref{fig:ambiguitDistanz} rappresenta un tentativo di georeferenziare il secondo nodo utilizzando soltanto la distanza tra i due nodi.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.35]{DescrizioneDelSistema/ambiguitDistanza.png}

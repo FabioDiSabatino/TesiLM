@@ -174,7 +174,7 @@ Che corrispondono alle seguenti frequenze di lavoro massime:
 \end{enumerate}
 
 \section{Analisi dello zero-offset}
-Quest'analisi è stata effettuata al fine di stimare lo \textbf{zero-offset} dell'accelerometro e del giroscopi. Tale fenomeno consiste nella deviazione dei dati in output dai sensori (\ref{imp_i2c}) rispetto al valore ideale atteso quando il sensore non subisce forze esterne. L'origine di questo errore è strettamente legata agli stress meccanici subiti dall'IMU nei processi di realizzazione.\\
+Quest'analisi è stata effettuata al fine di stimare lo \textbf{zero-offset} dell'accelerometro e del giroscopio. Tale fenomeno consiste nella deviazione dei dati in output dai sensori (\ref{imp_i2c}) rispetto al valore ideale atteso quando il sensore non subisce forze esterne. L'origine di questo errore è strettamente legata agli stress meccanici subiti dall'IMU nei processi di realizzazione.\\
 Relativamente ai sopra citati sensori, si hanno le seguenti definizioni di zero-offset:
 \begin{itemize}
 	\item \textbf{zero-g offset}: nel caso ideale un accelerometro posto in posizione orizzontale e immobile misura \textit{0 g} sugli assi X e Y mentre \textit{1 g} sull'asse Z. Lo \textit{zero-g} è la deviazione del valore letto in uscita rispetto al valore ideale.
@@ -240,9 +240,11 @@ Nella Tab.\ref{tab:zero-rate} si riportano invece i valori di \textit{media} e \
 	\end{tabular}
 	\caption{Media e varianza per i valori di zero-rate offset mostrati in Fig.\ref{fig:zero-rate}}
 \end{table}
-\subsection{Conclusioni stima dello zero-g offset}
-
-
+\subsection{Conclusioni stima dello zero-offset}
+L'analisi appena effettuata ha mostrato come i dati grezzi provenienti dall'unità di misura inerziale (Cap.\ref{tecnologie}) siano affetti dallo zero-offset.\\
+L'accelerometro non risulta subire molto questo fenomeno, infatti i valori medi dei moduli del vettore gravitazionale si discostano al più dello 0,96\% (\ref{tab:zero-g}) sull'asse delle \textit{X} e il valore massimo si ha in corrispondenza dell'asse \textit{Y} che supera il valore ideale di $0,0266 G$. \\
+Ben diversa è la situazione dello zero-rate offset che risulta essere molto significativo sopratutto sull'asse \textit{Z} dove si ha una media di $3,1291 dps$. I valori di varianza bassi sottolineano come tale errore sia relativamente constante nel tempo fornendo quindi un punto di partenza per una sua modellizzazione.\\
+A valle di queste considerazioni si vuole evidenziare come l'uso dei dati grezzi provenienti dall'IMU per un'elaborazione che permetta la stima dell'assetto, debba essere preceduto da un'attività di compensazione di tali offset. Compensazione che può, in alcuni casi, trasformarsi in un vero e proprio lavoro di caratterizzazione e modellizzazione dell'errore all'interno dell'algoritmo di elaborazione. 
 
 
 

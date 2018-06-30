@@ -1,6 +1,6 @@
 \chapter{Contesto applicativo }
 \label{contesto}
-Nella parte iniziale di questo capitolo viene esplicato il contesto applicativo di questa tesi, una volta delineato vengono illustrate le tecniche basilari più utilizzate in questo ambito.
+Nella parte iniziale di questo capitolo viene esplicato il contesto applicativo di questa tesi e, una volta delineato vengono illustrate le tecniche basilari più utilizzate in questo ambito.
 
 \section{Context-aware computing}
 \label{context-aware}
@@ -20,30 +20,31 @@ Si consideri un'applicazione nel quale l'utente deve registrare il peso degli og
 	\label{fig:context}
 \end{figure}
 Nello scenario descritto le \textit{entità} sono rispettivamente utente e sistema, mentre due possibili informazioni riguardanti il contesto sono la presenza di altre persone e la posizione geografica del magazzino.\\
-La presenza di altre persone nelle vicinanze non influisce il compito dell'utente, quindi non può essere considerato come informazione contestuale. La posizione geografica del magazzino invece si, infatti se quest'ultimo fosse situato in Italia il peso verrebbe calcolato in chilogrammi mentre se fosse situato negli USA verrebbe calcolato in libbre.\\
+La presenza di altre persone nelle vicinanze non influisce sul compito dell'utente, quindi non può essere considerata come informazione contestuale. La posizione geografica del magazzino invece si, infatti se quest'ultimo fosse situato in Italia il peso verrebbe calcolato in chilogrammi mentre se fosse situato negli USA verrebbe calcolato in libbre.\\
 I sistemi che reperiscono, usano o interpretano queste informazioni contestuali sono detti \textit{context-aware} e vengono definiti in \cite{context} come:
 \begin{quotation}
 	\textit{Un sistema è context-aware se usa il contesto per fornire informazioni rilevanti e/o servizi agli utenti, dove la rilevanza dipende dal compito degli utenti.}
 \end{quotation}
-Uno dei tipi di context-aware più utilizzati si basa sul contesto della localizzazione, ovvero servizi basati sulla conoscenza di dove qualcosa o qualcuno si trovi. Nell'era moderna i servizi basati sulla localizzazione (in inglese: Location based services LBSs) stanno assumendo sempre più importanza nelle attività quotidiane dell'uomo grazie alle molteplici possibili applicazioni, tra le quali navigazione assistita per autoveicoli, tracking di persone sensibili (bambini, anziani, malati), servizi di emergenza e così via.\\
+Uno dei tipi di context-aware più utilizzati si basa sul contesto della localizzazione, ovvero servizi basati sulla conoscenza di dove qualcosa o qualcuno si trovi. Nell'era moderna i servizi basati sulla localizzazione (in inglese: \textit{Location based services} LBSs) stanno assumendo sempre più importanza nelle attività quotidiane dell'uomo grazie alle molteplici possibili applicazioni, tra le quali navigazione assistita per autoveicoli, tracking di persone sensibili (bambini, anziani, malati), servizi di emergenza e così via.\\
 I LBSs vengono divisi in due macro categorie:
 \begin{itemize}
-	\item \textbf{OPSs}: Outdoor Positioning System Service, ovvero servizi di localizzazione in ambienti aperti.
-	\item \textbf{IPSs}: Indoor Positioning System Service, ovvero servizi di localizzazione in ambienti indoor.
+\label{ops/ips}
+	\item \textbf{OPSs}: \textit{Outdoor Positioning System Services}, ovvero servizi di localizzazione in ambienti aperti.
+	\item \textbf{IPSs}: \textit{Indoor Positioning System Services}, ovvero servizi di localizzazione in ambienti indoor.
 \end{itemize}
 La tecnologia satellitare nota come Global Positioning System (GPS) è la tecnologia dominante negli OPSs. Attraverso una rete dedicata di satelliti artificiali in orbita, fornisce ad un terminale mobile o ricevitore GPS informazioni sulle sue coordinate geografiche ed orario, in ogni condizione meteorologica, ovunque sulla Terra o nelle sue immediate vicinanze ove vi sia un contatto privo di ostacoli con almeno quattro satelliti del sistema. La localizzazione avviene tramite la trasmissione di un segnale radio da parte di ciascun satellite e l'elaborazione dei segnali ricevuti da parte del ricevitore \cite{gps}.\\ 
-Il grande limite di questa tecnologia è che i ricevitori devono essere nella line of sight (letteralmente a vista d'occhio) di almeno quattro satelliti nel cielo, questo significa che all'interno di edifici e spazi chiusi il segnale viene attenuato e i sistemi perdono di accuratezza. Quindi la tecnologia GPS non è adatta ai servizi di localizzazione indoor.\\
+Il grande limite di questa tecnologia è che i ricevitori devono essere nella \textit{line of sight} (letteralmente a vista d'occhio) di almeno quattro satelliti nel cielo, questo significa che all'interno di edifici e spazi chiusi il segnale viene attenuato e i sistemi perdono di accuratezza. Quindi la tecnologia GPS non è adatta ai servizi di localizzazione indoor.\\
 Il sistema realizzato nell'ambito di questa tesi si colloca nell'ambito degli IPSs approfonditi nel paragrafo successivo.
 
 
 \section{Indoor Positioning System Service}
 \label{IPS}
-Un sistema di posizionamento indoor (in inglese: Indoor positioning system o IPS) è un sistema in grado di localizzare \textit{oggetti} o \textit{persone} all'interno di edifici utilizzando onde radio, campi magnetici, segnali acustici e/o altre informazioni raccolte dai sensori all'interno di dispositivi mobili \cite{IPS} o da altri  appositamente installati nell'ambiente. Questi sono una specializzazione dei più generici sistemi \textbf{RTLS}, standardizzati dall'\textit{International
+Un sistema di posizionamento indoor (in inglese: Indoor positioning system o IPS) è un sistema in grado di localizzare \textit{oggetti} o \textit{persone} all'interno di edifici utilizzando onde radio, campi magnetici, segnali acustici e/o altre informazioni raccolte dai sensori all'interno di dispositivi mobili \cite{IPS} o da altri  appositamente installati nell'ambiente. Questi sono una specializzazione dei più generici sistemi  \textit{Real Time Locating Systems} (RTLS), standardizzati dall'\textit{International
 Organization for Standardization and the International Electro Technical Commission} (ISO/IEC 24730). Lo standard definisce i sistemi RTLS come:
 \begin{quotation}
-	\textit{“ I Real time locating system sono sistemi wireless con l'abilità di localizzare la posizione di oggetti ovunque essi siano in uno spazio definito in un certo momento che è, o si avvicina, real time. La posizione è derivata dalla misurazione delle proprietà fisiche del collegamento radio."}
+	\textit{“ I Real Time Locating System sono sistemi wireless con l'abilità di localizzare la posizione di oggetti ovunque essi siano (in uno spazio definito) con un tempo di risposta che è, o si avvicina, a quello real time. La posizione è derivata dalla misurazione delle proprietà fisiche del collegamento radio."}
 \end{quotation}
-La differenza tra RTLS e IPS è che i primi sono stati pensati per le compagnie che vogliono tracciare i propri oggetti e le persone, fornendo uno storico di dove sono stati e dove si trovano ora, mentre gli IPS sono pensati per essere utilizzati da utenti su dispositivi mobili per navigare ed orientarsi all'interno di edifici.
+La differenza tra RTLS e IPS è che gli IPS sono pensati per essere utilizzati da utenti su dispositivi mobili per navigare, orientarsi ed essere tracciati all'interno di edifici, mentre gli RTLS sono più generici e includono anche sistemi di localizzazione real-time che forniscono LBSs di tipo OPSs (Cap.\ref{ops/ips}).\\
 Come già accennato, gli IPS \cite{IPS2} permettono di creare una vasta gamma di servizi, ad esempio:
 \begin{itemize}
 	\item\textbf{Way-Finding}: permettere di navigare in edifici complessi, come ad esempio aeroporti, seguendo il percorso indicato.
@@ -51,7 +52,7 @@ Come già accennato, gli IPS \cite{IPS2} permettono di creare una vasta gamma di
 	\item \textbf{Multi-Dot}: visualizzare in una mappa le posizioni degli utenti per tracciare persone potenzialmente in pericolo (bambini, anziani).
 	\item \textbf{Marketing di prossimità}: realizzare marketing mirati, inviando annunci sulle ultime offerte.
 \end{itemize}
-L’elenco di cui sopra rappresenta solo un ridotto sottoinsieme dei potenziali campi applicativi (vedi Fig.\ref{fig:surveyApplication}), per questo motivo negli ultimi anni \cite{indoorThesis} l'interesse nella ricerca e nello sviluppo di sistemi di questo tipo è cresciuto sempre più tra le aziende, che hanno percepito la possibilità di grandi profitti in un mercato non ancora esplorato del tutto.
+L’elenco di cui sopra rappresenta solo un ridotto sottoinsieme dei potenziali campi applicativi (vedi Fig.\ref{fig:surveyApplication}), per questo motivo negli ultimi anni \cite{indoorThesis} l'interesse nella ricerca e nello sviluppo di sistemi di questo tipo è cresciuto sempre più tra le aziende, che hanno percepito la possibilità di grandi profitti in un mercato non ancora del tutto esplorato.
 \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=1.2]{ContestoApplicativo/application.png}
@@ -60,14 +61,14 @@ L’elenco di cui sopra rappresenta solo un ridotto sottoinsieme dei potenziali 
 \end{figure}
 
 Secondo un sondaggio  di \textit{Markets and Markets} e un articolo pubblicato da\textit{ The International News Magazine}, il mercato degli IPS subirà una crescita annuale media del 42.1\% arrivando a valere 2.60 bilioni di dollari nel 2018. Questo da un'idea del perché grandi aziende come Google, Sony, Microsoft e Apple stiano investendo in questo settore.\\
-Un'ulteriore spinta è data dal fatto che, al contrario del GPS per gli OPS (vedi \ref{context-aware}), tuttora non esiste uno standard di riferimento per gli IPS. Infatti sul mercato sono disponibili diversi tipi di IPS commerciali che si differenziano in base al principio di funzionamento e alle tecniche utilizzate, utilizzando hardware specifico o la combinazione di più sistemi.\\ 
+Un'ulteriore spinta è data dal fatto che, al contrario del GPS per gli OPS (Cap.\ref{context-aware}), tuttora non esiste uno standard di riferimento per gli IPS. Infatti sul mercato sono disponibili diversi tipi di IPS commerciali che si differenziano in base al principio di funzionamento e alle tecniche utilizzate, utilizzando hardware specifico o la combinazione di più sistemi.\\ 
 
 
 
 
 \section{Stima della posizione}
 \label{metodi_distanza}
-Gli IPS possono essere classificati sulla base di diversi fattori, uno di questi è su come determinano la posizione dei.\\
+Gli IPS possono essere classificati sulla base di diversi fattori, uno di questi è su come determinano la posizione dei nodi.\\
 Stimare \cite{IPS2} la distanza tra dispositivi wireless è utile perché attraverso questa informazione è possibile determinarne (con un certo errore) la posizione di un ricevitore rispetto ad un trasmettitore (\cite{alg1}, \cite{alg2}), queste tecniche si distinguono in:
 
 	\begin{itemize}
@@ -93,7 +94,7 @@ Si dicono:
 	\item \textbf{Target}: il nodo di cui non si conosce la posizione.
 \end{itemize}
 
- L’obiettivo del posizionamento è assegnare le giuste coordinate agli Unknown rispetto ad un sistema di riferimento. Questo è strettamente legato all'implementazione dell'IPS e così anche la codifica delle posizioni all'interno del sistema di riferimento, le coordinate potrebbero essere restituite all'utente in maniera relativa ("vicino alla cucina") oppure assoluta ("tre  metri in direzione ovest dal nodo 1").
+ L’obiettivo del posizionamento è assegnare le giuste coordinate agli \textit{Unknown} rispetto ad un sistema di riferimento. Questo è strettamente legato all'implementazione dell'IPS e così anche la codifica delle posizioni all'interno del sistema di riferimento, infatti le coordinate potrebbero essere restituite all'utente in maniera relativa ("vicino alla cucina") oppure assoluta ("tre  metri in direzione ovest dal nodo 1").
 
 \subsection{Range based}
 Nel posizionamento dei nodi basato sulla distanza la stima della posizione del target dipende dai seguenti parametri:
@@ -102,7 +103,7 @@ Nel posizionamento dei nodi basato sulla distanza la stima della posizione del t
 	\item la distanza euclidea tra ogni emettitore ed il ricevitore;
 	\item la potenza del segnale ricevuto.
 \end{itemize}
-In alcuni casi sono necessarie tre o più Anchor per ottenere le coordinate da assegnare allo Unknown.
+In alcuni casi sono necessarie tre o più \textit{Anchor} per ottenere le coordinate da assegnare allo \textit{Unknown}.
 
 \subsubsection{Received Signal Strength Indicator - RSSI}
 \label{rssi}
@@ -146,10 +147,10 @@ RSSI = -(10 n \log_{10} d - A)
 dove $A$ è la potenza del segnale ricevuto a distanza fissa di un metro (espressa in dBm), considerando una costante di propagazione $n$.\\
 La stima della distanza si ottiene infine dalla seguente equazione:
 \begin{equation}
-d = 10 (\frac{A - RSSI}{10n})
+d = 10 ^{(\frac{A - RSSI}{10n})}
 \label{eq4}
 \end{equation}
-Tuttavia la distanza restituita non è del tutto precisa, infatti la potenza del segnale potrebbe essere alterata dall'ambiente circostante attraverso i fenomeni di \textbf{Riflessione} (il segnale sbatte e si riflette su vari ostacoli seguendo più percorsi) e di \textbf{Assorbimento} (il decadimento viene alterato dagli oggetti presenti). Tale tecnica viene solitamente completata utilizzando il metodo della \textbf{Trilaterazione} (sez.\ref{trilaterazione})\\
+Tuttavia la distanza restituita non è del tutto precisa, infatti la potenza del segnale potrebbe essere alterata dall'ambiente circostante attraverso i fenomeni di \textbf{Riflessione} (il segnale si riflette su vari ostacoli seguendo più percorsi) e di \textbf{Assorbimento} (il decadimento viene alterato dagli oggetti presenti). Tale tecnica viene solitamente completata utilizzando il metodo della \textbf{Trilaterazione} (sez.\ref{trilaterazione})\\
 
 
 \subsubsection{Time Of Arrival measurements}  
@@ -170,7 +171,7 @@ Come mostrato dalla figura seguente:
 	\label{fig:toa}
 \end{figure}
 
-Quindi il tempo di viaggio può essere ricavato con la seguente equazione:
+Quindi il tempo di volo può essere ricavato con la seguente equazione:
 
 \begin{equation}
 t_d = \dfrac{(t_4 - t_1) - (t_3 - t_2)}{2}
@@ -219,14 +220,14 @@ In questo modo, la posizione del \textit{target} viene stimata all'interno del l
 	\label{fig:tdoa1}
 \end{figure}
 
-	Tuttavia così facendo la posizione del \textit{target} rimane stimata in un'insieme di punti infinito, quindi come per le tecniche viste precedentemente (\ref{rssi} e \ref{toa}) per identificare in modo univoco il target questa tecnica ha bisogno di essere completata dalla tecnica di posizionamento nota come \textbf{Trilaterazione} \ref{trilaterazione}.
+	Tuttavia così facendo la posizione del \textit{target} rimane stimata in un'insieme di punti infinito, quindi come per le tecniche viste precedentemente (sez.\ref{rssi} e sez.\ref{toa}) per identificare in modo univoco il target questa tecnica ha bisogno di essere completata dalla tecnica di posizionamento nota come \textbf{Trilaterazione} (sez.\ref{trilaterazione}).
 
 \subsection{Angle Based}
 \label{angle}
 \subsubsection{Angle of Arrival}
 \label{aoa}
 Con questa tecnica la posizione del \textit{target} viene stimata misurando gli angoli di incidenza del segnale trasmesso ad altri nodi.\\
-Si consideri \cite{aoa} un antenna in un canale di propagazione, la tensione del segnale ricevuto (\ref{fig:aoa}) è data dalla seguente equazione:\\
+Si consideri \cite{aoa} un'antenna in un canale di propagazione, la tensione del segnale ricevuto (\ref{fig:aoa}) è data dalla seguente equazione:\\
 \begin{equation}
  V = \int_{0}^{2\pi} AoA(\varphi) G(\varphi)d\varphi 
 \end{equation}
@@ -235,7 +236,7 @@ Dove:
 \begin{itemize}
 	\item $AoA(\varphi)$ rappresenta l'ampiezza e la fase dell'onda incidente
 	\item $G(\varphi)$ è il campo elettrico del nodo target 
-	\item $C$ valore proporzionale constante
+	\item $C$ valore proporzionale costante
 \end{itemize}
 
 Se si ruota l'antenna di un angolo $\alpha$ intorno a se stessa nel piano cartesiano la precedente equazione diventa:
@@ -271,7 +272,7 @@ AoA(\alpha) = F^{-1} \dfrac{F(V(\alpha))}{F(G(\alpha))} \quad se \quad F(G(\alph
 	\label{fig:aoa}
 \end{figure}
 
-Il vantaggio dell’AoA risiede nella possibilità di ottenere un risultato attendibile senza la necessità di informazioni riguardanti i tempi di trasmissione. A fronte del risparmio dal punto di vista computazionale, la tecnica presenta alcuni svantaggi pratici, dovuti al costo dell’hardware, che al fine di restituire informazioni precise, deve essere di alta qualità; rischiando altrimenti di incorrere in fenomeni che comprometterebbero la misurazione. Per questo motivo solitamente questa tecnica viene completata dalla tecnica di posizionamento nota come \textit{Triangolazione} (\ref{triangolazione}).
+Il vantaggio dell’AoA risiede nella possibilità di ottenere un risultato attendibile senza la necessità di informazioni riguardanti i tempi di trasmissione. A fronte del risparmio dal punto di vista computazionale, la tecnica presenta alcuni svantaggi pratici, dovuti al costo dell’hardware, che al fine di restituire informazioni precise, deve essere di alta qualità; rischiando altrimenti di incorrere in fenomeni che comprometterebbero la misurazione. Per questo motivo solitamente questa tecnica viene completata dalla tecnica di posizionamento nota come \textit{Triangolazione} (sez.\ref{triangolazione}).
 
 
 \section{Tecniche di localizzazione}
@@ -279,11 +280,11 @@ Per tecniche di localizzazione si intendono tutte quelle tecniche che, combinate
 In questo paragrafo vengono illustrate quelle più conosciute e basilari nell'ambito degli IPS.
 
 \subsection{MIN-MAX}
-Combina le stime della distanza di più \textit{anchor}, ottenute attraverso tecnica \textit{RSSI} (\ref{rssi}), nel seguente modo:
+Combina le stime della distanza di più \textit{anchor}, ottenute attraverso tecnica \textit{RSSI} (sez.\ref{rssi}), nel seguente modo:
 
 \begin{itemize}
 	\item Stimare la distanza $d_i$ di ogni nodo i-esimo in base al valore RSSI
-	\item Traccia due linee orizzontali e verticali a distanza $d_i$ dallo nodo \textit{target}
+	\item Traccia due linee orizzontali e verticali a distanza $d_i$ dal nodo \textit{target}
 	\item Identifica un quadrato di lato 2  $d_i$ i cui estremi saranno: \\
 			$[max(x_i-d:i),max(y_i-d_i)] * [min(x_i+d_i),min(y_i+d_i))]$
 	\item Calcola le intersezioni dei quadrati
@@ -301,14 +302,14 @@ Il centro del quadrato (Fig.\ref{fig:minmax}) rappresenta la posizione stimata d
 
 \subsection{Trilaterazione}
 \label{trilaterazione}
-Consideriamo 3 \textit{Anchor} intorno cui disegniamo 3 circonferenze aventi per centro le coordinate degli \textit{Anchor} e per raggio l'RSSI del segnale ricevuto dallo \textit{Uknown}, come mostrato in figura:
+Consideriamo 3 \textit{Anchor} intorno alle quali si disegnano 3 circonferenze aventi per centro le coordinate degli \textit{Anchor} e per raggio l'RSSI del segnale ricevuto dallo \textit{Uknown}, come mostrato in figura:
 \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.8]{ContestoApplicativo/trilaterazione.png}
 	\caption{Trilaterazione - Esempio esplicativo}
 	\label{fig:trilaterazione}
 \end{figure}
-Quindi le coordinate dell'Unknown sono la soluzione del seguente sistema:
+Quindi le coordinate dell'\textit{Unknown} sono la soluzione del seguente sistema:
 \begin{equation}
 \begin{cases}
 (x-x_1)^2 + (y-y_1)^2 = r_1^2\\
@@ -327,15 +328,15 @@ In base alla soluzione del sistema si può avere una delle seguenti situazioni:
 
 \subsection{Triangolazione}
 \label{triangolazione}
-A differenza delle Trilaterazione (\ref{trilaterazione}), queste tecniche identificano la posizione del nodo \textit{target} a partire dagli angoli stimati da tre anchors attraverso una delle teniche Angle Based (\ref{angle}).\\
+A differenza delle Trilaterazione (sez.\ref{trilaterazione}), queste tecniche identificano la posizione del nodo \textit{target} a partire dagli angoli stimati da tre \textit{anchors} attraverso una delle teniche Angle Based (sez.\ref{angle}).\\
 In \cite{triangolazione} si descrive la triangolazione geometrica attraverso il seguente algoritmo:\\
 
 \begin{enumerate}
-   \item Siano \textit{1,2 e 3} le anchor in grado di stimare l'angolo, rispetto ad una circonferenza concentrica all'anchor stessa, del nodo target
-   \item siano $L_{12}$ e $L_{31}$ rispettivamente le distanze tra l'anchor 1 e 2 e l'anchor 3 e 1
+   \item Siano \textit{1, 2, 3} le \textit{anchor} in grado di stimare l'angolo, rispetto ad una circonferenza concentrica all'\textit{anchor} stessa, del nodo target
+   \item siano $L_{12}$ e $L_{31}$ rispettivamente le distanze tra l'\textit{anchor} 1 e 2 e l'\textit{anchor} 3 e 1
    \item Siano gli angoli compresi tra \textit{1} e \textit{2} e tra \textit{1} e \textit{3}, indicati rispettivamente con $\lambda_{12} e \lambda_{13}$, minori di 180°
-   \item sia $\phi$ l'angolo tra l'asse x positivo e la linea formata dall'anchor \textit{1} e \textit{2}
-   \item sia $\sigma$ l'angoolo tra l'asse x positivo, l'anchor \textit{1} e l'anchor \textit{3} più $\phi$
+   \item sia $\phi$ l'angolo tra l'asse x positivo e la linea formata dall'\textit{anchor} \textit{1} e \textit{2}
+   \item sia $\sigma$ l'angoolo tra l'asse x positivo, l'\textit{anchor} \textit{1} e l'\textit{anchor} \textit{3} più $\phi$
    \item sia $\gamma= \sigma - \lambda_{31}$
    \item sia $p= \dfrac{L_{31} \sin\lambda_{12}}{L_{12} \sin\lambda_{31}}$
    \item sia $\tau= \tan^{-1} \dfrac{\sin\lambda{12}-p \sin\gamma}{p \cos\gamma-\cos\lambda{12}}$
@@ -348,7 +349,7 @@ Allora le coordinate $x$ e $y$ del target sono date da:
 	\item $y_R = y_1 - L_1  \sin(\phi + \tau)$
 	\item $\Phi_R = \phi + \tau - \lambda_1$
 \end{itemize}
-Dove $\Phi_R$ rappresenta l'orientamento del nodo target, come mostrato in Fig.\ref{fig:triangolazione}.
+Dove $\Phi_R$ rappresenta l'orientamento del nodo target, come mostrato in figura:
 
 
 \begin{figure}[H]  
@@ -364,7 +365,7 @@ Dove $\Phi_R$ rappresenta l'orientamento del nodo target, come mostrato in Fig.\
 
 \section{Sensor Data Fusion}
 
-In generale con Sensor Data Fusion si indicano tutte quelle tecniche che \cite{sensorfusion} combinano dati provenienti da sensori o derivate da altre risorse tali che l'informazione risultante ha una minore incertezza rispetto a quella ottenuta utilizzando le risorse individualmente. \\
+In generale con Sensor Data Fusion si indicano tutte quelle tecniche che \cite{sensorfusion} combinano dati provenienti da sensori o derivate da altre risorse tali che l'informazione risultante abbia una minore incertezza rispetto a quella ottenuta utilizzando le risorse individualmente. \\
 Nel contesto degli IPS (\ref{IPS}), il Sensor Fusion ha come scopo quello di determinare informazioni riguardanti la posizione di oggetti e/o persone. Le risorse delle informazioni grezze sono le più svariate, tra le quali:
 \begin{itemize}
 	\item Accelerometro
@@ -380,7 +381,7 @@ Nel contesto degli IPS (\ref{IPS}), il Sensor Fusion ha come scopo quello di det
 	\item UWB
 \end{itemize}
 
-Come e quali risorse utilizzare per stimare la posizione di un oggetto è una sfida ingegneristica non banale, ma grazie alla crescente richiesta di IPSs la ricerca di nuove tecnologie e algoritmi in questo settore ha permesso di raggiungere risultati incredibili fino a qualche anno. \\
+Come e quali risorse utilizzare per stimare la posizione di un oggetto è una sfida ingegneristica non banale, ma grazie alla crescente richiesta di IPSs la ricerca di nuove tecnologie e algoritmi in questo settore ha permesso di raggiungere risultati incredibili. \\
 
 
 

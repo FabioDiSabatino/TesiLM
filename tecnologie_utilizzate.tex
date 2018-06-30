@@ -1,6 +1,6 @@
 \chapter{Unità di misura inerziale}
 \label{tecnologie}
-Le unità di misura inerziale \cite{mems} (in inglese Inertial Measurement Units - IMU) sono dispositivi elettronici basati su sensori inerziali come accelerometri (\ref{accell}) e giroscopi (\ref{giroscopi}). In molti casi a questi vengono aggiunti altri sensori utili ad applicazioni di navigazione come il magnetometro (\ref{magnetometro}). Nello specifico di questa tesi, l'IMU utilizzata è un circuito integrato composto da questi tre sensori (più altri non utilizzati come sensore di temperatura) realizzati tramite tecnologia MEMS (acronimo di Microelectro Mechanical System, ovvero sistemi meccanici microelettrici).\\
+Le unità di misura inerziale \cite{mems} (in inglese \textit{Inertial Measurement Units} - IMU) sono dispositivi elettronici basati su sensori inerziali come accelerometri (sez.\ref{accell}) e giroscopi (sez.\ref{giroscopi}). In molti casi a questi vengono aggiunti altri sensori utili ad applicazioni di navigazione come il magnetometro (sez.\ref{magnetometro}). Nello specifico di questa tesi, l'IMU utilizzata è un circuito integrato composto da questi tre sensori (più altri non utilizzati come sensore di temperatura) realizzati tramite tecnologia MEMS (acronimo di Microelectro Mechanical System, ovvero sistemi meccanici microelettrici).\\
 Nel corso degli anni l'interesse per questa tecnologia è cresciuto grazie ai vantaggi in termini economici e tecnici, tra questi i più importanti sono:
 \begin{itemize}
 	\item costo di realizzazione costante e proporzionale alla superficie del dispositivo
@@ -30,14 +30,14 @@ Dove:
 	\item $A$ è l'area delle piastre
 	\item $d$ è la distanza tra le due piastre
 \end{itemize}
-Dall'Eq.\ref{capacita} si noti che la capacità può variare solo se vi sono cambiamenti nell'area delle piastre o nella loro distanza. Proprio su quest'ultimo parametro si basano gli accelerometri capacitivi. Una classica struttura è rappresentata dalla Fig.\ref{fig:acc1}:
+Dall'equazione \ref{capacita} si noti che la capacità può variare solo se vi sono cambiamenti nell'area delle piastre o nella loro distanza. Proprio su quest'ultimo parametro si basano gli accelerometri capacitivi. Una classica struttura è rappresentata dalla figura seguente:
  \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.25 ]{tecnologie/acc1.png}
 	\caption{Rappresentazione esemplificativa di un accelerometro capacitivo a riposo}
 	\label{fig:acc1}
 \end{figure}
-La massa centrale è in grado di muoversi lungo un asse orizzontale grazie a delle molle poste alle sue estremità, come rappresentato in Fig.\ref{fig:acc2}:
+La massa centrale è in grado di muoversi lungo un asse orizzontale grazie a delle molle poste alle sue estremità, come rappresentato dalla figura seguente:
  \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.25 ]{tecnologie/acc2.png}
@@ -50,7 +50,7 @@ A seguito del movimento della massa centrale, la distanza $d2$ in Fig.\ref{fig:a
 \section{Giroscopio}
 \label{giroscopi}
 In generale, un giroscopio è un dispositivo in grado di misurare la velocità angolare a cui è sottoposto il dispositivo. I giroscopi realizzati mediante tecnologia MEMS si basano sulla forza di \textit{Coriolis}. In fisica \cite{corolois}, la forza di Coriolis è una forza apparente a cui risulta soggetto un corpo quando si osserva il suo moto da un sistema di riferimento che sia in moto circolare rispetto ad un sistema di riferimento inerziale. \\
-I giroscopi di questo tipo sono composti \cite{gyroMems} da una \textit{massa} \textbf{m}, due \textit{molle} e due ammortizzatori come mostrato in Fig.\ref{fig:gyro}. Si assuma  l'asse x come l'asse di direzione (drive mode) e l'asse y come l'asse di rilevamento(sensing mode). Quando la massa è sottoposta ad una vibrazione armonica applicata da una forza elettrostatica, elettromagnetica o elettrotermica, lo spostamento lungo l'asse x è dato da:
+I giroscopi di questo tipo sono composti \cite{gyroMems} da una \textit{massa}, due \textit{molle} e due ammortizzatori come mostrato in Fig.\ref{fig:gyro}. Si assuma  l'asse x come l'asse di direzione (\textit{drive mode}) e l'asse y come l'asse di rilevamento(\textit{sensing mode}). Quando la massa è sottoposta ad una vibrazione armonica applicata da una forza elettrostatica, elettromagnetica o elettrotermica lo spostamento lungo l'asse x è dato da:
 \begin{equation}
 x(t) = A_x \cos(\omega_x t)
 \end{equation}
@@ -113,7 +113,7 @@ Dove:
 	\item $R$ è la matrice di allineamento che specifica la direzione degli assi
 	\item $c$ è il vettore di offset 
 \end{itemize}
-Al fine di discutere il modello di misura, si devono introdurre i seguenti sistemi di coordinate (in inglese: coordinate frames) rappresentati in Fig.\ref{fig:frames}:
+Al fine di discutere il modello di misura, si devono introdurre i seguenti sistemi di coordinate (in inglese: \textit{coordinate frames}) rappresentati in Fig.\ref{fig:frames}:
 
 \begin{itemize}
 	\item Il \textbf{frame del corpo} - \textit{b-frame} (in inglese: \textit{body frame}): è il sistema							 di riferimento dei movimenti dell'IMU. L'origine è posta al centro dei sensori e allineata al case posto sul chip. Tutte le misure inerziali sono calcolate su questo sistema di riferimento.

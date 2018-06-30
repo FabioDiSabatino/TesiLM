@@ -1,4 +1,4 @@
-\chapter{Stima dell'assetto tramite sensor fusion}
+\chapter{Stima dell'assetto tramite sensor fusion (NON completo)}
 \label{elaborazione}
 In questo capitolo vengono inizialmente illustrati gli strumenti matematici utilizzati per rappresentare l'assetto di un corpo rigido nello spazio,
 successivamente viene illustrato l'algoritmo di fusione dei dati, provenienti dall'unità di misura inerziale, utilizzato per la stima dell'assetto dell'operatore.
@@ -23,7 +23,7 @@ Nella Tab.\ref{rappresentazioni} vengono riportate sinteticamente le caratterist
 	\begin{tabular}{lllll}
 		\cline{1-3}
 		\multicolumn{1}{|l|}{\textbf{Rappresentazione}} & \multicolumn{1}{l|}{\textbf{\#Parametri}} & \multicolumn{1}{l|}{\textbf{Caratteristiche}}                                                                                                                                                                                                                                                    &  &  \\ \cline{1-3}
-		\multicolumn{1}{|l|}{Angoli di Eulero}          & \multicolumn{1}{c|}{3}                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}- facilmente interpretabili \\ dall'essere umano\\ \\ - funzioni trigonometriche nelle \\ relazioni cinematiche\\ \\ -presentato singolarità in \\ alcune situazioni\\ \\ - meno accurati dei quaternioni\end{tabular}}                           &  &  \\ \cline{1-3}
+		\multicolumn{1}{|l|}{Angoli di Eulero}          & \multicolumn{1}{c|}{3}                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}- facilmente interpretabili \\ dall'essere umano\\ \\ - funzioni trigonometriche nelle \\ relazioni cinematiche\\ \\ -soffrono del fenomeno \\ noto come \textit{Gimbal lock}\\ \\ - meno accurati dei quaternioni\end{tabular}}                           &  &  \\ \cline{1-3}
 		\multicolumn{1}{|l|}{Quaternioni unitari}       & \multicolumn{1}{c|}{4}                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}- non interpretabili facilmente\\ dall'essere umano\\ \\ - equazioni della cinematica \\ lineari\\ \\ - costo computazione di \\ elaborazione minore degli\\ angoli di Eulero\\ \\ - necessitano di un vincolo di \\ norma unitaria\end{tabular}} &  &  \\ \cline{1-3}
 		&                                           &                                                                                                                                                                                                                                                                                                  &  & 
 	\end{tabular}
@@ -91,6 +91,7 @@ A(x,\varphi)= \begin{bmatrix}
 Andando a moltiplicare le precedenti matrici si ottiene la matrice di rotazione cercata:
 
 \begin{eqnarray}
+\label{matriceRotazione}
 A(\psi,\vartheta,\varphi)= \begin{bmatrix}
 \cos\psi \cos\vartheta  & \cos\psi \sin\vartheta \sin\varphi-\sin\psi \cos\varphi & \cos\psi \sin\vartheta \cos\varphi + \sin\psi \sin\varphi \\
 \sin\psi \cos\vartheta    & \sin\psi \sin\vartheta \sin\varphi+\cos\psi \cos\varphi & \sin\psi \sin\vartheta \sin\varphi - \cos\psi \sin\varphi\\
@@ -112,21 +113,59 @@ Il significato geometrico si ha osservando la Fig.\ref{fig:eulero}, dove:
 	\caption{Significato geometrico degli angoli di Eulero \cite{assetto2}}
 	\label{fig:eulero}
 \end{figure}
+Come accennato nella tabella \ref{rappresentazioni}, la rappresentazione dell'assetto mediante angoli di Eulero presenta un problema di singolarità noto come \textit{gimbal lock}.\\
+Nel caso della matrice di rotazione ricavata nell'equazione \ref{matriceRotazione}, il problema si presenta per $\vartheta = \pm \dfrac{\pi}{2}$: in questa situazione esistono infinite combinazioni di $\varphi$ e $\psi$ che portano alla stessa matrice di rotazione, nel caso di $\vartheta= \dfrac{\pi}{2}$ si ha:
+\begin{equation}
+\label{matriceGimbal}
+A(\psi,\vartheta,\varphi)= \begin{bmatrix}
+0   &\sin(\varphi - \psi) & \cos(\varphi - \psi) \\
+0    & \cos(\varphi-\psi)  &-\sin(\varphi - \psi)\\
+-1    & 0 & 0
+\end{bmatrix}
+\end{equation}
+Ottenuta mediante sostituzione e applicazione delle formule di addizione e sottrazione di seno e coseno. Mentre la matrice di rotazione in Eq.\ref{matriceRotazione} permette una rotazione completa attorno ad un qualsiasi asse, la matrice in \ref{matriceGimbal} permette la rotazione attorno al solo asse $X$. Quindi si manifesta un vincolo di rotazione con conseguente perdita di un grado di libertà, come mostrato in Fig.\ref{fig:gimbal}. \\
+Basti pensare ad un velivolo con un \textit{pitch} di $90°$, modificare il \textit{roll} o lo \textit{yaw} di un certo angolo avrebbe il medesimo effetto.\\
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.3]{elaborazione/gimbal.png}
+	\caption{Rappresentazione del fenomeno di \textit{gimbal lock} \cite{gimbal}}
+	\label{fig:gimbal}
+\end{figure}
 
 
 
+\subsection{Quaternioni unitari}
+I quaternioni hanno la peculiarità di essere il metodo di rappresentazione dell'assetto con minor numero di parametri privi di singolarità, come ad esempio il \textit{gimbal lock} visto precedentemente per gli angoli di Eulero.\\
+Il quaternione unitario è un vettore composto da tre elementi che definiscono il vettore \textbf{$q_{1:3}$} e da un elemento scalare $q_4$, tale che la norma:
+\begin{equation}
+ ||\overrightarrow{q}|| = \sqrt{q_1^2 + q_2^2 + q_3^2 + q_4^2}=1
+\end{equation}
+Questi possono essere usati per rappresentare l'assetto di un corpo rigido in quanto le trasformazioni che legano le terne di Eulero ai quaternioni unitari, sono semplicemente delle trasformazioni algebriche che portano da uno spazio rappresentativo all'altro.\\
+Sfruttando il teorema di Eulero \cite{assetto2}, si può parametrizzare la matrice di rotazione in \ref{matriceRotazione} ottenendo l'equivalente in funzione dei quaternioni:
+\begin{equation}
+\label{matriceQuaternioni}
+A(\overrightarrow{q})= \begin{bmatrix}
+ q_1^2 -  q_2^2 -  q_3^2 -  q_4^2 & 2(q_1 q_2 + q_3  q_4) & 2(q_1 q_3 - q_2 q_4) \\
+2(q_2 q_1 - q_3 q_4)    &  -q_1^2 + q_2^2 -  q_3^2 +  q_4^2  & 2(q_2 q_3 + q_1q_4)\\
+2(q_3 q_1 + q_2 q_4)    & 2(q_3 q_2 - q_1 q_4)  &  -q_1^2 -  q_2^2 +  q_3^2 +  q_4^2
+\end{bmatrix}
+\end{equation}
+Come si può notare dalla \ref{matriceRotazione}, i quaternioni permettono di definire una matrice di assetto i cui elementi sono funzioni quadratiche omogenee degli elementi del quaternione. Si evita così qualsiasi tipo di calcolo trigonometrico (e relative singolarità) e si ha un costo computazionale minore.\\
 
+Un diretto confronto tra le matrici \ref{matriceRotazione} e \ref{matriceQuaternioni} permette inoltre di definire il rapporto tra gli angoli di Eulero ($\psi,\vartheta,\varphi$) e le componenti del quaternione ($q_1, q_2, q_3,q_4$) attraverso le seguenti:
 
+\begin{equation}
+\psi = Atan2 \left( \frac{2q_2q_3 - 2q_1q_4}{2q_1^2+q_2^2 -1}\right)
+\end{equation}
 
+\begin{equation}
+\vartheta = -\sin(2q_2q_4 + 2q_1q_3)
+\end{equation}
 
+\begin{equation}
+\psi = Atan2\left(  \frac{2q_3 q_4 - 2q_1q_2}{2q_1^2+q_4^2 -1}\right)
+\end{equation}
 
-
-
-
-
-
-
-\subsection{Quaternioni }
 
 \section{Sensor fusion mediante  filtro di Kalman}
 \label{sensor_fusion}
