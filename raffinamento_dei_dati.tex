@@ -218,6 +218,7 @@ Il primo stadio utilizza i dati provenienti dall'accelerometro (sez.\ref{accell}
 Un altro grande vantaggio consiste nella flessibilità dell'algoritmo, questo infatti può essere utilizzato anche se si dispone di un IMU a 6DOF (privo del magnetometro) semplicemente "disattivando" lo \textit{stadio 2} in Fig.\ref{fig:filtro}, così facendo l'uscita dallo \textit{stadio 1} diventa l'uscita del sistema e viene retroazionata allo \textit{stadio 0} andando a correggere la prossima lettura.
  
 \subsection{Descrizione dell'algoritmo}
+\label{descrizioneAlgoritmo}
 Lo stato del sistema è, come già detto, rappresentato tramite quaternioni (sez.\ref{quaternioni}). Lo \textit{stadio 0} anche detto \textit{stima a priori} utilizza solo i dati grezzi provenienti dal giroscopio.
 Fatto ciò, si deve stimare il vettore gravitazionale $h_1$ per poter correggere il \textit{roll} e il \textit{pitch} nello \textit{stadio 1}. Tale vettore è così definito:
 \begin{eqnarray}
@@ -226,9 +227,9 @@ h_1(q_k)= \hat{q}= R_n^b \begin{bmatrix}
 0 \\
 |q|
 \end{bmatrix}= |g| \begin{bmatrix}
-2q_1q_3 - 2q_0q_2  \\
-2q_0q_1 + 2q_2q_3 \\
-q_0^2 - q_1^2 - q_2^2 + q_3^3
+2q_2q_4 - 2q_1q_3  \\
+2q_1q_2 + 2q_3q_4 \\
+q_1^2 - q_2^2 - q_3^2 + q_4^3
 \end{bmatrix}
 \end{eqnarray}
 Il vettore gravitazionale $g$, espresso secondo l'\textit{i-frame} (sez.\ref{modello_di_misura}), viene riportato nel \textit{b-frame} utilizzando la seguente matrice di rotazione:
@@ -241,12 +242,118 @@ q_1^2 +  q_2^2 -  q_3^2 -  q_4^2 & 2(q_2 q_3 + q_1  q_4) & 2(q_2 q_4 - q_1 q_3) 
 \end{equation}
 Da $h_1$ si ricava quindi la matrice $H_{k1}$ del guadagno di Kalman che verrà utilizzata successivamente dallo \textit{stadio 1}:
 \begin{eqnarray}
-H_{K1}= \frac{\delta h_{1[i]}}{\delta q_j}=  \begin{bmatrix}
+H_{k1}= \frac{\delta h_{1[i]}}{\delta q_j}=  \begin{bmatrix}
 -2q_3 & 2q_4 & -2q_1 & 2q_2  \\
 2q_2 & 2q_1 & 2q_4 & 2q_3\\
-2q_0 & -2q_1 & -2q_2 & 2q_3
+2q_1 & -2q_2 & -2q_3 & 2q_4
 \end{bmatrix}
 \end{eqnarray}  
+Lo \textit{stadio 1} calcola il residuo $q_{\epsilon 1}$ che sarà sommato allo stato $\hat{x_k}$, stimato a \textit{priori} dallo \textit{stadio 0}, ottenendo così la prima stima a \textit{posteriori} $\hat{x_{k1}}$. L'elemento $q_{\in1,4}$ è posto a zero, al fine di essere sicuri che lo \textit{stadio 1} corregga solo \textit{roll} e \textit{pitch}. Il residuo $q_{\epsilon 1}$ è determinato dalla seguente relazione:
+
+\begin{equation}
+q_{\epsilon 1}= K_{k1}(z_{k1}-h_1(\hat{x_k},0))= q_{\in1,1} + q_{\in1,2} + q_{\in1,3} + 0 \cdot q_{\in1,4} 
+\end{equation}
+
+e quindi la stima dello stato a \textit{posteriori} risulta:
+\begin{equation}
+\hat{x_{k1}} = \hat{x}_k + q_{\epsilon 1}
+\end{equation}
+
+Per lo \textit{stadio 2} è necessario stimare il vettore del campo magnetico $h_2$:
+
+\begin{equation}
+h_2(q_k) = \hat{m} = R_n^b \begin{bmatrix}
+0 \\
+1 \\
+0
+\end{bmatrix} = 
+\begin{bmatrix}
+2q_2q_3 + 2q_1q_4 \\
+q_1^2 - q_2^2 - q_3^2 - q_4^2 \\
+2q_3q_4 - 2q_1q_2
+\end{bmatrix} 
+\end{equation}
+
+La matrice $H_{k2}$ usata dallo \textit{stadio 2} per calcolare il guadagno di Kalman è la seguente:
+\begin{eqnarray}
+H_{k2}= \frac{\delta h_{2[i]}}{\delta q_j}=  \begin{bmatrix}
+2q_4 & 2q_3 & 2q_2 & 2q_1  \\
+2q_1 & -2q_2 & -2q_3 & -2q_4\\
+-2q_2 & -2q_1 & -2q_4 & 2q_3
+\end{bmatrix}
+\end{eqnarray}  
+Si ottiene così il secondo residuo $q_{\in 2}$ che verrà sommato alla precedente stima a \textit{posteriori} determinata dallo \textit{stadio 1}. In questo caso, al fine di essere sicuri che lo \textit{stadio 2} corregga solo lo \textit{yaw}, le componenti del residuo poste a zero sono $q_{\in 2,2}$ e $q_{\in 2,3}$ :
+
+\begin{equation}
+q_{\epsilon 2}= q_{\in2,1} + 0 \cdot q_{\in2,2} + 0 \cdot q_{\in2,3} + q_{\in2,4} 
+\end{equation}
+
+E infine l'ultima stima a \textit{posteriori} è data da:
+
+\begin{equation}
+\hat{x_{k}} = \hat{x}_{k1} + q_{\epsilon 2}
+\end{equation}
+
+
+\subsection{Trasformazione del sistema a tempo discreto}
+L'equazione precedenti descrivono l'evoluzione del sistema nel dominio del tempo continuo. Per implementare tale filtro si devono trasformare l'equazioni in \ref{descrizioneAlgoritmo} nel dominio del tempo discreto. \\
+In \cite{trackingThesis} si utilizzano le formule standard per discretizzare un sistema a tempo continuo in uno a tempo discreto. Il sistema di partenza è descritto da un'equazione del tipo:
+\begin{equation}
+\label{sistemaContinuo}
+\dot{x}= A_{TC} x(t) + B_{TC} u(t)
+\end{equation}
+
+dove $A_{TC}$ e $B_{TC}$ sono le matrici di stato e d'ingresso mentre $x(t)$ e $u(t)$ sono le variabili di stato e dell'ingresso nel tempo continuo.\\
+Dalla definizione di derivata si ottiene la seguente relazione:
+\begin{equation}
+\dot{x} = \lim\limits_{x\rightarrow0} \dfrac{x(t+T)-x(t)}{T} = A_{TC}x(t) + B_{TC}u(t)
+\end{equation}
+
+La variabile $T$ è il \textit{delta-time} trascorso tra ogni iterazione in un sistema digitale, quindi è possibile rimuovere l'operazione di limite ed ottenere:
+\begin{equation}
+x(t+T)=x(t)+ A_{TC}x(t)T + B_{TC}u(t)T = (I + A_{TC}T)x(t) + B_{TC}Tu(t)
+\end{equation}
+In conclusione il sistema a tempo continuo di partenza nell'equazione \ref{sistemaContinuo} si trasforma nel seguente sistema a tempo discreto:
+\begin{equation}
+x_k = A x_{k-1} + B u_k
+\end{equation}
+Dove $x_k$ è equivalente alla variabile $x(t)$ campionata all'istante $t + T$ e:
+\begin{equation}
+A = I + A_{TC}T
+\end{equation}
+
+\begin{equation}
+B = B_{TC}T
+\end{equation}
+
+\subsection{Riepilogo algoritmo step-by-step}
+Per maggiore chiarezza,di seguito si fornisce un riepilogo dell'algoritmo step-by-step:
+\begin{itemize}
+	\item Calcolo della matrice di transizione dello stato discreta $A_k= I + \frac{1}{2} \Omega_{nb}^n T$
+	\item Calcolo della stima a \textit{priori} dello stato mediante lo \textit{stadio 0},  $\hat{q}_k = A_k\hat{q}_{k-1}$
+	\item Calcolo della matrice di covarianza del rumore  $P_k = A_kP_{k-1}A_k^T + Q_k$
+\end{itemize}
+
+\textit{Inizio della correzione mediante lo stadio 1}
+\begin{itemize}
+\item Calcolo della matrice $H_{k1} = \begin{bmatrix}
+-2q_3 & 2q_4 & -2q_1 & 2q_2  \\
+2q_2 & 2q_1 & 2q_4 & 2q_3\\
+2q_1 & -2q_2 & -2q_3 & 2q_4
+\end{bmatrix}$
+\item Calcolo del guadagno di Kalman $K_{k1} = P_k H_{k1}^T ( H_{k1} P_k H_{k1}^T + V_{k1}R_{k1}V_{k1}^T)^{-1}$
+\item Calcolo di $h_1(\hat{q}_k) = \begin{bmatrix}
+2q_2q_4 - 2q_1q_3  \\
+2q_1q_2 + 2q_3q_4 \\
+q_1^2 - q_2^2 - q_3^2 + q_4^3
+\end{bmatrix} $
+\item Calcolo del fattore di correzione  $q_{\in 1} = K_{k1}(z_{k1}-h_1(\hat{q}_k)) con q_{\in1,4} =0$ e dove $z_{k1}$ corrisponde alle accelerazioni sui tre assi lette dall'accelerometro.
+\item Calcolo della prima stima dello stato a \textit{posteriori}  $\hat{q}_{k1}= \hat{q}_k + q_{\in1}$
+\item Calcolo della matrice di covarianza del rumore a \textit{posteriori} $P_{k1} = ( I - K_{k1}H_{k1})P_k$
+\end{itemize}
+\textit{Inizio della correzione mediante lo stadio 2}
+
+
 
 
 

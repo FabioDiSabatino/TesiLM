@@ -34,27 +34,29 @@
 \contentsline {subsection}{\numberline {4.2.1}Equazioni di stato del sistema}{45}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Filtro di Kalman a due stadi}{46}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Descrizione dell'algoritmo}{47}{subsection.4.2.3}
-\contentsline {chapter}{\numberline {5}Implementazione}{48}{chapter.5}
-\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{48}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{48}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{48}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{48}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Canali di comunicazione}{48}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}I2C}{48}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}USB CDC}{48}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{49}{chapter.6}
-\contentsline {section}{\numberline {6.1}Analisi temporale}{49}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{50}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{51}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{52}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Analisi dello zero-offset}{54}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Stima dello zero-g offset}{54}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{57}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{59}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{59}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{60}{chapter.7}
-\contentsline {chapter}{\numberline {A}Script}{61}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Testing}{61}{section.Alph1.1}
-\contentsline {subsection}{\numberline {A.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{61}{subsection.Alph1.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{62}{subsection.Alph1.1.2}
-\contentsline {chapter}{Bibliografia}{63}{appendix*.5}
+\contentsline {subsection}{\numberline {4.2.4}Trasformazione del sistema a tempo discreto}{48}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Riepilogo algoritmo step-by-step}{49}{subsection.4.2.5}
+\contentsline {chapter}{\numberline {5}Implementazione}{50}{chapter.5}
+\contentsline {section}{\numberline {5.1}Modalit\IeC {\`a} di computazione}{50}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Low Computation mode}{50}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}High Computation mode}{50}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Testing Computation mode}{50}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Canali di comunicazione}{50}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}I2C}{50}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}USB CDC}{50}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Analisi temporale}{51}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{52}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{53}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{54}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Analisi dello zero-offset}{56}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Stima dello zero-g offset}{56}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{59}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{61}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{61}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{62}{chapter.7}
+\contentsline {chapter}{\numberline {A}Script}{63}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Testing}{63}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{63}{subsection.Alph1.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Script per la stima del tempo di trasmissione di dati al modulo App}{64}{subsection.Alph1.1.2}
+\contentsline {chapter}{Bibliografia}{65}{appendix*.5}
