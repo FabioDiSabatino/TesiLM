@@ -28,28 +28,31 @@
 \BOOKMARK [2][-]{subsection.4.1.1}{Matrice di rotazione}{section.4.1}% 28
 \BOOKMARK [2][-]{subsection.4.1.2}{Angoli di Eulero}{section.4.1}% 29
 \BOOKMARK [2][-]{subsection.4.1.3}{Quaternioni unitari}{section.4.1}% 30
-\BOOKMARK [1][-]{section.4.2}{Sensor fusion mediante filtro di Kalman}{chapter.4}% 31
-\BOOKMARK [0][-]{chapter.5}{Implementazione}{}% 32
-\BOOKMARK [1][-]{section.5.1}{Modalit\340 di computazione}{chapter.5}% 33
-\BOOKMARK [2][-]{subsection.5.1.1}{Low Computation mode}{section.5.1}% 34
-\BOOKMARK [2][-]{subsection.5.1.2}{High Computation mode}{section.5.1}% 35
-\BOOKMARK [2][-]{subsection.5.1.3}{Testing Computation mode}{section.5.1}% 36
-\BOOKMARK [1][-]{section.5.2}{Canali di comunicazione}{chapter.5}% 37
-\BOOKMARK [2][-]{subsection.5.2.1}{I2C}{section.5.2}% 38
-\BOOKMARK [2][-]{subsection.5.2.2}{USB CDC}{section.5.2}% 39
-\BOOKMARK [0][-]{chapter.6}{Analisi e validazione dei risultati}{}% 40
-\BOOKMARK [1][-]{section.6.1}{Analisi temporale}{chapter.6}% 41
-\BOOKMARK [2][-]{subsection.6.1.1}{Analisi del tempo di lettura dei dati grezzi dall'IMU}{section.6.1}% 42
-\BOOKMARK [2][-]{subsection.6.1.2}{Analisi del tempo di trasmissione dei dati tramite USB}{section.6.1}% 43
-\BOOKMARK [2][-]{subsection.6.1.3}{Conclusioni analisi temporale}{section.6.1}% 44
-\BOOKMARK [1][-]{section.6.2}{Analisi dello zero-offset}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.2.1}{Stima dello zero-g offset}{section.6.2}% 46
-\BOOKMARK [2][-]{subsection.6.2.2}{Stima dello zero-rate offset}{section.6.2}% 47
-\BOOKMARK [2][-]{subsection.6.2.3}{Conclusioni stima dello zero-offset}{section.6.2}% 48
-\BOOKMARK [1][-]{section.6.3}{Analisi qualitativa dell'assetto stimato}{chapter.6}% 49
-\BOOKMARK [0][-]{chapter.7}{Conclusioni e prospettive future}{}% 50
-\BOOKMARK [0][-]{appendix.Alph1}{Script}{}% 51
-\BOOKMARK [1][-]{section.Alph1.1}{Testing}{appendix.Alph1}% 52
-\BOOKMARK [2][-]{subsection.Alph1.1.1}{Script per la stima del tempo di lettura di dati provenienti dall'IMU }{section.Alph1.1}% 53
-\BOOKMARK [2][-]{subsection.Alph1.1.2}{Script per la stima del tempo di trasmissione di dati al modulo App}{section.Alph1.1}% 54
-\BOOKMARK [0][-]{appendix*.5}{Bibliografia}{}% 55
+\BOOKMARK [1][-]{section.4.2}{Algoritmo di sensor fusion per la stima dell'assetto}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.2.1}{Equazioni di stato del sistema}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.2}{Filtro di Kalman a due stadi}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.3}{Descrizione dell'algoritmo}{section.4.2}% 34
+\BOOKMARK [0][-]{chapter.5}{Implementazione}{}% 35
+\BOOKMARK [1][-]{section.5.1}{Modalit\340 di computazione}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.1.1}{Low Computation mode}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.2}{High Computation mode}{section.5.1}% 38
+\BOOKMARK [2][-]{subsection.5.1.3}{Testing Computation mode}{section.5.1}% 39
+\BOOKMARK [1][-]{section.5.2}{Canali di comunicazione}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.2.1}{I2C}{section.5.2}% 41
+\BOOKMARK [2][-]{subsection.5.2.2}{USB CDC}{section.5.2}% 42
+\BOOKMARK [0][-]{chapter.6}{Analisi e validazione dei risultati}{}% 43
+\BOOKMARK [1][-]{section.6.1}{Analisi temporale}{chapter.6}% 44
+\BOOKMARK [2][-]{subsection.6.1.1}{Analisi del tempo di lettura dei dati grezzi dall'IMU}{section.6.1}% 45
+\BOOKMARK [2][-]{subsection.6.1.2}{Analisi del tempo di trasmissione dei dati tramite USB}{section.6.1}% 46
+\BOOKMARK [2][-]{subsection.6.1.3}{Conclusioni analisi temporale}{section.6.1}% 47
+\BOOKMARK [1][-]{section.6.2}{Analisi dello zero-offset}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.2.1}{Stima dello zero-g offset}{section.6.2}% 49
+\BOOKMARK [2][-]{subsection.6.2.2}{Stima dello zero-rate offset}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.3}{Conclusioni stima dello zero-offset}{section.6.2}% 51
+\BOOKMARK [1][-]{section.6.3}{Analisi qualitativa dell'assetto stimato}{chapter.6}% 52
+\BOOKMARK [0][-]{chapter.7}{Conclusioni e prospettive future}{}% 53
+\BOOKMARK [0][-]{appendix.Alph1}{Script}{}% 54
+\BOOKMARK [1][-]{section.Alph1.1}{Testing}{appendix.Alph1}% 55
+\BOOKMARK [2][-]{subsection.Alph1.1.1}{Script per la stima del tempo di lettura di dati provenienti dall'IMU }{section.Alph1.1}% 56
+\BOOKMARK [2][-]{subsection.Alph1.1.2}{Script per la stima del tempo di trasmissione di dati al modulo App}{section.Alph1.1}% 57
+\BOOKMARK [0][-]{appendix*.5}{Bibliografia}{}% 58

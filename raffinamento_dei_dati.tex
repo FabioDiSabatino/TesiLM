@@ -46,6 +46,7 @@ Essendo per ipotesi la matrice $A_{FG}$ ortogonale, l'operazione di inversione c
  
 
 \subsection{Angoli di Eulero}
+\label{angoliEulero}
 Si consideri \cite{assetto2} un sistema di riferimento cartesiano $F$  fisso (con assi $x_F$,$y_F$ e $z_F$) ed un sistema di riferimento cartesiano $G$ mobile (con assi $x_G$,$y_G$ e $z_G$). \\
 Affinché l'orientamento degli assi del sistema mobile $G$ coincida con quelli del sistema fisso $F$, si devono eseguire almeno tre rotazioni successive attorno ai tre assi.\\
 Tale vincolo è posto dal teorema di Eulero che è alla base di tutte le matrici di rotazioni. Il teorema afferma che:
@@ -135,6 +136,7 @@ Basti pensare ad un velivolo con un \textit{pitch} di $90°$, modificare il \tex
 
 
 \subsection{Quaternioni unitari}
+\label{quaternioni}
 I quaternioni hanno la peculiarità di essere il metodo di rappresentazione dell'assetto con minor numero di parametri privi di singolarità, come ad esempio il \textit{gimbal lock} visto precedentemente per gli angoli di Eulero.\\
 Il quaternione unitario è un vettore composto da tre elementi che definiscono il vettore \textbf{$q_{1:3}$} e da un elemento scalare $q_4$, tale che la norma:
 \begin{equation}
@@ -167,5 +169,110 @@ Un diretto confronto tra le matrici \ref{matriceRotazione} e \ref{matriceQuatern
 \end{equation}
 
 
-\section{Sensor fusion mediante  filtro di Kalman}
+\section{Algoritmo di sensor fusion per la stima dell'assetto}
 \label{sensor_fusion}
+La maggior parte degli algoritmi di stima dell'assetto che sfruttano i dati provenienti da sensori (sez.\ref{tecnologie}) si basano sull'applicazione di un \textit{filtro di Kalman}.\\
+Il filtro di Kalman è un efficiente filtro ricorsivo che valuta lo stato di un sistema dinamico a partire da una serie di misure soggette a rumore. Per le sue caratteristiche intrinseche è un filtro ottimo per rumori e disturbi agenti su sistemi gaussiani a media nulla \cite{kalmanWiki}.\\
+Con riferimento alla rappresentazione del sistema realizzato nell'ambito di questa tesi (sez.\ref{livello_moduli}), all'interno del "modulo" \textit{microcontroller} e del "modulo" \textit{App} vi sono due diversi algoritmi di \textit{sensor fusion} basati sul filtro di Kalman che, a partire dai dati grezzi letti dall'unità di misura inerziale (sez.\ref{tecnologie}), stimano l'assetto relativo al modello di misura (sez.\ref{modello_di_misura}).\\
+Il modulo \textit{Microcontroller} utilizza una libreria esterna realizzata da \textit{STM} \cite{motion} della quale però non vengono forniti i dettagli implementativi, perciò nei paragrafi successivi si farà riferimento all'algoritmo utilizzato all'interno del modulo \textit{App} che è  l'implementazione di un lavoro di tesi trovato in letteratura \cite{trackingThesis}.
+
+\subsection{Equazioni di stato del sistema}
+
+ E' necessario come prima cosa, descrive l'evoluzione del sistema con un equazione differenziale, dove lo stato del sistema è rappresentato tramite quaternioni unitari (\ref{quaternioni}).\\
+ Definiamo con $\omega_{nb}^n$ il vettore delle velocità angolari rispetto al \textit{b-frame} dell'IMU (sez.\ref{modello_di_misura}):
+ 
+\begin{equation}
+\label{vettoreAngular}
+\omega_{nb}^b  = [\omega_x, \omega_y, \omega_z]^T
+\end{equation}
+
+Dall'algebra dei quaternioni è possibile scrivere l'equazione che descrive l'evoluzione del sistema come:
+
+\begin{equation}
+\label{stateEquation}
+\dot{q}_{n}^b = \frac{1}{2} \Omega_{nb}^n q_n^b
+\end{equation}
+Dove $\Omega_{nb}^n$ è la matrice con gli elementi del vettore della velocità angolare in \ref{vettoreAngular}:
+\begin{equation}
+\Omega_{nb}^n= \begin{bmatrix}
+0 &  -\omega_x &  -\omega_y & -\omega_z\\
+\omega_x     & 0  & \omega_z &  -\omega_y  \\
+ \omega_y & -\omega_z  & 0 &  \omega_x \\
+ \omega_z & \omega_y & -\omega_x & 0
+\end{bmatrix}
+\end{equation}
+
+Si noti bene come dalla precedente equazione \ref{stateEquation} l'evoluzione del sistema, corrispondente alla fase detta "aggiornamento a priori" del filtro di Kalman, è caratterizzata dai soli dati del giroscopio. Come si vedrà tra poco, i sensori di accelerometro (sez.\ref{accell}) e magnetometro (sez.\ref{magnetometro}) verranno utilizzati nella fase detta "aggiornamento a posteriori" per correggere la stima ottenuta con il solo giroscopio.
+
+\subsection{Filtro di Kalman a due stadi}
+Un filtro di Kalman completo potrebbe essere computazionalmente troppo oneroso da eseguire per un dispositivo come un microcontrollore. Per questo motivo in \cite{trackingThesis} si è pensato di adottare un approccio diverso dall'implementazione classica del filtro. Tale metodo è ancora basato sul filtro di Kalman, ma la fase di correzione della stima ottenuta nell'aggiornamento a priori, viene divisa in due parti, ognuna delle quali agisce su una specifica componente.\\
+Il primo stadio utilizza i dati provenienti dall'accelerometro (sez.\ref{accell}) per correggere gli angoli stimati di \textit{roll} e \textit{pitch} (sez.\ref{angoliEulero}) mentre il secondo stadio utilizza i dati provenienti dal magnetometro (sez.\ref{magnetometro}) per correggere la stima dello \textit{yaw}. Ogni stadio lavora con un singolo vettore di dati grezzi che è usato appunto per correggere una specifica parte della stima dell'assetto, da questo ne consegue che ogni stadio può lavorare con una matrice di dimensione $ 4 x 3$ contro le $ 4 x 6$ di un filtro di Kalman completo. Da questo ne consegue un guadagno notevole in termini di prestazioni.\\
+ Nella figura seguente una rappresentazione a blocchi del filtro a due stadi:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.3]{elaborazione/filtro.png}
+	\caption{Rappresentazione del principio di funzionamento del filtro di Kalman a due stadi \cite{trackingThesis}}
+	\label{fig:filtro}
+\end{figure}
+
+Un altro grande vantaggio consiste nella flessibilità dell'algoritmo, questo infatti può essere utilizzato anche se si dispone di un IMU a 6DOF (privo del magnetometro) semplicemente "disattivando" lo \textit{stadio 2} in Fig.\ref{fig:filtro}, così facendo l'uscita dallo \textit{stadio 1} diventa l'uscita del sistema e viene retroazionata allo \textit{stadio 0} andando a correggere la prossima lettura.
+ 
+\subsection{Descrizione dell'algoritmo}
+Lo stato del sistema è, come già detto, rappresentato tramite quaternioni (sez.\ref{quaternioni}). Lo \textit{stadio 0} anche detto \textit{stima a priori} utilizza solo i dati grezzi provenienti dal giroscopio.
+Fatto ciò, si deve stimare il vettore gravitazionale $h_1$ per poter correggere il \textit{roll} e il \textit{pitch} nello \textit{stadio 1}. Tale vettore è così definito:
+\begin{eqnarray}
+h_1(q_k)= \hat{q}= R_n^b \begin{bmatrix}
+0  \\
+0 \\
+|q|
+\end{bmatrix}= |g| \begin{bmatrix}
+2q_1q_3 - 2q_0q_2  \\
+2q_0q_1 + 2q_2q_3 \\
+q_0^2 - q_1^2 - q_2^2 + q_3^3
+\end{bmatrix}
+\end{eqnarray}
+Il vettore gravitazionale $g$, espresso secondo l'\textit{i-frame} (sez.\ref{modello_di_misura}), viene riportato nel \textit{b-frame} utilizzando la seguente matrice di rotazione:
+\begin{equation}
+R_n^b= \begin{bmatrix}
+q_1^2 +  q_2^2 -  q_3^2 -  q_4^2 & 2(q_2 q_3 + q_1  q_4) & 2(q_2 q_4 - q_1 q_3) \\
+2(q_2 q_3 - q_1 q_4)    &  q_1^2 - q_2^2 +  q_3^2 -  q_4^2  & 2(q_3 q_4 + q_1q_2)\\
+2(q_2 q_4 + q_1 q_3)    & 2(q_3 q_4 - q_1 q_2)  &  q_1^2 -  q_2^2 - q_3^2 +  q_4^2
+\end{bmatrix}
+\end{equation}
+Da $h_1$ si ricava quindi la matrice $H_{k1}$ del guadagno di Kalman che verrà utilizzata successivamente dallo \textit{stadio 1}:
+\begin{eqnarray}
+H_{K1}= \frac{\delta h_{1[i]}}{\delta q_j}=  \begin{bmatrix}
+-2q_3 & 2q_4 & -2q_1 & 2q_2  \\
+2q_2 & 2q_1 & 2q_4 & 2q_3\\
+2q_0 & -2q_1 & -2q_2 & 2q_3
+\end{bmatrix}
+\end{eqnarray}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
