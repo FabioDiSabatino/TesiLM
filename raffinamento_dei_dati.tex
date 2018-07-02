@@ -1,4 +1,4 @@
-\chapter{Stima dell'assetto tramite sensor fusion (NON completo)}
+\chapter{Stima dell'assetto tramite sensor fusion}
 \label{elaborazione}
 In questo capitolo vengono inizialmente illustrati gli strumenti matematici utilizzati per rappresentare l'assetto di un corpo rigido nello spazio,
 successivamente viene illustrato l'algoritmo di fusione dei dati, provenienti dall'unità di misura inerziale, utilizzato per la stima dell'assetto dell'operatore.
@@ -172,7 +172,7 @@ Un diretto confronto tra le matrici \ref{matriceRotazione} e \ref{matriceQuatern
 \section{Algoritmo di sensor fusion per la stima dell'assetto}
 \label{sensor_fusion}
 La maggior parte degli algoritmi di stima dell'assetto che sfruttano i dati provenienti da sensori (sez.\ref{tecnologie}) si basano sull'applicazione di un \textit{filtro di Kalman}.\\
-Il filtro di Kalman è un efficiente filtro ricorsivo che valuta lo stato di un sistema dinamico a partire da una serie di misure soggette a rumore. Per le sue caratteristiche intrinseche è un filtro ottimo per rumori e disturbi agenti su sistemi gaussiani a media nulla \cite{kalmanWiki}.\\
+Il filtro di Kalman è un efficiente filtro ricorsivo che valuta lo stato di un sistema dinamico a partire da una serie di misure soggette a rumore. Per le sue caratteristiche intrinseche è un filtro ottimo per rumori e disturbi agenti su sistemi gaussiani a media nulla \cite{kalmanWiki}, per maggiori dettagli si rimanda alla lettura dell'Appendice \ref{appendixKalman}.\\
 Con riferimento alla rappresentazione del sistema realizzato nell'ambito di questa tesi (sez.\ref{livello_moduli}), all'interno del "modulo" \textit{microcontroller} e del "modulo" \textit{App} vi sono due diversi algoritmi di \textit{sensor fusion} basati sul filtro di Kalman che, a partire dai dati grezzi letti dall'unità di misura inerziale (sez.\ref{tecnologie}), stimano l'assetto relativo al modello di misura (sez.\ref{modello_di_misura}).\\
 Il modulo \textit{Microcontroller} utilizza una libreria esterna realizzata da \textit{STM} \cite{motion} della quale però non vengono forniti i dettagli implementativi, perciò nei paragrafi successivi si farà riferimento all'algoritmo utilizzato all'interno del modulo \textit{App} che è  l'implementazione di un lavoro di tesi trovato in letteratura \cite{trackingThesis}.
 
@@ -327,7 +327,10 @@ B = B_{TC}T
 \end{equation}
 
 \subsection{Riepilogo algoritmo step-by-step}
-Per maggiore chiarezza,di seguito si fornisce un riepilogo dell'algoritmo step-by-step:
+\label{algoritmo}
+Per maggiore chiarezza si fornisce un riepilogo dell'algoritmo step-by-step da eseguire ad ogni iterazione:
+
+\textit{Inizio}
 \begin{itemize}
 	\item Calcolo della matrice di transizione dello stato discreta $A_k= I + \frac{1}{2} \Omega_{nb}^n T$
 	\item Calcolo della stima a \textit{priori} dello stato mediante lo \textit{stadio 0},  $\hat{q}_k = A_k\hat{q}_{k-1}$
@@ -347,13 +350,59 @@ Per maggiore chiarezza,di seguito si fornisce un riepilogo dell'algoritmo step-b
 2q_1q_2 + 2q_3q_4 \\
 q_1^2 - q_2^2 - q_3^2 + q_4^3
 \end{bmatrix} $
-\item Calcolo del fattore di correzione  $q_{\in 1} = K_{k1}(z_{k1}-h_1(\hat{q}_k)) con q_{\in1,4} =0$ e dove $z_{k1}$ corrisponde alle accelerazioni sui tre assi lette dall'accelerometro.
+\item Calcolo del fattore di correzione  $q_{\in 1} = K_{k1}(z_{k1}-h_1(\hat{q}_k))$ con $ q_{\in1,4} =0$, dove $z_{k1}$ corrisponde alle accelerazioni sui tre assi lette dall'accelerometro.
 \item Calcolo della prima stima dello stato a \textit{posteriori}  $\hat{q}_{k1}= \hat{q}_k + q_{\in1}$
 \item Calcolo della matrice di covarianza del rumore a \textit{posteriori} $P_{k1} = ( I - K_{k1}H_{k1})P_k$
 \end{itemize}
 \textit{Inizio della correzione mediante lo stadio 2}
+\begin{itemize}
+	\item Calcolo della matrice $H_{k2} = \begin{bmatrix}
+	2q_4 & 2q_3 & 2q_2 & 2q_1  \\
+	2q_1 & -2q_2 & -2q_3 & -2q_4\\
+	-2q_2 & -2q_1 & -2q_4 & 2q_3
+	\end{bmatrix} $
+	\item Calcolo del guadagno di Kalman $K_{k2} = P_k H_{k2}^T (H_{k2}P_k H_{k2}^T + V_{k2}R_{k2}V_{k2}^T)^{-1}$
+	\item Calcolo di $h_2(\hat{q}_k) = \begin{bmatrix}
+	2q_2q_3 + 2q_1q_4 \\
+	q_1^2 - q_2^2 - q_3^2 - q_4^2 \\
+	2q_3q_4 - 2q_1q_2
+	\end{bmatrix} $
+	\item Calcolo del secondo fattore di correzione a \textit{posteriori} $q_{\in2} = K_{k2}(z_{k2} - h_2(\hat{q}_k))$ con $ q_{\in2,2},q_{\in2,3} = 0$, dove $z_{k2}$ corrisponde alle misure del campo magnetico sui tre assi lette dal magnetometro.
+	\item Calcolo della seconda stima dello stato a \textit{posteriori}   $\hat{q}_{k2}= \hat{q}_{k1} + q_{\in2}$
+	\item Calcolo della seconda matrice di covarianza del rumore  $P_k = (I - K_{k2}H_{k2})P_{k1}$
+\end{itemize}
+\textit{fine }
 
-
+\subsection{Settaggio iniziale delle costanti}
+Di seguito si mostrano i valori assegnati alle constanti nell'algoritmo precedentemente illustrato (sez.\ref{algoritmo}). Tali valori sono definiti in \cite{trackingThesis} e, a seguito di alcuni test, si sono rivelati i valori ottimali anche nel lavoro di questa tesi.
+\begin{itemize}
+\item $Q = 10^{-6} \cdot \begin{bmatrix}
+1 & 0 & 0 & 0  \\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 
+\end{bmatrix}$
+\item $R_1 = \begin{bmatrix}
+2 & 0 & 0 \\
+0 & 2 & 0\\
+0 & 0 & 2
+\end{bmatrix} $
+\item $R_2 = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix} $
+\item $P_0 = \begin{bmatrix}
+0.5 & 0 & 0 & 0\\
+0 & 0.5 & 0 & 0\\
+0 & 0 & 0.5 & 0 \\
+0 & 0 & 0 & 0.5
+\end{bmatrix} $
+\item $q_0 = \begin{bmatrix}
+1 & 0 & 0 & 0
+\end{bmatrix} $
+\item $V_{[i,j]} = \frac{\delta h_{[i]}}{\delta v_{[j]}} (x_k,0) = I$, il che vuol dire assumere che il rumore dell'accelerometro e del magnetometro sia indipendente dalla posizione dell'IMU.
+\end{itemize}
 
 
 
