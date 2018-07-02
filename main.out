@@ -55,8 +55,10 @@
 \BOOKMARK [1][-]{section.6.3}{Analisi qualitativa dell'assetto stimato}{chapter.6}% 55
 \BOOKMARK [0][-]{chapter.7}{Conclusioni e prospettive future}{}% 56
 \BOOKMARK [0][-]{appendix.Alph1}{Script}{}% 57
-\BOOKMARK [1][-]{section.Alph1.1}{Testing}{appendix.Alph1}% 58
-\BOOKMARK [2][-]{subsection.Alph1.1.1}{Script per la stima del tempo di lettura di dati provenienti dall'IMU }{section.Alph1.1}% 59
-\BOOKMARK [2][-]{subsection.Alph1.1.2}{Script per la stima del tempo di trasmissione di dati al modulo App}{section.Alph1.1}% 60
-\BOOKMARK [0][-]{appendix.Alph2}{Filtro di Kalman}{}% 61
-\BOOKMARK [0][-]{appendix*.5}{Bibliografia}{}% 62
+\BOOKMARK [1][-]{section.Alph1.1}{Operativi}{appendix.Alph1}% 58
+\BOOKMARK [2][-]{subsection.Alph1.1.1}{Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{section.Alph1.1}% 59
+\BOOKMARK [1][-]{section.Alph1.2}{Testing}{appendix.Alph1}% 60
+\BOOKMARK [2][-]{subsection.Alph1.2.1}{Script per la stima del tempo di lettura di dati provenienti dall'IMU }{section.Alph1.2}% 61
+\BOOKMARK [2][-]{subsection.Alph1.2.2}{Script per la stima del tempo di trasmissione di dati al modulo App}{section.Alph1.2}% 62
+\BOOKMARK [0][-]{appendix.Alph2}{Filtro di Kalman}{}% 63
+\BOOKMARK [0][-]{appendix*.5}{Bibliografia}{}% 64

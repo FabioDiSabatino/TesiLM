@@ -3,6 +3,84 @@
 
 \chapter{Script}
 
+\section{Operativi}
+\subsection{Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}
+\label{scriptXLGRead}
+Di seguito si riporta il codice utilizzato per leggere i dati misurati dall'accelerometro e dal giroscpio utilizzando un canale I2C in fast-mode.\\
+\noindent\rule{14.1cm}{0.4pt}
+\begin{lstlisting}[language=C]
+LSM9DS1_XLG_READ LSM9DS1_Read_XLG(MFX_input_t *data_in, int samples)
+{
+	int16_t pData[6]={0,0,0,0,0,0};
+	int16_t data=0;
+	int8_t regadd;
+	int i,j,k;
+	float divisor=1000;
+	float sensitivityXL= (float) LSM9DS1_get_Sens_XL();
+	float sensitivityG= (float) LSM9DS1_get_Sens_G();
+
+	uint8_t hi;
+	uint8_t lo;
+
+	/* Read output registers from LSM9DS1_OUT_X_L_G to LSM9DS1_OUT_Z_XL. */
+	for (i = 0; i < samples; i++ )
+	{
+		regadd=LSM9DS1_OUT_X_L_G;
+
+		//read Gyroscope output
+		for (j = 0; j < 3; j++ )
+		{
+			if( !I2C_ReadData(LSM9DS1_I2C_BADD, regadd, &lo,1))
+			{
+				return 0;
+			}
+			regadd++;
+			if( !I2C_ReadData(LSM9DS1_I2C_BADD,regadd, &hi,1))
+			{
+				return 0 ;
+			}
+			regadd++;
+
+			data = ((uint16_t)hi << 8) | (uint16_t)lo;
+			pData[j]=data;
+
+		}
+		/* Format the data. */
+		data_in->gyro[0] =  (pData[0] * sensitivityG )/divisor;
+		data_in->gyro[1] =  (pData[1] * sensitivityG )/divisor;
+		data_in->gyro[2] = ((pData[2] * sensitivityG )/divisor);
+
+		regadd=LSM9DS1_OUT_X_L_XL;
+		//read Accelerometer output
+		for (j = 3; j < 6; j++ )
+		{
+			if( !I2C_ReadData(LSM9DS1_I2C_BADD, regadd, &lo,1))
+			{
+				return 0;
+			}
+			regadd++;
+			if( !I2C_ReadData(LSM9DS1_I2C_BADD,regadd, &hi,1))
+			{
+				return 0 ;
+			}
+			regadd++;
+
+			data = ((uint16_t)hi << 8) | (uint16_t)lo;
+			pData[j]=data;
+
+		}
+		/* Format the data. */
+		data_in->acc[0] =  (pData[3] * sensitivityXL)/divisor;
+		data_in->acc[1] =  (pData[4] * sensitivityXL)/divisor;
+		data_in->acc[2] = (pData[5] * sensitivityXL)/divisor;
+	}
+	return 1;
+}
+
+
+
+\end{lstlisting}
+
 \section{Testing}
 \subsection{Script per la stima del tempo di lettura di dati provenienti dall'IMU }
 \label{app:stimai2c}
@@ -68,4 +146,6 @@ while(1)
 
 
 \chapter{Filtro di Kalman}
+
+
 \label{appendixKalman}
