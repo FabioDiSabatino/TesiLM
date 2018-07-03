@@ -45,22 +45,22 @@
 \contentsline {section}{\numberline {5.2}Canali di comunicazione}{52}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}I2C}{52}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}USB CDC}{55}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{56}{chapter.6}
-\contentsline {section}{\numberline {6.1}Analisi temporale}{56}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{57}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{58}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{59}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Analisi dello zero-offset}{61}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Stima dello zero-g offset}{61}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{64}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{66}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{66}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{67}{chapter.7}
-\contentsline {chapter}{\numberline {A}Script}{68}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Operativi}{68}{section.Alph1.1}
-\contentsline {subsection}{\numberline {A.1.1}Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{68}{subsection.Alph1.1.1}
-\contentsline {section}{\numberline {A.2}Testing}{71}{section.Alph1.2}
-\contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{71}{subsection.Alph1.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{71}{subsection.Alph1.2.2}
-\contentsline {chapter}{\numberline {B}Filtro di Kalman}{73}{appendix.Alph2}
-\contentsline {chapter}{Bibliografia}{74}{appendix*.5}
+\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{60}{chapter.6}
+\contentsline {section}{\numberline {6.1}Analisi temporale}{60}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{61}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{62}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{63}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Analisi dello zero-offset}{65}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Stima dello zero-g offset}{65}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{68}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{70}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{70}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{71}{chapter.7}
+\contentsline {chapter}{\numberline {A}Script}{72}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Operativi}{72}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{72}{subsection.Alph1.1.1}
+\contentsline {section}{\numberline {A.2}Testing}{75}{section.Alph1.2}
+\contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{75}{subsection.Alph1.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{75}{subsection.Alph1.2.2}
+\contentsline {chapter}{\numberline {B}Filtro di Kalman}{77}{appendix.Alph2}
+\contentsline {chapter}{Bibliografia}{78}{appendix*.5}

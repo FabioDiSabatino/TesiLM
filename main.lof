@@ -42,21 +42,24 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Rappresentazione del fenomeno di \textit {gimbal lock} \cite {gimbal}}}{43}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Rappresentazione del principio di funzionamento del filtro di Kalman a due stadi \cite {trackingThesis}}}{46}{figure.4.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{53}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{54}{figure.5.2}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{53}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{53}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{54}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{56}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{57}{figure.5.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{57}{figure.6.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}{figure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{62}{figure.6.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{62}{figure.6.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{62}{figure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{62}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{63}{figure.6.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}{figure.6.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}{figure.6.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{63}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{65}{figure.6.4}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{61}{figure.6.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{61}{figure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{61}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{66}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{66}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{67}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{67}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{67}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{67}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{69}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
