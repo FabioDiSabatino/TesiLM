@@ -242,7 +242,7 @@ q_1^2 +  q_2^2 -  q_3^2 -  q_4^2 & 2(q_2 q_3 + q_1  q_4) & 2(q_2 q_4 - q_1 q_3) 
 \end{equation}
 Da $h_1$ si ricava quindi la matrice $H_{k1}$ del guadagno di Kalman che verrà utilizzata successivamente dallo \textit{stadio 1}:
 \begin{eqnarray}
-H_{k1}= \frac{\delta h_{1[i]}}{\delta q_j}=  \begin{bmatrix}
+H_{k1}= \frac{\partial h_{1[i]}}{\partial q_j}=  \begin{bmatrix}
 -2q_3 & 2q_4 & -2q_1 & 2q_2  \\
 2q_2 & 2q_1 & 2q_4 & 2q_3\\
 2q_1 & -2q_2 & -2q_3 & 2q_4
@@ -251,12 +251,12 @@ H_{k1}= \frac{\delta h_{1[i]}}{\delta q_j}=  \begin{bmatrix}
 Lo \textit{stadio 1} calcola il residuo $q_{\epsilon 1}$ che sarà sommato allo stato $\hat{x_k}$, stimato a \textit{priori} dallo \textit{stadio 0}, ottenendo così la prima stima a \textit{posteriori} $\hat{x_{k1}}$. L'elemento $q_{\in1,4}$ è posto a zero, al fine di essere sicuri che lo \textit{stadio 1} corregga solo \textit{roll} e \textit{pitch}. Il residuo $q_{\epsilon 1}$ è determinato dalla seguente relazione:
 
 \begin{equation}
-q_{\epsilon 1}= K_{k1}(z_{k1}-h_1(\hat{x_k},0))= q_{\in1,1} + q_{\in1,2} + q_{\in1,3} + 0 \cdot q_{\in1,4} 
+q_{\epsilon 1}= K_{k1}(z_{k1}-h_1(\hat{x}_k,0))= q_{\in1,1} + q_{\in1,2} + q_{\in1,3} + 0 \cdot q_{\in1,4} 
 \end{equation}
 
 e quindi la stima dello stato a \textit{posteriori} risulta:
 \begin{equation}
-\hat{x_{k1}} = \hat{x}_k + q_{\epsilon 1}
+\hat{x}_{k1}= \hat{x}_k + q_{\epsilon 1}
 \end{equation}
 
 Per lo \textit{stadio 2} è necessario stimare il vettore del campo magnetico $h_2$:
@@ -276,7 +276,7 @@ q_1^2 - q_2^2 - q_3^2 - q_4^2 \\
 
 La matrice $H_{k2}$ usata dallo \textit{stadio 2} per calcolare il guadagno di Kalman è la seguente:
 \begin{eqnarray}
-H_{k2}= \frac{\delta h_{2[i]}}{\delta q_j}=  \begin{bmatrix}
+H_{k2}= \frac{\partial h_{2[i]}}{\partial q_j}=  \begin{bmatrix}
 2q_4 & 2q_3 & 2q_2 & 2q_1  \\
 2q_1 & -2q_2 & -2q_3 & -2q_4\\
 -2q_2 & -2q_1 & -2q_4 & 2q_3

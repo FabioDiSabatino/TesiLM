@@ -63,4 +63,7 @@
 \contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{75}{subsection.Alph1.2.1}
 \contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{75}{subsection.Alph1.2.2}
 \contentsline {chapter}{\numberline {B}Filtro di Kalman}{77}{appendix.Alph2}
-\contentsline {chapter}{Bibliografia}{78}{appendix*.5}
+\contentsline {section}{\numberline {B.1}Descrizione teorica del filtro di Kalman}{77}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}L'algoritmo del filtro di Kalman discreto}{79}{section.Alph2.2}
+\contentsline {section}{\numberline {B.3}Il filtro di Kalman esteso}{82}{section.Alph2.3}
+\contentsline {chapter}{Bibliografia}{86}{appendix*.5}

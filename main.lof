@@ -63,3 +63,5 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{81}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{85}{figure.Alph2.2}
