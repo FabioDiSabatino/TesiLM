@@ -3,7 +3,46 @@
 
 \section{Modalità di computazione}
 \label{computationMode}
+In questa sezione verranno illustrate le modalità computazionali implementate all'interno del sistema (sez.\ref{livello_moduli}).
+
 \subsection{Low Computation mode}
+Questa modalità ha lo scopo di alleggerire il carico computazionale del microcontrollore, da qui il nome di \textit{low computation}. Infatti selezionandola l'algoritmo di \textit{sensor fusion}, per la stima dell'assetto (sez.\ref{sensor_fusion}), verrà eseguito dal modulo App, lasciando al microcontrollore la sola responsabilità di recuperare le misure effettuate dai sensori dell'IMU.\\
+In questa modalità il pacchetto di dati da trasferire dal microcontrollore al modulo App ha la seguente struttura per la versione a 6DOF (giroscopio + accelerometro):
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.5]{implementazione/lcm6Foto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Low Computation Mode} a 6DOF}
+	\label{fig:lcm6Foto}
+\end{figure}
+Con riferimento alla Fig.\ref{fig:lcm6Foto}, si mostra la tabella riepilogativa dei singoli campi:
+\begin{table}[H]
+	\label{tab:packlcm6dof}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Campo}    & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                            \\ \hline
+		Accelerometro - X & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata \\ lungo l'asse X\end{tabular}                                \\ \hline
+		Accelerometro - Y & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}" " \\ lungo l'asse Y\end{tabular}                                 \\ \hline
+		Accelerometro - Z & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ lungo l'asse Z\end{tabular}                                 \\ \hline
+		$\mid$             & \multicolumn{1}{l|}{}                                                 & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dell'accelerometro\\ e quelli del giroscopio\end{tabular} \\ \hline
+		Giroscopio - X    & xxx,xxx                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse X\end{tabular}                        \\ \hline
+		Giroscopio - Y    & yyy,yyy                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ misurata attorno  all'asse Y\end{tabular}                        \\ \hline
+		Giroscopio - Z    & zzz,zzz                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ misurata attorno  all'asse Z\end{tabular}                        \\ \hline
+		LF                &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular}           \\ \hline
+	\end{tabular}
+\end{table}
+A questi vanno aggiunti quattro campi ";"  utilizzati per separare le varie misure assiali dei sensori. \\
+Sommando le dimensioni massime dei singoli campi mostrati in tab.\ref{tab:packlcm6dof} si ottiene facilmente che la dimensione massima del pacchetto dati nella modalità \textit{Low Computation} a 6DOF è: 
+Mentre per l'uso a 9DOF, viene aggiunto un campo per i dati provenienti dal magnetometro (sez.\ref{magnetometro}):
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{implementazione/lcm9Foto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Low Computation Mode} a 9DOF}
+	\label{fig:lcm9Foto}
+\end{figure}
+
+
+
 
 \subsection{High Computation mode}
 
@@ -12,7 +51,7 @@
 
 
 \section{Canali di comunicazione}
-
+In questa sezione verranno illustrati i canali di comunicazione utilizzati per la trasmissione dei dati all'interno del sistema realizzato nell'ambito di questa tesi. Il primo paragrafo tratta il canale di comunicazione utilizzato tra il microcontrollore e l'unità di misura inerziale mentre nel secondo e ultimo paragrafo il canale di comunicazione utilizzato per trasmettere dati dal microcontrollore all'applicativo terminale sull'elaboratore.
 \subsection{I2C}
 \label{imp_i2c}
 Per la comunicazione tra l' \textbf{IMU} e il \textbf{Microcontrollore}, si è utilizzato un canale di comunicazione seriale bifilare noto come \textit{Inter Integrated Circuit}, abbreviato \textbf{I2C}, come mostrato dalla seguente figura:

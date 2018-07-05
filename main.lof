@@ -42,26 +42,28 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Rappresentazione del fenomeno di \textit {gimbal lock} \cite {gimbal}}}{43}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Rappresentazione del principio di funzionamento del filtro di Kalman a due stadi \cite {trackingThesis}}}{46}{figure.4.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{53}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{53}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{54}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{56}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{57}{figure.5.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 6DOF}}{52}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 9DOF}}{54}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{55}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{55}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{56}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{58}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{59}{figure.5.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{61}{figure.6.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{61}{figure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{61}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{66}{figure.6.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}{figure.6.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}{figure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{66}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{67}{figure.6.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{67}{figure.6.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{67}{figure.6.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{67}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{69}{figure.6.4}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{63}{figure.6.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}{figure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{68}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{68}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{69}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{69}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{69}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{69}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{71}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{81}{figure.Alph2.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{85}{figure.Alph2.2}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{83}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{87}{figure.Alph2.2}
