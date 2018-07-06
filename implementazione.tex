@@ -1,58 +1,13 @@
 \chapter{Implementazione}
 \label{implementazione}
 
-\section{Modalità di computazione}
-\label{computationMode}
-In questa sezione verranno illustrate le modalità computazionali implementate all'interno del sistema (sez.\ref{livello_moduli}).
-
-\subsection{Low Computation mode}
-Questa modalità ha lo scopo di alleggerire il carico computazionale del microcontrollore, da qui il nome di \textit{low computation}. Infatti selezionandola l'algoritmo di \textit{sensor fusion}, per la stima dell'assetto (sez.\ref{sensor_fusion}), verrà eseguito dal modulo App, lasciando al microcontrollore la sola responsabilità di recuperare le misure effettuate dai sensori dell'IMU.\\
-In questa modalità il pacchetto di dati da trasferire dal microcontrollore al modulo App ha la seguente struttura per la versione a 6DOF (giroscopio + accelerometro):
-\begin{figure}[H]  
-	\centering 
-	\includegraphics[scale=0.5]{implementazione/lcm6Foto.png}
-	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Low Computation Mode} a 6DOF}
-	\label{fig:lcm6Foto}
-\end{figure}
-Con riferimento alla Fig.\ref{fig:lcm6Foto}, si mostra la tabella riepilogativa dei singoli campi:
-\begin{table}[H]
-	\label{tab:packlcm6dof}
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		\textbf{Campo}    & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                            \\ \hline
-		Accelerometro - X & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata \\ lungo l'asse X\end{tabular}                                \\ \hline
-		Accelerometro - Y & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}" " \\ lungo l'asse Y\end{tabular}                                 \\ \hline
-		Accelerometro - Z & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ lungo l'asse Z\end{tabular}                                 \\ \hline
-		$\mid$             & \multicolumn{1}{l|}{}                                                 & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dell'accelerometro\\ e quelli del giroscopio\end{tabular} \\ \hline
-		Giroscopio - X    & xxx,xxx                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse X\end{tabular}                        \\ \hline
-		Giroscopio - Y    & yyy,yyy                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ misurata attorno  all'asse Y\end{tabular}                        \\ \hline
-		Giroscopio - Z    & zzz,zzz                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ misurata attorno  all'asse Z\end{tabular}                        \\ \hline
-		LF                &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular}           \\ \hline
-	\end{tabular}
-\end{table}
-A questi vanno aggiunti quattro campi ";"  utilizzati per separare le varie misure assiali dei sensori. \\
-Sommando le dimensioni massime dei singoli campi mostrati in tab.\ref{tab:packlcm6dof} si ottiene facilmente che la dimensione massima del pacchetto dati nella modalità \textit{Low Computation} a 6DOF è: 
-Mentre per l'uso a 9DOF, viene aggiunto un campo per i dati provenienti dal magnetometro (sez.\ref{magnetometro}):
-
-\begin{figure}[H]  
-	\centering 
-	\includegraphics[scale=0.4]{implementazione/lcm9Foto.png}
-	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Low Computation Mode} a 9DOF}
-	\label{fig:lcm9Foto}
-\end{figure}
+\section{Implementazione Hardware}
 
 
 
-
-\subsection{High Computation mode}
-
-\subsection{Testing Computation mode}
-\label{tcm}
-
-
-\section{Canali di comunicazione}
+\subsection{Canali di comunicazione}
 In questa sezione verranno illustrati i canali di comunicazione utilizzati per la trasmissione dei dati all'interno del sistema realizzato nell'ambito di questa tesi. Il primo paragrafo tratta il canale di comunicazione utilizzato tra il microcontrollore e l'unità di misura inerziale mentre nel secondo e ultimo paragrafo il canale di comunicazione utilizzato per trasmettere dati dal microcontrollore all'applicativo terminale sull'elaboratore.
-\subsection{I2C}
+\subsubsection{I2C}
 \label{imp_i2c}
 Per la comunicazione tra l' \textbf{IMU} e il \textbf{Microcontrollore}, si è utilizzato un canale di comunicazione seriale bifilare noto come \textit{Inter Integrated Circuit}, abbreviato \textbf{I2C}, come mostrato dalla seguente figura:
 \begin{figure}[H]  
@@ -63,8 +18,8 @@ Per la comunicazione tra l' \textbf{IMU} e il \textbf{Microcontrollore}, si è u
 \end{figure}
 Il protocollo \cite{i2cWiki} dell'I2C richiede due linee seriali per comunicare correttamente:
 \begin{itemize}
-\item SDA (\textit{Serial Data}) per i dati
-\item SCL (\textit{Serial Clock}) per sincronizzare i dispositivi
+	\item SDA (\textit{Serial Data}) per i dati
+	\item SCL (\textit{Serial Clock}) per sincronizzare i dispositivi
 \end{itemize}
 Vanno inoltre aggiunte una connessione di riferimento alla massa e una alla linea di alimentazione (tipicamente 5 o 3,3 V) a cui sono connessi resistori di \textit{pull-up}, come mostrato dalla figura seguente:
 \begin{figure}[H]  
@@ -77,15 +32,15 @@ L'I2C utilizza un indirizzo a 7 bit per un totale di 128 indirizzi disponibili. 
 La velocità è il grande limite di questa comunicazione, infatti con le recenti revisioni si è riuscita a raggiungere una velocità massima di 3,4 Mbit/s (detto anche \textit{High Speed Mode}). Nello specifico di questa tesi lo si è utilizzato in \textit{fast mode} che corrisponde ad una velocità di 400 Kbit/s.\\
 I dispositivi collegati al bus possono essere di due tipi:
 \begin{itemize}
-\item Un \textit{Master} che controlla la SCL, inizializza le comunicazioni e invia dati
-\item Uno o più \textit{Slave} che rispondono ad un master e inviano dati
+	\item Un \textit{Master} che controlla la SCL, inizializza le comunicazioni e invia dati
+	\item Uno o più \textit{Slave} che rispondono ad un master e inviano dati
 \end{itemize}
 
 Il messaggio viene spezzato in due parti:
-	\begin{itemize}
-		\item \textit{Address frame} dove il \textit{master} indica l'indirizzo dello \textit{slave} interessato alla comunicazione
-		\item uno o più \textit{Data frames} contenenti l'informazione da trasmettere
-	\end{itemize}
+\begin{itemize}
+	\item \textit{Address frame} dove il \textit{master} indica l'indirizzo dello \textit{slave} interessato alla comunicazione
+	\item uno o più \textit{Data frames} contenenti l'informazione da trasmettere
+\end{itemize}
 I dati sono "piazzati" sulla linea SDA dopo che la linea SCL è posta a zero dal master, questi dati verranno letti dal dispositivo specificato nell'\textit{address frame} quando il \textit{master} riporterà la linea SCL al valore alto.\\
 Relativamente al lavoro di questa tesi si identificano il \textit{Microcontrollore} come \textit{master} mentre l'\textit{IMU} come \textit{slave}. Nello specifico la comunicazione consiste nella lettura periodica da parte del microcontrollore dei valori misurati dai sensori all'interno dell'IMU. Tale lettura è stata realizzata leggendo i singoli registri ad 8 bit dei sensori (per maggiori dettagli si veda la stima temporale in sez.\ref{analisiTemporale}) attraverso lo script in Appendice \ref{scriptXLGRead} e rappresentato dalla seguente figura:
 \begin{figure}[H]  
@@ -94,8 +49,8 @@ Relativamente al lavoro di questa tesi si identificano il \textit{Microcontrollo
 	\caption{Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}
 	\label{fig:i2cRead}
 \end{figure}
- Dove:
- \begin{itemize}
+Dove:
+\begin{itemize}
 	\item  \textit{ST} è il segnale di inizio di una comunicazione
 	\item \textit{SAD + W} include l'indirizzo del dispositivo slave mentre l'ultimo bit specifica che il master sta per scrivere
 	\item \textit{SAK} lo slave con l'indirizzo specificato precedentemente risponde con un segnale di \textit{acknowledge}
@@ -110,9 +65,9 @@ Relativamente al lavoro di questa tesi si identificano il \textit{Microcontrollo
 \end{itemize}
 Tuttavia questa lettura non è sempre la migliore, infatti è possibile continuare a leggere i registri interni dello \textit{slave} trasmettendo il segnale di \textit{MAK} invece del segnale di \textit{NMAK} mostrato in Fig.\ref{fig:i2cRead}. In questo modo l'IMU incrementerà l'indirizzo del registro interno di partenza specificato in \textit{SUB} e provvederà a trasmettere il valore del registro interno successivo ad esso. Questa funzionalità è molto utile quando si devono leggere dati, come in questo caso, che sono rappresentati con più registri. Così facendo infatti si riduce l'\textit{overhead} della trasmissione e si migliora quindi il goodput generale rispetto alla lettura ripetuta dei singoli registri.\\
 
- 
-	
-\subsection{USB CDC}
+
+
+\subsubsection{USB CDC}
 \label{imp_usbcdc}
 Per la comunicazione tra il \textit{microcontrollore} e l'elaboratore si è utilizzato un canale di comunicazione USB nella classe CDC \cite{usbCDC}, mostrato in Fig.\ref{usbFoto}, attraverso la libreria \textit{HAL} \cite{hal} fornita da \textit{STM}.
 \begin{figure}[H]  
@@ -165,3 +120,189 @@ La libreria HAL utilizzata nel lavoro di questa tesi, utilizza due tipi di \text
 Il trasferimento dei dati IN (dal \textit{device} verso l'\textit{host}) è gestito periodicamente in base alle richieste dell'\textit{host} (il \textit{device} specifica l'intervallo di tempo tra le richieste dei pacchetti). Per questo motivo, un buffer statico circolare viene usato per memorizzare i dati mandati dal terminale del \textit{device} (esempio USART nel caso di una \textit{Virtual COM Port}).\\
 In generale, la comunicazione USB è molto più veloce dell'output del terminale (ad esempio il bitrate massimo di un USART è tipicamente 115 Knps mentre il bitrate dell'USB 1.1 è 12 Mbps in \textit{Full speed mode} o 480 Mbps in \textit{High speed mode}). Di conseguenza, prima di mandare nuovi pacchetti l'\textit{host} deve aspettare finché il \textit{device} non termina di processare i dati precedentemente inviati. Quindi, nel caso di data OUT dall'\textit{host} verso il \textit{device} l'uso di un buffer statico circolare non avrebbe senso. Il driver sul \textit{device} aspetta che la procedura di processamento del dato precedente sia terminata prima di mandare un segnale di \textit{acknowledge} all'\textit{host}. \\
 Infine la gestione delle richieste di controllo viene effettuata utilizzando o un \textit{endpoint} pari a zero oppure attraverso un \textit{endpoint interrupt} infatti se la dimensione del pacchetto di richiesta non eccede i 64 bytes, allora l'\textit{endpoint 0} è sufficiente a gestire tale richiesta. 
+
+
+\section{Implementazione Software}
+
+\subsection{Diagramma funzionale}
+Per una avere una visione generale delle funzionalità implementate all'interno dei moduli \textit{APP} e \textit{microcontrollore}, si mostreranno due pseudo diagrammi di flusso che ne sintetizzano il comportamento di ciascuno dei due.\\
+\subsubsection{Diagramma funzionale Microcontrollore}
+Le funzionalità del modulo Microcontrollore possono essere rappresentate mediante il seguente diagramma di flusso:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.3]{implementazione/diagramma.png}
+	\caption{Rappresentazione delle funzionalità implementate nel modulo Microcontrollore.}
+	\label{fig:diagrammaMicro}
+\end{figure}
+
+
+\subsubsection{Diagramma funzionale APP}
+Le funzionalità del modulo APP relative alla modalità \textbf{TCM}, dettagliate successivamente in sez.\ref{tcm}, possono essere rappresentate mediante il seguente diagramma di flusso:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{implementazione/diagrammaApp.png}
+	\caption{Rappresentazione delle funzionalità implementate nel modulo Microcontrollore.}
+	\label{fig:diagrammaAPP}
+\end{figure}
+
+\subsection{Modalità di computazione}
+\label{computationMode}
+In questa sezione verranno illustrate le modalità computazionali implementate all'interno del sistema (sez.\ref{livello_moduli}) e i relativi pacchetti dati utilizzati.
+
+\subsubsection{Low Computation mode}
+\label{lcm}
+Questa modalità ha lo scopo di alleggerire il carico computazionale del microcontrollore, da qui il nome di \textit{low computation}. Infatti selezionandola l'algoritmo di \textit{sensor fusion}, per la stima dell'assetto (sez.\ref{sensor_fusion}), verrà eseguito dal modulo App, lasciando al microcontrollore la sola responsabilità di recuperare le misure effettuate dai sensori dell'IMU.\\
+In questa modalità il pacchetto di dati da trasferire dal microcontrollore al modulo App ha la seguente struttura per la versione a 6DOF (giroscopio + accelerometro):
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.5]{implementazione/lcm6Foto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Low Computation Mode} a 6DOF}
+	\label{fig:lcm6Foto}
+\end{figure}
+Con riferimento alla Fig.\ref{fig:lcm6Foto}, si mostra la tabella riepilogativa dei singoli campi:
+\begin{table}[H]
+	\label{tab:packlcm6dof}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Campo}    & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                            \\ \hline
+		Accelerometro - X & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata \\ lungo l'asse X\end{tabular}                                \\ \hline
+		Accelerometro - Y & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}" " \\ lungo l'asse Y\end{tabular}                                 \\ \hline
+		Accelerometro - Z & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ lungo l'asse Z\end{tabular}                                 \\ \hline
+		$\mid$             & \multicolumn{1}{l|}{}                                                 & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dell'accelerometro\\ e quelli del giroscopio\end{tabular} \\ \hline
+		Giroscopio - X    & xxx,xxx                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse X\end{tabular}                        \\ \hline
+		Giroscopio - Y    & yyy,yyy                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ misurata attorno  all'asse Y\end{tabular}                        \\ \hline
+		Giroscopio - Z    & zzz,zzz                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}" "\\ misurata attorno  all'asse Z\end{tabular}                        \\ \hline
+		LF                &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular}           \\ \hline
+	\end{tabular}
+	\caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in LCM a 6DOF}
+\end{table}
+A questi vanno aggiunti quattro campi ";"  utilizzati per separare le varie misure assiali dei sensori.\\
+Sommando le dimensioni massime dei singoli campi mostrati in tab.\ref{tab:packlcm6dof} si ottiene facilmente che la dimensione massima del pacchetto dati nella modalità \textit{Low Computation} a 6DOF è di \textbf{42 bytes}.\\
+Nell'uso a 9DOF viene aggiunto un campo per i dati provenienti dal magnetometro (sez.\ref{magnetometro}), ottenendo la seguente struttura:
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{implementazione/lcm9Foto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Low Computation Mode} a 9DOF}
+	\label{fig:lcm9Foto}
+\end{figure}
+
+Con riferimento alla Fig.\ref{fig:lcm9Foto}, si mostra la tabella riepilogativa dei singoli campi:
+
+\begin{table}[H]
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Campo}    & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                  \\ \hline
+		Accelerometro - X & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata \\ lungo l'asse X\end{tabular}                      \\ \hline
+		Accelerometro - Y & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata\\ lungo l'asse Y\end{tabular}                       \\ \hline
+		Accelerometro - Z & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata\\ lungo l'asse Z\end{tabular}                       \\ \hline
+		$\mid$            & \multicolumn{1}{l|}{}                                                 & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dei sensori\end{tabular}                        \\ \hline
+		Giroscopio - X    & xxx,xxx                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse X\end{tabular}              \\ \hline
+		Giroscopio - Y    & yyy,yyy                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse Y\end{tabular}              \\ \hline
+		Giroscopio - Z    & zzz,zzz                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse Z\end{tabular}              \\ \hline
+		$\mid$            &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dei sensori\end{tabular}                        \\ \hline
+		Magnetometro- X   & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Intensità del campo\\ magnetico esterno\\ sull'asse X\end{tabular}         \\ \hline
+		Magnetometro- Y   & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Intensità del campo\\ magnetico esterno\\ sull'asse Y\end{tabular}         \\ \hline
+		Magnetometro- Z   & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Intensità del campo\\ magnetico esterno\\ sull'asse Z\end{tabular}         \\ \hline
+		LF                &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular} \\ \hline
+	\end{tabular}
+	\caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in LCM a 9DOF}
+\end{table}
+Ancora una volta per determinare la dimensione totale del pacchetto, bisogna aggiungere i sei campi ";" che separano le varie misure assiali dei sensori. Così facendo si ottiene banalmente che la dimensione totale per la LCM in 9DOF è di \textbf{60 bytes}.
+
+\subsubsection{High Computation mode}
+Questa modalità permette di assegnare al microcontrollore anche il compito di stimare l'assetto utilizzando la libreria \textit{MotionFX} fornita da STM. Risulta evidente come questa modalità sia la duale della precedente (sez.\ref{lcm}) in quanto aumenta il carico computazionale del microcontrollore, da cui il nome \textit{High Computation}. \\
+Analogamente a quanto fatto per la modalità LCM, si mostra la struttura del pacchetto da trasferire dal microcontrollore al modulo APP per questa modalità:
+
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{implementazione/hcmFoto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{High Computation Mode}}
+	\label{fig:hcmFoto}
+\end{figure}
+Si noti che in questo caso non vi sono distinzioni tra le strutture dei pacchetti a 6DOF e 9DOF, infatti indipendentemente da quanti sensori verranno utilizzati il microcontrollore dovrà sempre stimare l'assetto e mandarlo sotto forma di \textit{roll}, \textit{pitch} e \textit{yaw} (sez.\ref{angoliEulero}) al modulo APP. Con riferimento alla fig.\ref{fig:hcmFoto} si mostra la tabella riepilogativa dei campi:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Campo} & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                  \\ \hline
+		Yaw            & xxx,x                                                                 & 5                                                                     &  \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di imbardata\end{tabular}                                                               \\ \hline
+		Pitch          & yyy,y                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di beccheggio\end{tabular}                                            \\ \hline
+		Roll           & zzz,z                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di rollio\end{tabular}                                           \\ \hline
+		LF             &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular} \\ \hline
+	\end{tabular}
+\caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in HCM}
+\end{table}
+Aggiungendo i due campi ";" utilizzati per separare gli angoli stimati, si ottiene che la dimensione del pacchetto dati da trasferire dal microcontrollore al modulo APP è di \textbf{18 bytes}.
+Si noti come in questa modalità, pur aumentando il carico computazionale richiesto dal microcontrollore, si abbattano le dimensioni del pacchetto da trasferire al numero minimo di bytes necessari per rappresentare le stime degli angoli d'assetto in modo significativo.
+
+\subsubsection{Testing Computation mode}
+\label{tcm}
+Quest'ultima modalità è stata pensata appositamente al fine di realizzare l'analisi qualitativa dell'assetto stimato (sez.\ref{analisiQualitativa}). La si può considerare come una modalità ibrida tra l'HCM e la LCM viste precedentemente, infatti in questo caso il pacchetto da trasferire dal microcontrollore al modulo APP include sia le misure dei sensori sia la stima dell'assetto.\\
+In questa modalità il pacchetto di dati da trasferire dal microcontrollore al modulo App ha la seguente struttura per la versione a 6DOF:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.4]{implementazione/tcm6Foto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Test Computation Mode} a 6DOF}
+	\label{fig:tcm6Foto}
+\end{figure}
+
+Con riferimento alla Fig.\ref{fig:tcm6Foto}, si mostra la tabella riepilogativa dei singoli campi:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Campo}    & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                  \\ \hline
+		Accelerometro - X & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata \\ lungo l'asse X\end{tabular}                      \\ \hline
+		Accelerometro - Y & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata\\ lungo l'asse Y\end{tabular}                       \\ \hline
+		Accelerometro - Z & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata\\ lungo l'asse Z\end{tabular}                       \\ \hline
+		$\mid$            & \multicolumn{1}{l|}{}                                                 & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dei sensori\end{tabular}                        \\ \hline
+		Giroscopio - X    & xxx,xxx                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse X\end{tabular}              \\ \hline
+		Giroscopio - Y    & yyy,yyy                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse Y\end{tabular}              \\ \hline
+		Giroscopio - Z    & zzz,zzz                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse Z\end{tabular}              \\ \hline
+		$\mid$            &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dei sensori\end{tabular}                        \\ \hline
+		Yaw               & xxx,x                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di imbardata\end{tabular}                                   \\ \hline
+		Pitch             & yyy,y                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di beccheggio\end{tabular}                                  \\ \hline
+		Roll              & zzz,z                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di rollio\end{tabular}                                      \\ \hline
+		LF                &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular} \\ \hline
+	\end{tabular}
+\caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in TCM a 6DOF}
+\end{table}
+Ancora una volta aggiungendo sei campi ";" utilizzati per separare le misure assiali e gli angoli stimati si ottiene che la dimensione del pacchetto per questa modalità a 6DOF è  \textbf{60 bytes}.\\
+Nell'uso a 9DOF viene aggiunto un campo per i dati provenienti dal magnetometro (sez.\ref{magnetometro}), ottenendo la seguente struttura:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.35]{implementazione/tcm9Foto.png}
+	\caption{Rappresentazione del pacchetto dati utilizzato in \textit{Test Computation Mode} a 9DOF}
+	\label{fig:tcm9Foto}
+\end{figure}
+Con riferimento alla Fig.\ref{fig:tcm9Foto}, si mostra la tabella riepilogativa dei singoli campi:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Campo}    & \textbf{\begin{tabular}[c]{@{}c@{}}Formattazione\\ dati\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Dimensione\\ (bytes)\end{tabular}} & \textbf{Descrizione}                                                                                  \\ \hline
+		Accelerometro - X & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata \\ lungo l'asse X\end{tabular}                      \\ \hline
+		Accelerometro - Y & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata\\ lungo l'asse Y\end{tabular}                       \\ \hline
+		Accelerometro - Z & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Accelerazione misurata\\ lungo l'asse Z\end{tabular}                       \\ \hline
+		$\mid$            & \multicolumn{1}{l|}{}                                                 & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dei sensori\end{tabular}                        \\ \hline
+		Giroscopio - X    & xxx,xxx                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse X\end{tabular}              \\ \hline
+		Giroscopio - Y    & yyy,yyy                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse Y\end{tabular}              \\ \hline
+		Giroscopio - Z    & zzz,zzz                                                               & 7                                                                     & \begin{tabular}[c]{@{}c@{}}Velocità angolare\\ misurata attorno  all'asse Z\end{tabular}              \\ \hline
+		$\mid$            &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i dati \\ dei sensori\end{tabular}                        \\ \hline
+		Magnetometro- X   & x,xxx                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Intensità del campo\\ magnetico esterno\\ sull'asse X\end{tabular}         \\ \hline
+		Magnetometro- Y   & y,yyy                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Intensità del campo\\ magnetico esterno\\ sull'asse Y\end{tabular}         \\ \hline
+		Magnetometro- Z   & z,zzz                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Intensità del campo\\ magnetico esterno\\ sull'asse Z\end{tabular}         \\ \hline
+		$\mid$            &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Delimitatore tra i\\ dati dei sensori e\\ l'assetto stimato\end{tabular}   \\ \hline
+		Yaw               & xxx,x                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di imbardata\end{tabular}                                   \\ \hline
+		Pitch             & yyy,y                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di beccheggio\end{tabular}                                  \\ \hline
+		Roll              & zzz,z                                                                 & 5                                                                     & \begin{tabular}[c]{@{}c@{}}Stima angolo\\ di rollio\end{tabular}                                      \\ \hline
+		LF                &                                                                       & 1                                                                     & \begin{tabular}[c]{@{}c@{}}Carattere ASCII per la \\ codifica del comando\\ "nuova riga"\end{tabular} \\ \hline
+	\end{tabular}
+\caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in TCM a 9DOF}
+\end{table}
+Infine aggiungendo otto campi ";" utilizzati per separare le misure assiali e gli angoli stimati si ottiene che la dimensione del pacchetto per questa modalità a 9DOF è  \textbf{78 bytes}.\\
+Quindi la TCM a 9DOF risulta essere la modalità con il maggiore carico computazionale richiesto al microcontrollore e con la dimensione maggiore dei pacchetti da trasferire dal micro al modulo APP.
+

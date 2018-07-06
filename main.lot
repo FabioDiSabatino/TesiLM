@@ -6,10 +6,15 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Tabella comparativa delle rappresentazioni d\IeC {\textquoteright }assetto}}{39}{table.4.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Tabella con gli usi tipici degli \textit {endpoints} per comunicazioni USB-CDC}}{60}{table.5.1}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Tabella con gli usi tipici degli \textit {endpoints} per comunicazioni USB-CDC}}{58}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Tabella riepilogativa dei campi presenti nel pacchetto dati in LCM a 6DOF}}{61}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Tabella riepilogativa dei campi presenti nel pacchetto dati in LCM a 9DOF}}{63}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Tabella riepilogativa dei campi presenti nel pacchetto dati in HCM}}{64}{table.5.4}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Tabella riepilogativa dei campi presenti nel pacchetto dati in TCM a 6DOF}}{66}{table.5.5}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Tabella riepilogativa dei campi presenti nel pacchetto dati in TCM a 9DOF}}{68}{table.5.6}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Media, Max e percentuali di occorrenze dei valori compresi nell'intervallo (0,1) e maggiori di 1 dei dati mostrati in Fig.\ref {fig:zgx} }}{70}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Media e varianza per i valori di zero-rate offset mostrati in Fig.\ref {fig:zero-rate}}}{71}{table.6.2}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Media, Max e percentuali di occorrenze dei valori compresi nell'intervallo (0,1) e maggiori di 1 dei dati mostrati in Fig.\ref {fig:zgx} }}{78}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Media e varianza per i valori di zero-rate offset mostrati in Fig.\ref {fig:zero-rate}}}{79}{table.6.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
