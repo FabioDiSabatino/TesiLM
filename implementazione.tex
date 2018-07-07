@@ -3,6 +3,8 @@
 
 \section{Implementazione Hardware}
 
+\subsection{Schema hardware del sistema}
+
 
 
 \subsection{Canali di comunicazione}
@@ -118,32 +120,54 @@ La libreria HAL utilizzata nel lavoro di questa tesi, utilizza due tipi di \text
 	\item \textit{Endpoint interrupt} per il controllo della comunicazione (richieste CDC, 1 \textit{endpoint} IN)
 \end{itemize}
 Il trasferimento dei dati IN (dal \textit{device} verso l'\textit{host}) è gestito periodicamente in base alle richieste dell'\textit{host} (il \textit{device} specifica l'intervallo di tempo tra le richieste dei pacchetti). Per questo motivo, un buffer statico circolare viene usato per memorizzare i dati mandati dal terminale del \textit{device} (esempio USART nel caso di una \textit{Virtual COM Port}).\\
-In generale, la comunicazione USB è molto più veloce dell'output del terminale (ad esempio il bitrate massimo di un USART è tipicamente 115 Knps mentre il bitrate dell'USB 1.1 è 12 Mbps in \textit{Full speed mode} o 480 Mbps in \textit{High speed mode}). Di conseguenza, prima di mandare nuovi pacchetti l'\textit{host} deve aspettare finché il \textit{device} non termina di processare i dati precedentemente inviati. Quindi, nel caso di data OUT dall'\textit{host} verso il \textit{device} l'uso di un buffer statico circolare non avrebbe senso. Il driver sul \textit{device} aspetta che la procedura di processamento del dato precedente sia terminata prima di mandare un segnale di \textit{acknowledge} all'\textit{host}. \\
+In generale, la comunicazione USB è molto più veloce dell'output del terminale (ad esempio il bitrate massimo di un USART è tipicamente 115 Kbps mentre il bitrate dell'USB 1.1 è 12 Mbps in \textit{Full speed mode} o 480 Mbps in \textit{High speed mode}). Di conseguenza, prima di mandare nuovi pacchetti l'\textit{host} deve aspettare finché il \textit{device} non termina di processare i dati precedentemente inviati. Quindi, nel caso di data OUT dall'\textit{host} verso il \textit{device} l'uso di un buffer statico circolare non avrebbe senso. Il driver sul \textit{device} aspetta che la procedura di processamento del dato precedente sia terminata prima di mandare un segnale di \textit{acknowledge} all'\textit{host}. \\
 Infine la gestione delle richieste di controllo viene effettuata utilizzando o un \textit{endpoint} pari a zero oppure attraverso un \textit{endpoint interrupt} infatti se la dimensione del pacchetto di richiesta non eccede i 64 bytes, allora l'\textit{endpoint 0} è sufficiente a gestire tale richiesta. 
 
 
-\section{Implementazione Software}
 
-\subsection{Diagramma funzionale}
-Per una avere una visione generale delle funzionalità implementate all'interno dei moduli \textit{APP} e \textit{microcontrollore}, si mostreranno due pseudo diagrammi di flusso che ne sintetizzano il comportamento di ciascuno dei due.\\
-\subsubsection{Diagramma funzionale Microcontrollore}
-Le funzionalità del modulo Microcontrollore possono essere rappresentate mediante il seguente diagramma di flusso:
+
+
+
+\section{Implementazione Software}
+In questa sezione si mostrano alcuni dettagli riguardanti l'implementazione software. Nella parte iniziale si fornisce un \textit{overview} delle funzionalità dei due moduli (sez.\ref{livello_moduli}) mentre nell'ultima parte si mostrano le modalità operative identificate e realizzate.
+\subsection{Diagramma Comportamentale}
+Per una avere una visione generale delle funzionalità implementate nei moduli APP e microcontrollore, si mostrano due pseudo diagrammi di flusso che ne sintetizzano il comportamento di ciascuno dei due.
+\subsubsection{Diagramma del Microcontrollore}
+Il comportamento del modulo Microcontrollore può essere rappresentato mediante il seguente diagramma di flusso:
 \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.3]{implementazione/diagramma.png}
-	\caption{Rappresentazione delle funzionalità implementate nel modulo Microcontrollore.}
+	\caption{Rappresentazione del comportamento per il modulo Microcontrollore.}
 	\label{fig:diagrammaMicro}
 \end{figure}
+Dove:
+\begin{itemize}
+	\item \textbf{Init}: rappresenta la fase di inizializzazione del micro. L'utente sceglie la \textit{Computation Mode} e il numero di sensori da utilizzare (6DOF o 9DOF) modificando semplicemente due variabili globali (si veda appendice \ref{app:init}).
+	\item \textbf{Start?}: il microcontrollore attende che il pulsante, integrato nella board, venga premuto di iniziare qualsiasi operazione.
+	\item \textbf{LCM mode? e TCM mode?}: test di condizione sulla variabile globale che indica la \textit{Computation Mode} settata nella fase di inizializzazione. In base al suo valore il micro entrerà in un loop infinito della modalità scelta.
+	\item \textbf{LCM}: procedura di \textit{Low Computation Mode}, sez.\ref{lcm}.
+	\item \textbf{TCM}: procedura di \textit{Test Computation Mode}, sez.\ref{tcm}.
+	\item \textbf{HCM}: procedura di \textit{High Computation Mode}, sez.\ref{hcm}.
+	\item \textbf{Flag?}: test di condizione su una variabile di flag, modificata periodicamente da una routine tramite interrupt service.
+\end{itemize}
 
 
-\subsubsection{Diagramma funzionale APP}
-Le funzionalità del modulo APP relative alla modalità \textbf{TCM}, dettagliate successivamente in sez.\ref{tcm}, possono essere rappresentate mediante il seguente diagramma di flusso:
+\subsubsection{Diagramma del modulo APP}
+Il comportamento del modulo APP relativo alla modalità \textbf{TCM} (sez.\ref{tcm}) può essere rappresentato mediante il seguente diagramma di flusso:
 \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.4]{implementazione/diagrammaApp.png}
-	\caption{Rappresentazione delle funzionalità implementate nel modulo Microcontrollore.}
+	\caption{Rappresentazione del comportamento per il modulo Microcontrollore.}
 	\label{fig:diagrammaAPP}
 \end{figure}
+Dove:
+\begin{itemize}
+	\item \textbf{Init}: rappresenta la fase di inizializzazione della procedura. Vengono inizializzate le costanti necessarie all'algoritmo di sensor fusion (sez.\ref{sensor_fusion}), la variabile globale che definisce l'uso a 6DOF o 9DOF e infine i grafici da plottare successivamente.
+	\item  \textbf{Read}: rappresenta la fase di lettura dei dati trasferiti dal modulo microcontrollore e salvati in un file di log. Ogni riga del file, corrispondente ad un pacchetto TCM (sez.\ref{tcm}), viene estratta e parsificata scomponendo la stringa in base ai separatori e i delimitatori utilizzati. Alla fine di questa fase si ottiene una matrice con i dati collezionati, per ogni sensore utilizzato, e una matrice con le stime dell'assetto elaborate dal microcontrollore.
+	\item \textbf{Sensor Fusion}: rappresenta la fase di esecuzione dell'algoritmo di sensor fusion implementato (sez.\ref{descrizioneAlgoritmo}) a partire dalle matrici dei dati grezzi ottenuti nella fase precedente.
+	\item \textbf{Plot stime}: vengono visualizzati gli angoli stimati dal microcontrollore e dal modulo APP al fine di completare l'analisi qualitativa dei due metodi (sez.\ref{analisiQualitativa})
+\end{itemize}
+Per i dettagli implementativi si rimanda alla lettura dell'Appendice \ref{app:tcmMatlab}.
 
 \subsection{Modalità di computazione}
 \label{computationMode}
@@ -208,9 +232,10 @@ Con riferimento alla Fig.\ref{fig:lcm9Foto}, si mostra la tabella riepilogativa 
 	\end{tabular}
 	\caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in LCM a 9DOF}
 \end{table}
-Ancora una volta per determinare la dimensione totale del pacchetto, bisogna aggiungere i sei campi ";" che separano le varie misure assiali dei sensori. Così facendo si ottiene banalmente che la dimensione totale per la LCM in 9DOF è di \textbf{60 bytes}.
+Ancora una volta per determinare la dimensione totale del pacchetto, bisogna aggiungere i sei campi ";" che separano le varie misure assiali dei sensori. Così facendo si ottiene banalmente che la dimensione totale per la LCM in 9DOF è di \textbf{60 bytes}. Per i dettagli implementativi si rimanda alla lettura dell'appendice \ref{app:lcm}.
 
 \subsubsection{High Computation mode}
+\label{hcm}
 Questa modalità permette di assegnare al microcontrollore anche il compito di stimare l'assetto utilizzando la libreria \textit{MotionFX} fornita da STM. Risulta evidente come questa modalità sia la duale della precedente (sez.\ref{lcm}) in quanto aumenta il carico computazionale del microcontrollore, da cui il nome \textit{High Computation}. \\
 Analogamente a quanto fatto per la modalità LCM, si mostra la struttura del pacchetto da trasferire dal microcontrollore al modulo APP per questa modalità:
 
@@ -235,7 +260,7 @@ Si noti che in questo caso non vi sono distinzioni tra le strutture dei pacchett
 \caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in HCM}
 \end{table}
 Aggiungendo i due campi ";" utilizzati per separare gli angoli stimati, si ottiene che la dimensione del pacchetto dati da trasferire dal microcontrollore al modulo APP è di \textbf{18 bytes}.
-Si noti come in questa modalità, pur aumentando il carico computazionale richiesto dal microcontrollore, si abbattano le dimensioni del pacchetto da trasferire al numero minimo di bytes necessari per rappresentare le stime degli angoli d'assetto in modo significativo.
+Si noti come in questa modalità, pur aumentando il carico computazionale richiesto dal microcontrollore, si abbattano le dimensioni del pacchetto da trasferire al numero minimo di bytes necessari per rappresentare le stime degli angoli d'assetto in modo significativo. Per i dettagli implementativi si rimanda alla lettura dell'appendice \ref{app:hcm}.
 
 \subsubsection{Testing Computation mode}
 \label{tcm}
@@ -304,5 +329,5 @@ Con riferimento alla Fig.\ref{fig:tcm9Foto}, si mostra la tabella riepilogativa 
 \caption{Tabella riepilogativa dei campi presenti nel pacchetto dati in TCM a 9DOF}
 \end{table}
 Infine aggiungendo otto campi ";" utilizzati per separare le misure assiali e gli angoli stimati si ottiene che la dimensione del pacchetto per questa modalità a 9DOF è  \textbf{78 bytes}.\\
-Quindi la TCM a 9DOF risulta essere la modalità con il maggiore carico computazionale richiesto al microcontrollore e con la dimensione maggiore dei pacchetti da trasferire dal micro al modulo APP.
+Quindi la TCM a 9DOF risulta essere la modalità con il maggiore carico computazionale richiesto al microcontrollore e con la dimensione maggiore dei pacchetti da trasferire dal micro al modulo APP. Per i dettagli implementativi si rimanda alla lettura dell'appendice \ref{app:tcm}.
 

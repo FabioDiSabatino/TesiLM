@@ -81,6 +81,381 @@ LSM9DS1_XLG_READ LSM9DS1_Read_XLG(MFX_input_t *data_in, int samples)
 
 \end{lstlisting}
 
+\subsection{Script di inizializzazione del micro}
+Di seguito si riporta il codice utilizzato per stimare il tempo di lettura di dati provenienti dall'unità di misura inerziale utilizzando un canale I2C in fast-mode.\\
+\noindent\rule{14.1cm}{0.4pt}
+\begin{lstlisting}[language=C]
+//Test I2C speed
+while(1){
+if(id<1000){
+
+if(!I2C_ReadData(LSM9DS1_I2C_BADD,LSM9DS1_WHO_AM_I,&result,1)){
+if( result == LSM9DS1_WHO_AM_I_VALUE)
+id++;
+}
+else
+{
+lost++;
+}
+
+if(id==1000){
+t1=HAL_GetTick()-t0;
+HAL_Delay(2);
+snprintf(data, 10, "%Lu",t1);
+CDC_Transmit_FS((uint8_t *)data,strlen(data));
+}
+}
+
+
+
+\end{lstlisting}
+
+
+\subsection{Script per la stima del tempo di trasmissione di dati al modulo App}
+\label{app:init}
+Di seguito si riporta il codice utilizzato per inizializzare il micro.\\
+\noindent\rule{14.1cm}{0.4pt}
+
+\begin{lstlisting}[language=C]
+.
+.
+.
+#define ComputationMode					TEST_COMPUTATION_MODE
+#define DOF_MODE						MODE_6DOF
+.
+.
+. 
+int main(void)
+{
+	.
+	.
+	.
+	LSM9DS1_State_Connection testConnection= LSM9DS1_ERROR;
+	testConnection=LSM9DS1_IsConnected();
+	LSM9DS1_XLG_TurnOff();
+	
+	if(DOF_MODE==MODE_9DOF){
+		LSM9DS1_XLG_READ start= LSM9DS1_XLGM_Start(119,40,245,8,8);
+		MotionFX_manager_init(MODE_9DOF);
+	}
+	else{
+		LSM9DS1_XLG_READ start= LSM9DS1_XLG_Start(119,245,2);
+		MotionFX_manager_init(MODE_6DOF);
+	}
+	.
+	.
+	.
+
+}
+
+
+\end{lstlisting}
+
+\subsection{Script Low Computation Mode}
+\label{app:lcm}
+Di seguito si riporta il codice utilizzato per implementare la funzione di Low Computation Mode all'interno del modulo Microcontrollore.\\
+\noindent\rule{14.1cm}{0.4pt}
+\begin{lstlisting}[language=C]
+void LowComputationMode(){
+
+HAL_TIM_Base_Start_IT(&htim3);
+while(1)
+	{
+		if(flag==1)
+		{
+
+			HAL_NVIC_DisableIRQ(TIM3_IRQn);
+
+			if(DOF_MODE == MODE_6DOF)
+			{
+
+				LSM9DS1_Read_XLG(&data_in,1);
+
+				snprintf(data, 64, "%.3f;%.3f;%.3f|%3.1f;%3.1f;%3.1f\n",
+				data_in.acc[0], data_in.acc[1], data_in.acc[2],
+				data_in.gyro[0],data_in.gyro[1],data_in.gyro[2]);
+			}
+			else
+			{
+				LSM9DS1_Read_XLGM(&data_in,1);
+				snprintf(data, 64, "%.3f;%.3f;%.3f|%3.1f;%3.1f;%3.1f|%3.1f;%3.1f;%3.1f\n",
+				data_in.acc[0], data_in.acc[1], data_in.acc[2],
+				data_in.gyro[0],data_in.gyro[1],data_in.gyro[2],
+				data_in.mag[0],data_in.mag[1],data_in.mag[2]);
+			}
+
+			//transmit data
+			CDC_Transmit_FS((uint8_t *)data,strlen(data));
+			flag=0;
+			HAL_NVIC_EnableIRQ(TIM3_IRQn);
+			}
+	}
+
+}
+
+
+
+\end{lstlisting}
+
+
+\subsection{Script High Computation Mode}
+\label{app:hcm}
+Di seguito si riporta il codice utilizzato per implementare la funzione di High Computation Mode all'interno del modulo Microcontrollore.\\
+\noindent\rule{14.1cm}{0.4pt}
+\begin{lstlisting}[language=C]
+void HighComputationMode(){
+
+	HAL_TIM_Base_Start_IT(&htim3);
+	HAL_TIM_Base_Start_IT(&htim2);
+	while(1)
+	{
+		if(flag==1)
+		{
+
+			HAL_NVIC_DisableIRQ(TIM3_IRQn);
+
+			//prepare packet
+			if(DOF_MODE == MODE_6DOF)
+			{
+				LSM9DS1_Read_XLG(&data_in,1);
+				MotionFX_manager_run(&data_in,&data_out,MFX_DELTATIME);
+				snprintf(data, 25, "%3.1f;%3.1f;%3.1f\n",
+				data_out.rotation_6X[0],data_out.rotation_6X[1],data_out.rotation_6X[2]);
+			}
+			else
+			{
+				LSM9DS1_Read_XLGM(&data_in,1);
+				if(flag2==1){
+				HAL_NVIC_DisableIRQ(TIM2_IRQn);
+				mag_in.mag[0]=data_in.mag[0]/50;
+				mag_in.mag[1]=data_in.mag[1]/50;
+				mag_in.mag[2]=data_in.mag[2]/50;
+				mag_in.time_stamp=0;
+				MotionFX_MagCal_run(&mag_in);
+				MotionFX_MagCal_getParams(&mag_out);
+				if(mag_out.cal_quality !=  MFX_MAGCALPOOR){
+				data_in.mag[0]=mag_in.mag[0]-mag_out.hi_bias[0];
+				data_in.mag[1]=mag_in.mag[1]-mag_out.hi_bias[1];
+				data_in.mag[2]=mag_in.mag[2]-mag_out.hi_bias[2];
+				}
+				
+				flag2=0;
+				HAL_NVIC_EnableIRQ(TIM2_IRQn);
+				}
+				MotionFX_manager_run(&data_in,&data_out,MFX_DELTATIME);
+				snprintf(data, 25, "%3.1f;%3.1f;%3.1f\n",
+				data_out.rotation_9X[0],data_out.rotation_9X[1],data_out.rotation_9X[2]);
+			}
+
+			//transmit data
+			CDC_Transmit_FS((uint8_t *)data,strlen(data));
+			flag=0;
+			HAL_NVIC_EnableIRQ(TIM3_IRQn);
+		}
+
+	}
+
+}
+
+\end{lstlisting}
+
+
+\subsection{Script Test Computation Mode per il modulo Microcontrollore}
+\label{app:tcm}
+Di seguito si riporta il codice utilizzato per implementare la funzione di Test Computation Mode all'interno del modulo Microcontrollore.\\
+\noindent\rule{14.1cm}{0.4pt}
+\begin{lstlisting}[language=C]
+void TestComputationMode(){
+
+	HAL_TIM_Base_Start_IT(&htim3);
+	HAL_TIM_Base_Start_IT(&htim2);
+
+	while(1)
+	{
+		if(flag==1)
+		{
+
+			HAL_NVIC_DisableIRQ(TIM3_IRQn);
+
+			//prepare packet
+			if(DOF_MODE == MODE_6DOF)
+			{
+				LSM9DS1_Read_XLG(&data_in,1);
+				MotionFX_manager_run(&data_in,&data_out,MFX_DELTATIME);
+				snprintf(data, 128, "%.3f;%.3f;%.3f|%.3f;%.3f;%.3f|%3.1f;%3.1f;%3.1f\n",
+				data_in.acc[0], data_in.acc[1], data_in.acc[2],
+				data_in.gyro[0],data_in.gyro[1],data_in.gyro[2],
+				data_out.rotation_6X[0],data_out.rotation_6X[1],data_out.rotation_6X[2]);
+			}
+			else
+			{
+				LSM9DS1_Read_XLGM(&data_in,1);
+				if(flag2==1)
+				{
+					HAL_NVIC_DisableIRQ(TIM2_IRQn);
+					mag_in.mag[0]=data_in.mag[0]/50;
+					mag_in.mag[1]=data_in.mag[1]/50;
+					mag_in.mag[2]=data_in.mag[2]/50;
+					mag_in.time_stamp=0;
+					MotionFX_MagCal_run(&mag_in);
+					MotionFX_MagCal_getParams(&mag_out);
+					if(mag_out.cal_quality !=  MFX_MAGCALPOOR){
+					data_in.mag[0]=mag_in.mag[0]-mag_out.hi_bias[0];
+					data_in.mag[1]=mag_in.mag[1]-mag_out.hi_bias[1];
+					data_in.mag[2]=mag_in.mag[2]-mag_out.hi_bias[2];
+				}
+
+			flag2=0;
+			HAL_NVIC_EnableIRQ(TIM2_IRQn);
+			}
+
+
+			MotionFX_manager_run(&data_in,&data_out,MFX_DELTATIME);
+			snprintf(data, 128, "%.3f;%.3f;%.3f|%3.1f;%3.1f;%3.1f|%3.1f;%3.1f;%3.1f|%3.1f;%3.1f;%3.1f\n",
+			data_in.acc[0], data_in.acc[1], data_in.acc[2],
+			data_in.gyro[0],data_in.gyro[1],data_in.gyro[2],
+			data_in.mag[0],data_in.mag[1],data_in.mag[2],
+			data_out.rotation_9X[0],data_out.rotation_9X[1],data_out.rotation_9X[2]);
+			}
+
+		//transmit data
+		CDC_Transmit_FS((uint8_t *)data,strlen(data));
+		flag=0;
+
+		HAL_NVIC_EnableIRQ(TIM3_IRQn);
+		}
+
+	}	
+
+}
+\end{lstlisting}
+
+
+\subsection{Script Test Computation Mode per il modulo APP}
+\label{app:tcmMatlab}
+Di seguito si riporta il codice utilizzato per implementare la funzione di Test Computation Mode all'interno del modulo APP.\\
+\noindent\rule{14.1cm}{0.4pt}
+\begin{lstlisting}[style=Matlab-editor]
+
+%-----------------------Init--------------------%
+f=figure;
+.
+.
+.
+g=figure;
+.
+.
+.
+
+h=figure
+.
+.
+.
+
+%Sensor fusion algorithm init
+T=0.01;
+qk=[0 0 0 0].';
+p_qk=0;
+Pk=eye(4);
+p_Pk=eye(4);
+data=strings(1,10000);
+acc=zeros(6000,3);
+gyro=zeros(6000,3);
+rotation=zeros(6000,3);
+%set 0 for 6DOF 1 otherwise
+DOF=0;
+count=length(Data);
+
+%-----------------------Read----------------------%
+for c=1:count
+
+[accData,gyroData,~,rotationData]=read(Data(c),DOF);
+
+%Acceleration on x-axe
+acc(c,1)=accData(1);
+
+%Acceleration on y-axe
+acc(c,2)=accData(2);
+
+%Acceleration on z-axe
+acc(c,3)=accData(3);
+
+%Angular velocity on x-axe
+gyro(c,1)=gyroData(1);
+
+%Angular velocity on y-axe
+gyro(c,2)=gyroData(2);
+
+%Angular velocity on z-axe
+gyro(c,3)=gyroData(3);
+
+%Magnetic field on x-axe
+magneto(c,1)=gyroData(1);
+
+%Magnetic field on y-axe
+magneto(c,2)=gyroData(2);
+
+%Magnetic field on z-axe
+magneto(c,3)=gyroData(3);
+
+%Yaw
+rotation(c,1)=rotationData(1);
+
+%Pitch
+rotation(c,2)=rotationData(2);
+
+%Roll
+rotation(c,3)=rotationData(3);
+
+end
+%------------------Sensor fusion--------------------%
+for c=1:count
+
+%-----Stage 0:Angular position estimation-----%
+gyroRaw=[gyro(c,1),gyro(c,2),gyro(c,3)];
+[qk,Pk] = Stage0(gyroRaw,p_qk,p_Pk,T);
+
+%----------Stage 1:correction position--------%
+accRaw=[acc(c,1),acc(c,2),acc(c,3)];
+[qk1, Pk1]= Stage1(accRaw,qk,Pk);
+
+%----------Stage 2:correction positio--------%
+if(DOF==1)
+magnetoRaw=[magneto(c,1),magneto(c,2),magneto(c,3)];
+[qk2, Pk2]= Stage2(magnetoRaw,qk1,Pk1);
+[yaw,pitch,roll]=quat2angle(qk1');
+
+%Feedbacks loop for 9DOF
+p_qk=qk2;
+p_Pk=Pk2;
+end
+else
+%Feedbacks loop for 6DOF
+p_qk=qk1;
+p_Pk=Pk1;
+end
+%------------------Plot stime------------------%
+yaw=yaw*180/pi;
+pitch=pitch*180/pi;
+roll=roll*180/pi;
+
+addpoints(rollLine,c*T,roll);
+addpoints(rollSTMLine,c*T,rotation(c,3));
+
+addpoints(pitchLine,c*T,pitch);
+addpoints(pitchSTMLine,c*T,rotation(c,2));
+
+addpoints(yawLine,c*T,yaw);
+addpoints(yawSTMLine,c*T,rotation(c,1));
+
+addpoints(angularX,c*T,gyro(c,1)*180/pi);
+addpoints(angularY,c*T,gyro(c,2)*180/pi);
+addpoints(angularZ,c*T,gyro(c,3)*180/pi);
+end
+\end{lstlisting}
+
+
+
 \section{Testing}
 \subsection{Script per la stima del tempo di lettura di dati provenienti dall'IMU }
 \label{app:stimai2c}
@@ -111,6 +486,11 @@ if(id<1000){
 
 
 \end{lstlisting}
+
+
+
+
+
 
 
 \subsection{Script per la stima del tempo di trasmissione di dati al modulo App}
