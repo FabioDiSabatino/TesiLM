@@ -42,33 +42,34 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Rappresentazione del fenomeno di \textit {gimbal lock} \cite {gimbal}}}{43}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Rappresentazione del principio di funzionamento del filtro di Kalman a due stadi \cite {trackingThesis}}}{46}{figure.4.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{53}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{53}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{54}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{56}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{57}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{60}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{61}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 6DOF}}{62}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 9DOF}}{64}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {High Computation Mode}}}{66}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 6DOF}}{67}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 9DOF}}{69}{figure.5.12}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schema hardware del sistema}}{53}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{55}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{55}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{56}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{58}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{59}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{62}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{63}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 6DOF}}{64}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 9DOF}}{66}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {High Computation Mode}}}{68}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 6DOF}}{69}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 9DOF}}{71}{figure.5.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{73}{figure.6.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{73}{figure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{73}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{78}{figure.6.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{78}{figure.6.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{78}{figure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{78}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{79}{figure.6.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{79}{figure.6.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{79}{figure.6.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{79}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{81}{figure.6.4}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{75}{figure.6.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{75}{figure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{75}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{80}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{80}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{80}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{80}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{81}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{81}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{81}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{81}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{83}{figure.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{105}{figure.Alph2.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{109}{figure.Alph2.2}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{107}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{111}{figure.Alph2.2}
