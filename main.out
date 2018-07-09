@@ -72,8 +72,9 @@
 \BOOKMARK [1][-]{section.Alph1.2}{Testing}{appendix.Alph1}% 72
 \BOOKMARK [2][-]{subsection.Alph1.2.1}{Script per la stima del tempo di lettura di dati provenienti dall'IMU }{section.Alph1.2}% 73
 \BOOKMARK [2][-]{subsection.Alph1.2.2}{Script per la stima del tempo di trasmissione di dati al modulo App}{section.Alph1.2}% 74
-\BOOKMARK [0][-]{appendix.Alph2}{Filtro di Kalman}{}% 75
-\BOOKMARK [1][-]{section.Alph2.1}{Descrizione teorica del filtro di Kalman}{appendix.Alph2}% 76
-\BOOKMARK [1][-]{section.Alph2.2}{L'algoritmo del filtro di Kalman discreto}{appendix.Alph2}% 77
-\BOOKMARK [1][-]{section.Alph2.3}{Il filtro di Kalman esteso}{appendix.Alph2}% 78
-\BOOKMARK [0][-]{appendix*.5}{Bibliografia}{}% 79
+\BOOKMARK [2][-]{subsection.Alph1.2.3}{Script per il sistema ausiliario Arduino per l'analisi qualitativa}{section.Alph1.2}% 75
+\BOOKMARK [0][-]{appendix.Alph2}{Filtro di Kalman}{}% 76
+\BOOKMARK [1][-]{section.Alph2.1}{Descrizione teorica del filtro di Kalman}{appendix.Alph2}% 77
+\BOOKMARK [1][-]{section.Alph2.2}{L'algoritmo del filtro di Kalman discreto}{appendix.Alph2}% 78
+\BOOKMARK [1][-]{section.Alph2.3}{Il filtro di Kalman esteso}{appendix.Alph2}% 79
+\BOOKMARK [0][-]{appendix*.5}{Bibliografia}{}% 80

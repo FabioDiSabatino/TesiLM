@@ -219,6 +219,7 @@ Nella Tab.\ref{tab:zero-g} si riportano i valori di \textit{Media, Max} e le per
 
 
 \subsection{Stima dello zero-rate offset}
+\label{zero_rate}
 Per stimare lo zero-rate offset si è posto immobile l'IMU (come in Fig.\ref{fig:zero-g}) e si sono raccolti i dati letti dal giroscopio per un totale di due minuti. I valori ottenuti, per ognuno dei tre assi, sono mostrati in Fig.\ref{fig:zero-rate}:
 \begin{figure}[H]  
 	\centering 
@@ -252,5 +253,38 @@ A valle di queste considerazioni si vuole evidenziare come l'uso dei dati grezzi
 
 \section{Analisi qualitativa dell'assetto stimato}
 \label{analisiQualitativa}
+Quest'analisi ha lo scopo di verificare la correttezza dell'algoritmo di \textit{sensor fusion} implementato (sez.\ref{sensor_fusion}) e della libreria \textit{MotionFX} \cite{motion}. In particolare si vuole confrontare la stima dello \textit{yaw} (sez.\ref{angoliEulero}) a seguito di varie sollecitazioni. Questo perché la stima dell'imbardata è, attualmente, quella più utile per  identificare gli angoli assunti dall'operatore nel tragitto tra un nodo e l'altro (cap.\ref{descrizioeDelLavoro}).\\
+Per fare questo si è realizzato un "sistema ausiliario" ad hoc in grado di ruotare l'unità di misura inerziale ripetutamente e di un certo angolo. Tale sistema è composto da:
+\begin{itemize}
+	\item Un Arduino duemilanove
+	\item Un servo motore MG995
+\end{itemize}
+Ed è rappresentato dalla seguente figura:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.5]{analisi/servo.png}
+	\caption{Schema hardware del sistema ausiliario realizzato per eseguire l'analisi qualitativa}
+	\label{fig:arduino}
+\end{figure}
+Alla pressione del bottone mostrato in Fig.\ref{fig:arduino}, il codice all'interno di Arduino (App.\ref{app:scriptArduino}) manda un impulso al servo motore grazie al quale il servo ruota di $90^{\circ}$. Quindi Arduino attende 500 ms prima di inviare un'ulteriore segnale affinché il servo torni alla posizione iniziale. Questa procedura viene ripetuta dieci volte aspettando 1 secondo tra le prime cinque rotazioni di $\pm 90^{\circ}$ e le ultime. Il modulo App elabora i dati grezzi letti dal modulo Microcontrollore (sez.\ref{impl_hardware}) a seguito di questi movimenti e applica l'algoritmo di \textit{Sensor fusion} implementato. \\
+Le stime dello \textit{yaw} ottenute dai due moduli, a partire dagli stessi dati grezzi, sono mostrate dalle seguente figura:
+\begin{sidewaysfigure}[htbp]
+	\includegraphics[width=\textwidth]{analisi/analisiQualitativa.png}
+	\caption{Risultati analisi qualitativa}
+	\label{fig:analisiQualitativa}
+\end{sidewaysfigure}
+\newpage
+Come si può notare dalla Fig.\ref{fig:analisiQualitativa}, la risposta generale dei due algoritmi è buona. Infatti entrambi rispondono correttamente ai movimenti rotatori effettuati intorno all'asse $Z$ dell'IMU facendo oscillare lo \textit{yaw} di $\pm 90^{\circ}$ rispetto all'angolo di partenza ( da notare che per il modulo APP è circa  $ 110^{\circ}$ mentre per il micro è  $0^{\circ}$ ).\\
+Tuttavia si nota facilmente come la stima da parte del modulo APP diverga sempre più, muovendo verso l'alto il range dei valori picco-picco. Tale variazione è costante e rappresentata dalla seguente figura:
+\begin{figure}[H]  
+	\centering 
+	\includegraphics[scale=0.35]{analisi/analisiQualitativaApp.png}
+	\caption{Retta di divergenza della stima dello \textit{yaw} eseguita dal modulo APP.}
+	\label{fig:analisiQualitativaApp}
+\end{figure}
+A partire da un angolo stimato di $ 110^{\circ}$ lo \textit{yaw} dopo dieci rotazioni di $\pm 90^{\circ}$ effettuate in $\approx 15 sec$ lo \textit{yaw} finale risulta essere  $ 157^{\circ}$. Da tali valori si calcola facilmente che il coefficiente angolare delle rette di divergenza mostrate in Fig.\ref{fig:analisiQualitativaApp} è di $3,13$. Questo risultato è coerente con quanto emerso nell'analisi dello zero-rate (sez.\ref{zero_rate}), ovvero che lungo l'asse z si ha un \textit{drift} di valore medio pari a $\approx 3,12 dps$.\\
+Alla luce di questa analisi è facile capire come l'algoritmo di \textit{Sensor fusion} (sez.\ref{sensor_fusion}) implementato e utilizzato dal modulo APP non tenga conto di questo fenomeno, cosa che avviene invece all'interno della libreria \textit{MotionFX} utilizzata dal modulo Microcontrollore poiché i valori picco-picco restano confinati all'interno dell'intervallo $[0^{\circ},-90^{\circ}]$ come mostrato dalla Fig.\ref{fig:analisiQualitativa}.
+
+
 
 

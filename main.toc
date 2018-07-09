@@ -61,21 +61,22 @@
 \contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{82}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{84}{subsection.6.2.3}
 \contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{84}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{85}{chapter.7}
-\contentsline {chapter}{\numberline {A}Script}{86}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Operativi}{86}{section.Alph1.1}
-\contentsline {subsection}{\numberline {A.1.1}Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{86}{subsection.Alph1.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Script di inizializzazione del micro}{88}{subsection.Alph1.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Script per la stima del tempo di trasmissione di dati al modulo App}{89}{subsection.Alph1.1.3}
-\contentsline {subsection}{\numberline {A.1.4}Script Low Computation Mode}{90}{subsection.Alph1.1.4}
-\contentsline {subsection}{\numberline {A.1.5}Script High Computation Mode}{92}{subsection.Alph1.1.5}
-\contentsline {subsection}{\numberline {A.1.6}Script Test Computation Mode per il modulo Microcontrollore}{94}{subsection.Alph1.1.6}
-\contentsline {subsection}{\numberline {A.1.7}Script Test Computation Mode per il modulo APP}{97}{subsection.Alph1.1.7}
-\contentsline {section}{\numberline {A.2}Testing}{100}{section.Alph1.2}
-\contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{100}{subsection.Alph1.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{101}{subsection.Alph1.2.2}
-\contentsline {chapter}{\numberline {B}Filtro di Kalman}{103}{appendix.Alph2}
-\contentsline {section}{\numberline {B.1}Descrizione teorica del filtro di Kalman}{103}{section.Alph2.1}
-\contentsline {section}{\numberline {B.2}L'algoritmo del filtro di Kalman discreto}{105}{section.Alph2.2}
-\contentsline {section}{\numberline {B.3}Il filtro di Kalman esteso}{108}{section.Alph2.3}
-\contentsline {chapter}{Bibliografia}{112}{appendix*.5}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{88}{chapter.7}
+\contentsline {chapter}{\numberline {A}Script}{89}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Operativi}{89}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{89}{subsection.Alph1.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Script di inizializzazione del micro}{91}{subsection.Alph1.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Script per la stima del tempo di trasmissione di dati al modulo App}{92}{subsection.Alph1.1.3}
+\contentsline {subsection}{\numberline {A.1.4}Script Low Computation Mode}{93}{subsection.Alph1.1.4}
+\contentsline {subsection}{\numberline {A.1.5}Script High Computation Mode}{95}{subsection.Alph1.1.5}
+\contentsline {subsection}{\numberline {A.1.6}Script Test Computation Mode per il modulo Microcontrollore}{97}{subsection.Alph1.1.6}
+\contentsline {subsection}{\numberline {A.1.7}Script Test Computation Mode per il modulo APP}{100}{subsection.Alph1.1.7}
+\contentsline {section}{\numberline {A.2}Testing}{103}{section.Alph1.2}
+\contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{103}{subsection.Alph1.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{104}{subsection.Alph1.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Script per il sistema ausiliario Arduino per l'analisi qualitativa}{105}{subsection.Alph1.2.3}
+\contentsline {chapter}{\numberline {B}Filtro di Kalman}{107}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Descrizione teorica del filtro di Kalman}{107}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}L'algoritmo del filtro di Kalman discreto}{109}{section.Alph2.2}
+\contentsline {section}{\numberline {B.3}Il filtro di Kalman esteso}{112}{section.Alph2.3}
+\contentsline {chapter}{Bibliografia}{116}{appendix*.5}

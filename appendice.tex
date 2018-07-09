@@ -524,6 +524,53 @@ while(1)
 
 \end{lstlisting}
 
+\subsection{Script per il sistema ausiliario Arduino per l'analisi qualitativa}
+\label{app:scriptArduino}
+Di seguito si riporta il codice utilizzato su Arduino per muovere il servo motore al fine di effettuare l'analisi qualitativa degli
+algoritmi di \textit{Sensor Fusion}.\\
+\noindent\rule{14.1cm}{0.4pt}
+
+\begin{lstlisting}[language=C]
+#include <Servo.h>
+Servo myservo;  // create servo object to control a servo
+// a maximum of eight servo objects can be created
+int pos = 0;    // variable to store the servo position
+int buttonState=0; // variable for reading the pushbutton status
+int count=0;
+
+// constants won't change. They're used here to set pin numbers:
+const int buttonPin = 2;     // the number of the pushbutton pin
+const int ledPin =  13;      // the number of the LED pin
+
+void setup() {
+	// attaches the servo on pin 9 to the servo object
+	myservo.attach(9);  
+	// initialize the LED pin as an output:
+	pinMode(ledPin, OUTPUT);
+	// initialize the pushbutton pin as an input:
+	pinMode(buttonPin, INPUT);
+	myservo.write(0);
+}
+void loop() {
+	while(digitalRead(buttonPin)!= HIGH){
+		digitalWrite(ledPin, LOW);
+		};
+	
+	for (int i=0;i<2;i++){
+		for(int j=0;j<5;i++){
+			digitalWrite(ledPin, HIGH);
+			myservo.write(90);
+			delay(500);
+			myservo.write(0);
+			delay(500);
+		}
+		delay(1000);
+	}
+}
+
+\end{lstlisting}
+
+
 
 \chapter{Filtro di Kalman}
 \label{appendixKalman}

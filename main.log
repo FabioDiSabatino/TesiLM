@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.17)  8 JUL 2018 11:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.17)  9 JUL 2018 11:44
 entering extended mode
 **./main.tex
 (main.tex
@@ -581,7 +581,7 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks34
 \verbatim@in@stream=\read1
 )
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 157.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 158.
 
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
@@ -589,29 +589,29 @@ File: t1txtt.fd 2000/12/15 v3.1
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 257.
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 257.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 257.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 258.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 258.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 258.
 
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 257.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 257.
+LaTeX Font Info:    ... okay on input line 258.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 258.
 
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
@@ -633,7 +633,7 @@ ii"
 \everyMPtoPDFconversion=\toks36
 )
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 257.
+Package hyperref Info: Link coloring OFF on input line 258.
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\nameref.s
 ty"
@@ -645,15 +645,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count145
 )
-LaTeX Info: Redefining \ref on input line 257.
-LaTeX Info: Redefining \pageref on input line 257.
-LaTeX Info: Redefining \nameref on input line 257.
+LaTeX Info: Redefining \ref on input line 258.
+LaTeX Info: Redefining \pageref on input line 258.
+LaTeX Info: Redefining \nameref on input line 258.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Info: Redefining \it@ocap on input line 257.
-LaTeX Info: Redefining \it@ccap on input line 257.
+LaTeX Info: Redefining \it@ocap on input line 258.
+LaTeX Info: Redefining \it@ccap on input line 258.
 
 
 File italian.ldf warning: 
@@ -661,7 +661,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 257.
+italian.ldf    on input line 258.
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -678,7 +678,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 7.
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<logo_univ.png, id=319, 63.8385pt x 70.46326pt>
+<logo_univ.png, id=323, 63.8385pt x 70.46326pt>
 File: logo_univ.png Graphic file (type png)
 <use logo_univ.png>
 Package pdftex.def Info: logo_univ.png  used on input line 8.
@@ -690,7 +690,7 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 16.
-<FIGS/logo_ing.png, id=321, 192.72pt x 262.9825pt>
+<FIGS/logo_ing.png, id=325, 192.72pt x 262.9825pt>
 File: FIGS/logo_ing.png Graphic file (type png)
 <use FIGS/logo_ing.png>
 Package pdftex.def Info: FIGS/logo_ing.png  used on input line 18.
@@ -703,7 +703,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 {C:/Users/Fabio/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo_univ
 .png> <./FIGS/logo_ing.png>])
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 276.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 277.
  (main.toc [1
 
 ] [2])
@@ -738,7 +738,7 @@ va-men-te sul-l'as-se X []6.3(a)[],
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
-<Introduzione/piantina1.png, id=649, 530.58224pt x 361.35pt>
+<Introduzione/piantina1.png, id=661, 530.58224pt x 361.35pt>
 File: Introduzione/piantina1.png Graphic file (type png)
 <use Introduzione/piantina1.png>
 Package pdftex.def Info: Introduzione/piantina1.png  used on input line 14.
@@ -748,7 +748,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 14--15
  [][] 
  []
 
-<Introduzione/piantina2.png, id=650, 530.58224pt x 360.74776pt>
+<Introduzione/piantina2.png, id=662, 530.58224pt x 360.74776pt>
 File: Introduzione/piantina2.png Graphic file (type png)
 <use Introduzione/piantina2.png>
 Package pdftex.def Info: Introduzione/piantina2.png  used on input line 21.
@@ -778,7 +778,7 @@ figure.0.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.27 \newpage
               <./Introduzione/piantina1.png> <./Introduzione/piantina2.png>]
-<Introduzione/intervento_step_1.png, id=659, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_1.png, id=671, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_1.png Graphic file (type png)
 <use Introduzione/intervento_step_1.png>
 Package pdftex.def Info: Introduzione/intervento_step_1.png  used on input line
@@ -789,7 +789,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 34--35
  [][] 
  []
 
-<Introduzione/intervento_step_2.png, id=660, 532.389pt x 360.74776pt>
+<Introduzione/intervento_step_2.png, id=672, 532.389pt x 360.74776pt>
 File: Introduzione/intervento_step_2.png Graphic file (type png)
 <use Introduzione/intervento_step_2.png>
 Package pdftex.def Info: Introduzione/intervento_step_2.png  used on input line
@@ -800,7 +800,7 @@ Overfull \hbox (15.6224pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
-<Introduzione/intervento_step_3.png, id=661, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_3.png, id=673, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_3.png Graphic file (type png)
 <use Introduzione/intervento_step_3.png>
 Package pdftex.def Info: Introduzione/intervento_step_3.png  used on input line
@@ -811,7 +811,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 51--52
  [][] 
  []
 
-<Introduzione/intervento_step_4.png, id=662, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_4.png, id=674, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_4.png Graphic file (type png)
 <use Introduzione/intervento_step_4.png>
 Package pdftex.def Info: Introduzione/intervento_step_4.png  used on input line
@@ -822,7 +822,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 58--59
  [][] 
  []
 
-<Introduzione/intervento_step_5.png, id=663, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_5.png, id=675, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_5.png Graphic file (type png)
 <use Introduzione/intervento_step_5.png>
 Package pdftex.def Info: Introduzione/intervento_step_5.png  used on input line
@@ -833,7 +833,7 @@ Overfull \hbox (14.99004pt too wide) in paragraph at lines 67--68
  [][] 
  []
 
-<Introduzione/intervento_step_6.png, id=664, 530.58224pt x 360.74776pt>
+<Introduzione/intervento_step_6.png, id=676, 530.58224pt x 360.74776pt>
 File: Introduzione/intervento_step_6.png Graphic file (type png)
 <use Introduzione/intervento_step_6.png>
 Package pdftex.def Info: Introduzione/intervento_step_6.png  used on input line
@@ -891,7 +891,7 @@ ntroduzione/intervento_step_6.png>]
 Capitolo 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
-<ContestoApplicativo/bilancia.jpg, id=681, 755.07094pt x 451.6875pt>
+<ContestoApplicativo/bilancia.jpg, id=693, 755.07094pt x 451.6875pt>
 File: ContestoApplicativo/bilancia.jpg Graphic file (type jpg)
 <use ContestoApplicativo/bilancia.jpg>
 Package pdftex.def Info: ContestoApplicativo/bilancia.jpg  used on input line 1
@@ -912,7 +912,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 l.33 	\item \textbf
                    {IPSs}: \textit{Indoor Positioning System Services}, ovve...
  <./ContestoApplicativo/bilancia.jpg>] [6]
-<ContestoApplicativo/application.png, id=705, 202.356pt x 150.5625pt>
+<ContestoApplicativo/application.png, id=717, 202.356pt x 150.5625pt>
 File: ContestoApplicativo/application.png Graphic file (type png)
 <use ContestoApplicativo/application.png>
 Package pdftex.def Info: ContestoApplicativo/application.png  used on input lin
@@ -930,7 +930,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--65
                                                   \fi \fi 
 l.65 
       <./ContestoApplicativo/application.png>] [8]
-<ContestoApplicativo/signal.PNG, id=729, 178.86826pt x 145.14224pt>
+<ContestoApplicativo/signal.PNG, id=741, 178.86826pt x 145.14224pt>
 File: ContestoApplicativo/signal.PNG Graphic file (type png)
 <use ContestoApplicativo/signal.PNG>
 Package pdftex.def Info: ContestoApplicativo/signal.PNG  used on input line 114
@@ -948,7 +948,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--154
  []
 
 [10]
-<ContestoApplicativo/toa.png, id=752, 697.8572pt x 585.68813pt>
+<ContestoApplicativo/toa.png, id=764, 697.8572pt x 585.68813pt>
 File: ContestoApplicativo/toa.png Graphic file (type png)
 <use ContestoApplicativo/toa.png>
 Package pdftex.def Info: ContestoApplicativo/toa.png  used on input line 169.
@@ -960,7 +960,7 @@ Package pdftex.def Info: ContestoApplicativo/toa.png  used on input line 169.
                                                   \fi \fi 
 l.189 
        <./ContestoApplicativo/toa.png>]
-<ContestoApplicativo/tdoa.png, id=768, 596.98032pt x 589.4522pt>
+<ContestoApplicativo/tdoa.png, id=780, 596.98032pt x 589.4522pt>
 File: ContestoApplicativo/tdoa.png Graphic file (type png)
 <use ContestoApplicativo/tdoa.png>
 Package pdftex.def Info: ContestoApplicativo/tdoa.png  used on input line 196.
@@ -978,7 +978,7 @@ Overfull \hbox (64.0161pt too wide) in paragraph at lines 211--212
 e di-men-sio-ni: $\OT1/cmr/m/n/12 ([] \OMS/cmsy/m/n/12   []\OT1/cmr/m/n/12 )$ 
  []
 
-<ContestoApplicativo/tdoa1.png, id=776, 567.62062pt x 354.57469pt>
+<ContestoApplicativo/tdoa1.png, id=788, 567.62062pt x 354.57469pt>
 File: ContestoApplicativo/tdoa1.png Graphic file (type png)
 <use ContestoApplicativo/tdoa1.png>
 Package pdftex.def Info: ContestoApplicativo/tdoa1.png  used on input line 218.
@@ -992,7 +992,7 @@ Package pdftex.def Info: ContestoApplicativo/tdoa1.png  used on input line 218.
 l.238 	\item $
               G(\varphi)$ è il campo elettrico del nodo target <./ContestoAppl
 icativo/tdoa1.png>]
-<ContestoApplicativo/aoa.png, id=793, 649.67719pt x 378.66469pt>
+<ContestoApplicativo/aoa.png, id=805, 649.67719pt x 378.66469pt>
 File: ContestoApplicativo/aoa.png Graphic file (type png)
 <use ContestoApplicativo/aoa.png>
 Package pdftex.def Info: ContestoApplicativo/aoa.png  used on input line 270.
@@ -1004,14 +1004,14 @@ Package pdftex.def Info: ContestoApplicativo/aoa.png  used on input line 270.
                                                   \fi \fi 
 l.276 
        <./ContestoApplicativo/aoa.png>]
-<ContestoApplicativo/minmax.png, id=808, 821.31844pt x 623.32875pt>
+<ContestoApplicativo/minmax.png, id=820, 821.31844pt x 623.32875pt>
 File: ContestoApplicativo/minmax.png Graphic file (type png)
 <use ContestoApplicativo/minmax.png>
 Package pdftex.def Info: ContestoApplicativo/minmax.png  used on input line 296
 .
 (pdftex.def)             Requested size: 328.52155pt x 249.32707pt.
  [15]
-<ContestoApplicativo/trilaterazione.png, id=813, 165.0165pt x 146.34676pt>
+<ContestoApplicativo/trilaterazione.png, id=825, 165.0165pt x 146.34676pt>
 File: ContestoApplicativo/trilaterazione.png Graphic file (type png)
 <use ContestoApplicativo/trilaterazione.png>
 Package pdftex.def Info: ContestoApplicativo/trilaterazione.png  used on input 
@@ -1036,7 +1036,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 331--333
  []
 
 [17]
-<ContestoApplicativo/triangolazione.png, id=838, 797.22844pt x 545.78906pt>
+<ContestoApplicativo/triangolazione.png, id=850, 797.22844pt x 545.78906pt>
 File: ContestoApplicativo/triangolazione.png Graphic file (type png)
 <use ContestoApplicativo/triangolazione.png>
 Package pdftex.def Info: ContestoApplicativo/triangolazione.png  used on input 
@@ -1055,7 +1055,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 384--385
 
 ) (descrizione_del_sistema.tex [19]
 Capitolo 2.
-<DescrizioneDelSistema/livelli_astrazione.png, id=852, 732.48656pt x 476.53032p
+<DescrizioneDelSistema/livelli_astrazione.png, id=864, 732.48656pt x 476.53032p
 t>
 File: DescrizioneDelSistema/livelli_astrazione.png Graphic file (type png)
 <use DescrizioneDelSistema/livelli_astrazione.png>
@@ -1071,7 +1071,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.10 \newpage
               <./DescrizioneDelSistema/livelli_astrazione.png>]
-<DescrizioneDelSistema/requisitiSistema.png, id=859, 747.54282pt x 365.11406pt>
+<DescrizioneDelSistema/requisitiSistema.png, id=871, 747.54282pt x 365.11406pt>
 
 File: DescrizioneDelSistema/requisitiSistema.png Graphic file (type png)
 <use DescrizioneDelSistema/requisitiSistema.png>
@@ -1085,7 +1085,7 @@ put line 20.
                                                   \fi \fi 
 l.30 \newpage
               <./DescrizioneDelSistema/requisitiSistema.png>]
-<DescrizioneDelSistema/ambiguitDistanza.png, id=870, 582.67688pt x 682.80093pt>
+<DescrizioneDelSistema/ambiguitDistanza.png, id=882, 582.67688pt x 682.80093pt>
 
 File: DescrizioneDelSistema/ambiguitDistanza.png Graphic file (type png)
 <use DescrizioneDelSistema/ambiguitDistanza.png>
@@ -1093,7 +1093,7 @@ Package pdftex.def Info: DescrizioneDelSistema/ambiguitDistanza.png  used on in
 put line 44.
 (pdftex.def)             Requested size: 203.93996pt x 238.9839pt.
  [22]
-<DescrizioneDelSistema/sistema_liv1.png, id=876, 1267.73625pt x 554.82281pt>
+<DescrizioneDelSistema/sistema_liv1.png, id=888, 1267.73625pt x 554.82281pt>
 File: DescrizioneDelSistema/sistema_liv1.png Graphic file (type png)
 <use DescrizioneDelSistema/sistema_liv1.png>
 Package pdftex.def Info: DescrizioneDelSistema/sistema_liv1.png  used on input 
@@ -1114,7 +1114,7 @@ tifier (name{figure.2.4}) has been already used, duplicate ignored
 l.68 ...ongono il sottosistema realizzato.\newpage
                                                    <./DescrizioneDelSistema/sis
 tema_liv1.png>]
-<DescrizioneDelSistema/sistema_liv2.png, id=892, 1500.35532pt x 765.6103pt>
+<DescrizioneDelSistema/sistema_liv2.png, id=904, 1500.35532pt x 765.6103pt>
 File: DescrizioneDelSistema/sistema_liv2.png Graphic file (type png)
 <use DescrizioneDelSistema/sistema_liv2.png>
 Package pdftex.def Info: DescrizioneDelSistema/sistema_liv2.png  used on input 
@@ -1125,7 +1125,7 @@ Overfull \hbox (51.77148pt too wide) in paragraph at lines 75--76
 [][]
  []
 
-<DescrizioneDelSistema/flusso1.png, id=895, 1500.35532pt x 766.36313pt>
+<DescrizioneDelSistema/flusso1.png, id=907, 1500.35532pt x 766.36313pt>
 File: DescrizioneDelSistema/flusso1.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso1.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso1.png  used on input line 
@@ -1139,7 +1139,7 @@ Package pdftex.def Info: DescrizioneDelSistema/flusso1.png  used on input line
 l.87 I
        dati acquisiti sono "grezzi" e devono essere elaborati (Cap.\ref{elab...
  <./DescrizioneDelSistema/sistema_liv2.png>]
-<DescrizioneDelSistema/flusso2.png, id=904, 1500.35532pt x 773.89125pt>
+<DescrizioneDelSistema/flusso2.png, id=916, 1500.35532pt x 773.89125pt>
 File: DescrizioneDelSistema/flusso2.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso2.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso2.png  used on input line 
@@ -1153,7 +1153,7 @@ Package pdftex.def Info: DescrizioneDelSistema/flusso2.png  used on input line
 l.99 P
       oiché per ipotesi si è scelto di settare la linea di comando sul val...
  <./DescrizioneDelSistema/flusso1.png>]
-<DescrizioneDelSistema/flusso3.png, id=910, 1494.33281pt x 773.89125pt>
+<DescrizioneDelSistema/flusso3.png, id=922, 1494.33281pt x 773.89125pt>
 File: DescrizioneDelSistema/flusso3.png Graphic file (type png)
 <use DescrizioneDelSistema/flusso3.png>
 Package pdftex.def Info: DescrizioneDelSistema/flusso3.png  used on input line 
@@ -1177,12 +1177,12 @@ Capitolo 3.
 [29
 
 ]
-<tecnologie/acc1.png, id=936, 807.7678pt x 742.27313pt>
+<tecnologie/acc1.png, id=948, 807.7678pt x 742.27313pt>
 File: tecnologie/acc1.png Graphic file (type png)
 <use tecnologie/acc1.png>
 Package pdftex.def Info: tecnologie/acc1.png  used on input line 36.
 (pdftex.def)             Requested size: 201.94145pt x 185.56783pt.
-<tecnologie/acc2.png, id=937, 858.20625pt x 620.3175pt>
+<tecnologie/acc2.png, id=949, 858.20625pt x 620.3175pt>
 File: tecnologie/acc2.png Graphic file (type png)
 <use tecnologie/acc2.png>
 Package pdftex.def Info: tecnologie/acc2.png  used on input line 43.
@@ -1205,7 +1205,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
                                                   \fi \fi 
 l.58 \begin{equation}
                       <./tecnologie/acc2.png>]
-<tecnologie/gyro.png, id=956, 252.945pt x 165.61874pt>
+<tecnologie/gyro.png, id=968, 252.945pt x 165.61874pt>
 File: tecnologie/gyro.png Graphic file (type png)
 <use tecnologie/gyro.png>
 Package pdftex.def Info: tecnologie/gyro.png  used on input line 66.
@@ -1217,7 +1217,7 @@ Package pdftex.def Info: tecnologie/gyro.png  used on input line 66.
                                                   \fi \fi 
 l.80 \end{equation}
                     <./tecnologie/gyro.png>]
-<tecnologie/magnet.png, id=964, 1005.7575pt x 618.05907pt>
+<tecnologie/magnet.png, id=976, 1005.7575pt x 618.05907pt>
 File: tecnologie/magnet.png Graphic file (type png)
 <use tecnologie/magnet.png>
 Package pdftex.def Info: tecnologie/magnet.png  used on input line 95.
@@ -1234,12 +1234,12 @@ e.3.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.117 
        <./tecnologie/magnet.png>]
-<tecnologie/framesa.png, id=978, 184.2885pt x 142.131pt>
+<tecnologie/framesa.png, id=990, 184.2885pt x 142.131pt>
 File: tecnologie/framesa.png Graphic file (type png)
 <use tecnologie/framesa.png>
 Package pdftex.def Info: tecnologie/framesa.png  used on input line 130.
 (pdftex.def)             Requested size: 170.71652pt x 131.66644pt.
-<tecnologie/framesb.png, id=979, 214.401pt x 162.6075pt>
+<tecnologie/framesb.png, id=991, 214.401pt x 162.6075pt>
 File: tecnologie/framesb.png Graphic file (type png)
 <use tecnologie/framesb.png>
 Package pdftex.def Info: tecnologie/framesb.png  used on input line 131.
@@ -1276,7 +1276,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--46
 
  []
 
-<elaborazione/rpy.png, id=1028, 542.025pt x 406.51875pt>
+<elaborazione/rpy.png, id=1040, 542.025pt x 406.51875pt>
 File: elaborazione/rpy.png Graphic file (type png)
 <use elaborazione/rpy.png>
 Package pdftex.def Info: elaborazione/rpy.png  used on input line 61.
@@ -1293,7 +1293,7 @@ Overfull \hbox (64.62901pt too wide) in alignment at lines 94--101
                                                   \fi \fi 
 l.101 \end{eqnarray}
                      <./elaborazione/rpy.png>]
-<elaborazione/eulero.png, id=1046, 317.988pt x 271.61475pt>
+<elaborazione/eulero.png, id=1058, 317.988pt x 271.61475pt>
 File: elaborazione/eulero.png Graphic file (type png)
 <use elaborazione/eulero.png>
 Package pdftex.def Info: elaborazione/eulero.png  used on input line 113.
@@ -1312,7 +1312,7 @@ LaTeX Warning: Command \textdegree invalid in math mode on input line 128.
 LaTeX Warning: Command \textdegree invalid in math mode on input line 128.
 
 Missing character: There is no � in font cmr12!
-<elaborazione/gimbal.png, id=1059, 593.37474pt x 557.08125pt>
+<elaborazione/gimbal.png, id=1071, 593.37474pt x 557.08125pt>
 File: elaborazione/gimbal.png Graphic file (type png)
 <use elaborazione/gimbal.png>
 Package pdftex.def Info: elaborazione/gimbal.png  used on input line 131.
@@ -1334,7 +1334,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--156
  []
 
 [44]
-<elaborazione/filtro.png, id=1099, 1233.10687pt x 618.81187pt>
+<elaborazione/filtro.png, id=1111, 1233.10687pt x 618.81187pt>
 File: elaborazione/filtro.png Graphic file (type png)
 <use elaborazione/filtro.png>
 Package pdftex.def Info: elaborazione/filtro.png  used on input line 213.
@@ -1354,11 +1354,11 @@ Overfull \hbox (3.30954pt too wide) in paragraph at lines 372--373
 
 [50]) (Implementazione.tex [51]
 Capitolo 5.
-<implementazione/schemaHardware.png, id=1161, 1544.01843pt x 689.57625pt>
+<implementazione/schemaHardware.png, id=1173, 1544.01843pt x 689.57625pt>
 File: implementazione/schemaHardware.png Graphic file (type png)
 <use implementazione/schemaHardware.png>
 Package pdftex.def Info: implementazione/schemaHardware.png  used on input line
- 10.
+ 11.
 (pdftex.def)             Requested size: 597.50787pt x 266.85028pt.
 [52
 
@@ -1367,40 +1367,40 @@ Package pdftex.def Info: implementazione/schemaHardware.png  used on input line
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.14 \newpage
+l.15 \newpage
               <./implementazione/schemaHardware.png>]
-<implementazione/i2cFoto.jpg, id=1178, 1967.35pt x 1626.075pt>
+<implementazione/i2cFoto.jpg, id=1190, 1967.35pt x 1626.075pt>
 File: implementazione/i2cFoto.jpg Graphic file (type jpg)
 <use implementazione/i2cFoto.jpg>
-Package pdftex.def Info: implementazione/i2cFoto.jpg  used on input line 39.
+Package pdftex.def Info: implementazione/i2cFoto.jpg  used on input line 40.
 (pdftex.def)             Requested size: 196.74652pt x 162.61702pt.
  [54]
-<implementazione/i2c.png, id=1184, 426.59375pt x 150.5625pt>
+<implementazione/i2c.png, id=1196, 426.59375pt x 150.5625pt>
 File: implementazione/i2c.png Graphic file (type png)
 <use implementazione/i2c.png>
-Package pdftex.def Info: implementazione/i2c.png  used on input line 51.
+Package pdftex.def Info: implementazione/i2c.png  used on input line 52.
 (pdftex.def)             Requested size: 255.95822pt x 90.33818pt.
  [55pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.58 \begin{itemize}
+l.59 \begin{itemize}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.58 \begin{itemize}
+l.59 \begin{itemize}
                      <./implementazione/i2cFoto.jpg> <./implementazione/i2c.png
 >]
-<implementazione/i2cRead.png, id=1193, 798.5835pt x 63.23625pt>
+<implementazione/i2cRead.png, id=1205, 798.5835pt x 63.23625pt>
 File: implementazione/i2cRead.png Graphic file (type png)
 <use implementazione/i2cRead.png>
-Package pdftex.def Info: implementazione/i2cRead.png  used on input line 72.
+Package pdftex.def Info: implementazione/i2cRead.png  used on input line 73.
 (pdftex.def)             Requested size: 399.29077pt x 31.61804pt.
 
-Overfull \hbox (0.9522pt too wide) in paragraph at lines 72--73
+Overfull \hbox (0.9522pt too wide) in paragraph at lines 73--74
  [][] 
  []
 
@@ -1409,26 +1409,26 @@ Overfull \hbox (0.9522pt too wide) in paragraph at lines 72--73
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.80 	\item \textit
+l.81 	\item \textit
                    {SAK} lo slave con l'indirizzo specificato precedentement...
  <./implementazione/i2cRead.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 
-LaTeX Warning: Reference `usbFoto' on page 57 undefined on input line 96.
+LaTeX Warning: Reference `usbFoto' on page 57 undefined on input line 97.
 
-<implementazione/usbFoto.jpg, id=1202, 1967.35pt x 1746.525pt>
+<implementazione/usbFoto.jpg, id=1214, 1967.35pt x 1746.525pt>
 File: implementazione/usbFoto.jpg Graphic file (type jpg)
 <use implementazione/usbFoto.jpg>
-Package pdftex.def Info: implementazione/usbFoto.jpg  used on input line 99.
+Package pdftex.def Info: implementazione/usbFoto.jpg  used on input line 100.
 (pdftex.def)             Requested size: 196.74652pt x 174.66273pt.
 [57]
-<implementazione/cdcDevice.png, id=1210, 874.76813pt x 505.13719pt>
+<implementazione/cdcDevice.png, id=1222, 874.76813pt x 505.13719pt>
 File: implementazione/cdcDevice.png Graphic file (type png)
 <use implementazione/cdcDevice.png>
-Package pdftex.def Info: implementazione/cdcDevice.png  used on input line 114.
+Package pdftex.def Info: implementazione/cdcDevice.png  used on input line 115.
 
 (pdftex.def)             Requested size: 349.90105pt x 202.05128pt.
  [58pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
@@ -1436,19 +1436,19 @@ Package pdftex.def Info: implementazione/cdcDevice.png  used on input line 114.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.118 U
+l.119 U
        n dispositivo CDC solitamente usa le senguenti combinazioni di \texti...
  <./implementazione/usbFoto.jpg>]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 131.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 132.
 
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 131.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 132.
 
-Overfull \hbox (31.40771pt too wide) in paragraph at lines 128--137
+Overfull \hbox (31.40771pt too wide) in paragraph at lines 129--138
  [][] 
  []
 
@@ -1457,50 +1457,50 @@ Overfull \hbox (31.40771pt too wide) in paragraph at lines 128--137
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.139 L
+l.140 L
        a libreria HAL utilizzata nel lavoro di questa tesi, utilizza due tip...
  <./implementazione/cdcDevice.png>] [60pdfTeX warning (ext4): destination with 
 the same identifier (name{table.5.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.147 
+l.148 
       ]
-<implementazione/diagramma.png, id=1228, 859.71187pt x 793.46437pt>
+<implementazione/diagramma.png, id=1240, 859.71187pt x 793.46437pt>
 File: implementazione/diagramma.png Graphic file (type png)
 <use implementazione/diagramma.png>
-Package pdftex.def Info: implementazione/diagramma.png  used on input line 161.
+Package pdftex.def Info: implementazione/diagramma.png  used on input line 162.
 
 (pdftex.def)             Requested size: 257.91554pt x 238.04114pt.
  [61]
-<implementazione/diagrammaApp.png, id=1238, 207.77625pt x 473.51906pt>
+<implementazione/diagrammaApp.png, id=1250, 207.77625pt x 473.51906pt>
 File: implementazione/diagrammaApp.png Graphic file (type png)
 <use implementazione/diagrammaApp.png>
 Package pdftex.def Info: implementazione/diagrammaApp.png  used on input line 1
-81.
+82.
 (pdftex.def)             Requested size: 83.10901pt x 189.40425pt.
  [62pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.184 \end{figure}
+l.185 \end{figure}
                    <./implementazione/diagramma.png>] [63pdfTeX warning (ext4):
  destination with the same identifier (name{figure.5.8}) has been already used,
  duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.194 \subsection
+l.195 \subsection
                  {Modalità di computazione} <./implementazione/diagrammaApp.pn
 g>]
-<implementazione/lcm6Foto.png, id=1256, 639.13782pt x 197.23688pt>
+<implementazione/lcm6Foto.png, id=1268, 639.13782pt x 197.23688pt>
 File: implementazione/lcm6Foto.png Graphic file (type png)
 <use implementazione/lcm6Foto.png>
-Package pdftex.def Info: implementazione/lcm6Foto.png  used on input line 204.
+Package pdftex.def Info: implementazione/lcm6Foto.png  used on input line 205.
 (pdftex.def)             Requested size: 319.56813pt x 98.61818pt.
 
-Overfull \hbox (3.60928pt too wide) in paragraph at lines 211--223
+Overfull \hbox (3.60928pt too wide) in paragraph at lines 212--224
 [][]
  []
 
@@ -1509,22 +1509,22 @@ Overfull \hbox (3.60928pt too wide) in paragraph at lines 211--223
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.225 A
+l.226 A
         questi vanno aggiunti quattro campi ";"  utilizzati per separare le ...
  <./implementazione/lcm6Foto.png>]
-<implementazione/lcm9Foto.png, id=1265, 919.18407pt x 197.23688pt>
+<implementazione/lcm9Foto.png, id=1277, 919.18407pt x 197.23688pt>
 File: implementazione/lcm9Foto.png Graphic file (type png)
 <use implementazione/lcm9Foto.png>
-Package pdftex.def Info: implementazione/lcm9Foto.png  used on input line 231.
+Package pdftex.def Info: implementazione/lcm9Foto.png  used on input line 232.
 (pdftex.def)             Requested size: 367.66711pt x 78.89334pt.
  [65pdfTeX warning (ext4): destination with the same identifier (name{table.5.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.235 
+l.236 
       ]
-Overfull \hbox (3.60928pt too wide) in paragraph at lines 239--255
+Overfull \hbox (3.60928pt too wide) in paragraph at lines 240--256
 [][]
  []
 
@@ -1533,40 +1533,40 @@ Overfull \hbox (3.60928pt too wide) in paragraph at lines 239--255
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.257 A
+l.258 A
        ncora una volta per determinare la dimensione totale del pacchetto, b...
  <./implementazione/lcm9Foto.png>] [67pdfTeX warning (ext4): destination with t
 he same identifier (name{table.5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.259 \subsubsection
+l.260 \subsubsection
                     {High Computation mode}]
-<implementazione/hcmFoto.png, id=1283, 347.79938pt x 197.23688pt>
+<implementazione/hcmFoto.png, id=1295, 347.79938pt x 197.23688pt>
 File: implementazione/hcmFoto.png Graphic file (type png)
 <use implementazione/hcmFoto.png>
-Package pdftex.def Info: implementazione/hcmFoto.png  used on input line 266.
+Package pdftex.def Info: implementazione/hcmFoto.png  used on input line 267.
 (pdftex.def)             Requested size: 139.11728pt x 78.89334pt.
  [68pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.286 
+l.287 
       pdfTeX warning (ext4): destination with the same identifier (name{table.5
 .4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.286 
+l.287 
        <./implementazione/hcmFoto.png>]
-<implementazione/tcm6Foto.png, id=1293, 916.1728pt x 197.23688pt>
+<implementazione/tcm6Foto.png, id=1305, 916.1728pt x 197.23688pt>
 File: implementazione/tcm6Foto.png Graphic file (type png)
 <use implementazione/tcm6Foto.png>
-Package pdftex.def Info: implementazione/tcm6Foto.png  used on input line 293.
+Package pdftex.def Info: implementazione/tcm6Foto.png  used on input line 294.
 (pdftex.def)             Requested size: 366.46263pt x 78.89334pt.
 
-Overfull \hbox (3.60928pt too wide) in paragraph at lines 301--317
+Overfull \hbox (3.60928pt too wide) in paragraph at lines 302--318
  [][] 
  []
 
@@ -1575,16 +1575,16 @@ Overfull \hbox (3.60928pt too wide) in paragraph at lines 301--317
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.319 A
+l.320 A
        ncora una volta aggiungendo sei campi ";" utilizzati per separare le ...
  <./implementazione/tcm6Foto.png>]
-<implementazione/tcm9Foto.png, id=1301, 1218.05063pt x 197.23688pt>
+<implementazione/tcm9Foto.png, id=1313, 1218.05063pt x 197.23688pt>
 File: implementazione/tcm9Foto.png Graphic file (type png)
 <use implementazione/tcm9Foto.png>
-Package pdftex.def Info: implementazione/tcm9Foto.png  used on input line 323.
+Package pdftex.def Info: implementazione/tcm9Foto.png  used on input line 324.
 (pdftex.def)             Requested size: 426.32411pt x 69.03392pt.
 
-Overfull \hbox (27.98553pt too wide) in paragraph at lines 323--324
+Overfull \hbox (27.98553pt too wide) in paragraph at lines 324--325
  [][] 
  []
 
@@ -1593,10 +1593,10 @@ Overfull \hbox (27.98553pt too wide) in paragraph at lines 323--324
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.327 C
+l.328 C
        on riferimento alla Fig.\ref{fig:tcm9Foto}, si mostra la tabella riep...
 ]
-Overfull \hbox (3.60928pt too wide) in paragraph at lines 331--351
+Overfull \hbox (3.60928pt too wide) in paragraph at lines 332--352
  [][] 
  []
 
@@ -1605,7 +1605,7 @@ Overfull \hbox (3.60928pt too wide) in paragraph at lines 331--351
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.353 I
+l.354 I
        nfine aggiungendo otto campi ";" utilizzati per separare le misure as...
  <./implementazione/tcm9Foto.png>]
 Overfull \vbox (84.26134pt too high) has occurred while \output is active []
@@ -1616,16 +1616,16 @@ Overfull \vbox (84.26134pt too high) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.353 I
+l.354 I
        nfine aggiungendo otto campi ";" utilizzati per separare le misure as...
 ]) (analisi_dati.tex [73]
 Capitolo 6.
-<analisi/op1.png, id=1324, 697.8572pt x 384.6872pt>
+<analisi/op1.png, id=1336, 697.8572pt x 384.6872pt>
 File: analisi/op1.png Graphic file (type png)
 <use analisi/op1.png>
 Package pdftex.def Info: analisi/op1.png  used on input line 22.
 (pdftex.def)             Requested size: 170.71652pt x 94.10536pt.
-<analisi/op2.png, id=1325, 696.35156pt x 381.67593pt>
+<analisi/op2.png, id=1337, 696.35156pt x 381.67593pt>
 File: analisi/op2.png Graphic file (type png)
 <use analisi/op2.png>
 Package pdftex.def Info: analisi/op2.png  used on input line 23.
@@ -1647,33 +1647,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 l.53 \begin{equation}
                       <./analisi/op1.png> <./analisi/op2.png>] [76] [77]
 [78]
-<analisi/x.jpg, id=1407, 944.328pt x 735.2268pt>
+<analisi/x.jpg, id=1419, 944.328pt x 735.2268pt>
 File: analisi/x.jpg Graphic file (type jpg)
 <use analisi/x.jpg>
 Package pdftex.def Info: analisi/x.jpg  used on input line 189.
 (pdftex.def)             Requested size: 113.81102pt x 88.60484pt.
-<analisi/y.jpg, id=1408, 1967.35pt x 1531.7225pt>
+<analisi/y.jpg, id=1420, 1967.35pt x 1531.7225pt>
 File: analisi/y.jpg Graphic file (type jpg)
 <use analisi/y.jpg>
 Package pdftex.def Info: analisi/y.jpg  used on input line 190.
 (pdftex.def)             Requested size: 113.81102pt x 88.6039pt.
-<analisi/z.jpg, id=1409, 1967.35pt x 1531.7225pt>
+<analisi/z.jpg, id=1421, 1967.35pt x 1531.7225pt>
 File: analisi/z.jpg Graphic file (type jpg)
 <use analisi/z.jpg>
 Package pdftex.def Info: analisi/z.jpg  used on input line 191.
 (pdftex.def)             Requested size: 113.81102pt x 88.6039pt.
  [79]
-<analisi/x-offset.jpg, id=1430, 761.84625pt x 464.73625pt>
+<analisi/x-offset.jpg, id=1442, 761.84625pt x 464.73625pt>
 File: analisi/x-offset.jpg Graphic file (type jpg)
 <use analisi/x-offset.jpg>
 Package pdftex.def Info: analisi/x-offset.jpg  used on input line 198.
 (pdftex.def)             Requested size: 227.62204pt x 138.84755pt.
-<analisi/y-offset.jpg, id=1431, 702.625pt x 526.96875pt>
+<analisi/y-offset.jpg, id=1443, 702.625pt x 526.96875pt>
 File: analisi/y-offset.jpg Graphic file (type jpg)
 <use analisi/y-offset.jpg>
 Package pdftex.def Info: analisi/y-offset.jpg  used on input line 199.
 (pdftex.def)             Requested size: 227.62204pt x 170.71602pt.
-<analisi/z-offset.jpg, id=1432, 702.625pt x 526.96875pt>
+<analisi/z-offset.jpg, id=1444, 702.625pt x 526.96875pt>
 File: analisi/z-offset.jpg Graphic file (type jpg)
 <use analisi/z-offset.jpg>
 Package pdftex.def Info: analisi/z-offset.jpg  used on input line 200.
@@ -1696,13 +1696,13 @@ Overfull \vbox (0.60165pt too high) has occurred while \output is active []
 l.204 
        <./analisi/x-offset.jpg> <./analisi/y-offset.jpg> <./analisi/z-offset.jp
 g>]
-<analisi/zero-rate.jpg, id=1452, 702.625pt x 526.96875pt>
+<analisi/zero-rate.jpg, id=1464, 702.625pt x 526.96875pt>
 File: analisi/zero-rate.jpg Graphic file (type jpg)
 <use analisi/zero-rate.jpg>
-Package pdftex.def Info: analisi/zero-rate.jpg  used on input line 225.
+Package pdftex.def Info: analisi/zero-rate.jpg  used on input line 226.
 (pdftex.def)             Requested size: 421.57825pt x 316.18369pt.
 
-Overfull \hbox (23.23967pt too wide) in paragraph at lines 225--226
+Overfull \hbox (23.23967pt too wide) in paragraph at lines 226--227
  [][] 
  []
 
@@ -1711,23 +1711,68 @@ Overfull \hbox (23.23967pt too wide) in paragraph at lines 225--226
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.229 D
+l.230 D
        ai valori mostrati in Fig.\ref{fig:zero-rate} si evince facilmente la...
 ] [83pdfTeX warning (ext4): destination with the same identifier (name{figure.6
 .4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.248 
+l.249 
       pdfTeX warning (ext4): destination with the same identifier (name{table.6
 .2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.248 
-       <./analisi/zero-rate.jpg>]) (conclusioni.tex [84]
+l.249 
+       <./analisi/zero-rate.jpg>]
+<analisi/servo.png, id=1484, 717.882pt x 339.669pt>
+File: analisi/servo.png Graphic file (type png)
+<use analisi/servo.png>
+Package pdftex.def Info: analisi/servo.png  used on input line 265.
+(pdftex.def)             Requested size: 358.94012pt x 169.83408pt.
+ [84]
+<analisi/analisiQualitativa.png, id=1492, 1273.00594pt x 621.82312pt>
+File: analisi/analisiQualitativa.png Graphic file (type png)
+<use analisi/analisiQualitativa.png>
+Package pdftex.def Info: analisi/analisiQualitativa.png  used on input line 272
+.
+(pdftex.def)             Requested size: 597.50787pt x 291.8584pt.
+ [85pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.276 \newpage
+               <./analisi/servo.png>] [86pdfTeX warning (ext4): destination wit
+h the same identifier (name{figure.6.6}) has been already used, duplicate ignor
+ed
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.276 \newpage
+               <./analisi/analisiQualitativa.png>]
+<analisi/analisiQualitativaApp.png, id=1504, 1272.25313pt x 204.765pt>
+File: analisi/analisiQualitativaApp.png Graphic file (type png)
+<use analisi/analisiQualitativaApp.png>
+Package pdftex.def Info: analisi/analisiQualitativaApp.png  used on input line 
+281.
+(pdftex.def)             Requested size: 445.29527pt x 71.66881pt.
+
+Overfull \hbox (46.9567pt too wide) in paragraph at lines 281--282
+ [][] 
+ []
+
+) (conclusioni.tex [87pdfTeX warning (ext4): destination with the same identifi
+er (name{figure.6.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Conclusioni e prospettive future} <./analisi/analisiQualitativaApp
+.png>]
 Capitolo 7.
-) (appendice.tex [85
+) (appendice.tex [88
 
 ]
 Appendice A.
@@ -1750,34 +1795,34 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 12.
-[86
+[89
 
-] [87]
+] [90]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 85--87
 [] 
  []
 
-[88]
+[91]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 116--118
 [] 
  []
 
-[89]
+[92]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 156--158
 [] 
  []
 
-[90] [91]
+[93] [94]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 203--205
 [] 
  []
 
-[92] [93]
+[95] [96]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 265--267
 [] 
  []
 
-[94] [95] [96]
+[97] [98] [99]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 336--338
 [] 
  []
@@ -1786,44 +1831,49 @@ LaTeX Font Info:    Try loading font information for TS1+pcr on input line 357.
 
 ("C:\Users\Fabio\AppData\Local\Programs\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [97] [98] [99]
+) [100] [101] [102]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 462--464
 [] 
  []
 
-[100]
+[103]
 Overfull \hbox (2.84544pt too wide) in paragraph at lines 498--500
 [] 
  []
 
-[101] [102]
-Appendice B.
-[103
+[104]
+Overfull \hbox (2.84544pt too wide) in paragraph at lines 529--532
+[] 
+ []
 
-] [104] [105]
-<kalman/kalmanfilter.png, id=2016, 305.943pt x 298.11375pt>
+[105] [106]
+Appendice B.
+[107
+
+] [108] [109]
+<kalman/kalmanfilter.png, id=2100, 305.943pt x 298.11375pt>
 File: kalman/kalmanfilter.png Graphic file (type png)
 <use kalman/kalmanfilter.png>
-Package pdftex.def Info: kalman/kalmanfilter.png  used on input line 630.
+Package pdftex.def Info: kalman/kalmanfilter.png  used on input line 677.
 (pdftex.def)             Requested size: 244.75471pt x 238.49132pt.
- [106] [107pdfTeX warning (ext4): destination with the same identifier (name{fi
+ [110] [111pdfTeX warning (ext4): destination with the same identifier (name{fi
 gure.Alph2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.643 \begin{equation}
-                       <./kalman/kalmanfilter.png>] [108] [109]
-<kalman/kalmanfilterNL.png, id=2063, 317.38576pt x 316.18124pt>
+l.690 \begin{equation}
+                       <./kalman/kalmanfilter.png>] [112] [113]
+<kalman/kalmanfilterNL.png, id=2147, 317.38576pt x 316.18124pt>
 File: kalman/kalmanfilterNL.png Graphic file (type png)
 <use kalman/kalmanfilterNL.png>
-Package pdftex.def Info: kalman/kalmanfilterNL.png  used on input line 761.
+Package pdftex.def Info: kalman/kalmanfilterNL.png  used on input line 808.
 (pdftex.def)             Requested size: 253.90895pt x 252.94533pt.
- [110]) [111pdfTeX warning (ext4): destination with the same identifier (name{f
+ [114]) [115pdfTeX warning (ext4): destination with the same identifier (name{f
 igure.Alph2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.300 \newpage
+l.301 \newpage
                <./kalman/kalmanfilterNL.png>] (bibliography.tex
 Underfull \hbox (badness 2772) in paragraph at lines 10--12
 []\OT1/ptm/m/n/12 Sistema di po-si-zio-na-men-to glo-ba-le []$\OT1/pcr/m/n/12 h
@@ -1854,7 +1904,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--31
 45 /
  []
 
-[112
+[116
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 53--55
@@ -1885,7 +1935,7 @@ Underfull \hbox (badness 1270) in paragraph at lines 87--89
 / / it . wikipedia . org / wiki /
  []
 
-[113]
+[117]
 Underfull \hbox (badness 3333) in paragraph at lines 105--107
 []\OT1/ptm/m/n/12 Aircraft prin-ci-pal axes, Wi-ki-pe-dia. []$\OT1/pcr/m/n/12 h
 ttps : / / en . wikipedia . org /
@@ -1944,25 +1994,25 @@ s +
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
- [114]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 316.
+ [118]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 316.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 316.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 316.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DB693957A36F7A7E3F9371279BDFE01D;6403.
+(rerunfilecheck)             Checksum: 8BFD790B8262746F95866FED3F5239D9;6532.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 315.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 316.
  ) 
 Here is how much of TeX's memory you used:
- 13326 strings out of 493305
- 193443 string characters out of 3129802
- 362810 words of memory out of 3000000
- 15648 multiletter control sequences out of 15000+200000
+ 13432 strings out of 493305
+ 195111 string characters out of 3129802
+ 369542 words of memory out of 3000000
+ 15706 multiletter control sequences out of 15000+200000
  34405 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,16n,56p,915b,2005s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1987,9 +2037,9 @@ sers/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb
 .pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/ut
 mr8a.pfb><C:/Users/Fabio/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/time
 s/utmri8a.pfb>
-Output written on main.pdf (122 pages, 6832002 bytes).
+Output written on main.pdf (126 pages, 7280377 bytes).
 PDF statistics:
- 2388 PDF objects out of 2487 (max. 8388607)
- 893 named destinations out of 1000 (max. 500000)
- 943 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2481 PDF objects out of 2487 (max. 8388607)
+ 938 named destinations out of 1000 (max. 500000)
+ 966 words of extra memory for PDF output out of 10000 (max. 10000000)
 

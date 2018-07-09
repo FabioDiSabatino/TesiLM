@@ -68,8 +68,11 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{81}{figure.6.3}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{81}{figure.6.3}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{83}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Schema hardware del sistema ausiliario realizzato per eseguire l'analisi qualitativa}}{85}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Risultati analisi qualitativa}}{86}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Retta di divergenza della stima dello \textit {yaw} eseguita dal modulo APP.}}{87}{figure.6.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{107}{figure.Alph2.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{111}{figure.Alph2.2}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{111}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{115}{figure.Alph2.2}
