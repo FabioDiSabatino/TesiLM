@@ -1,82 +1,84 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {chapter}{Introduzione}{1}{chapter*.4}
-\contentsline {chapter}{\numberline {1}Contesto applicativo }{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}Context-aware computing}{4}{section.1.1}
-\contentsline {section}{\numberline {1.2}Indoor Positioning System Service}{6}{section.1.2}
-\contentsline {section}{\numberline {1.3}Stima della posizione}{8}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Range based}{9}{subsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.1.1}Received Signal Strength Indicator - RSSI}{9}{subsubsection.1.3.1.1}
-\contentsline {subsubsection}{\numberline {1.3.1.2}Time Of Arrival measurements}{11}{subsubsection.1.3.1.2}
-\contentsline {subsubsection}{\numberline {1.3.1.3}Time Difference Of Arrival}{12}{subsubsection.1.3.1.3}
-\contentsline {subsection}{\numberline {1.3.2}Angle Based}{13}{subsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.2.1}Angle of Arrival}{13}{subsubsection.1.3.2.1}
-\contentsline {section}{\numberline {1.4}Tecniche di localizzazione}{15}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}MIN-MAX}{15}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Trilaterazione}{16}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Triangolazione}{17}{subsection.1.4.3}
-\contentsline {section}{\numberline {1.5}Sensor Data Fusion}{18}{section.1.5}
-\contentsline {chapter}{\numberline {2}Descrizione del lavoro}{20}{chapter.2}
-\contentsline {section}{\numberline {2.1}Livello black box}{21}{section.2.1}
-\contentsline {section}{\numberline {2.2}Livello sottosistemi}{22}{section.2.2}
-\contentsline {section}{\numberline {2.3}Livello moduli}{25}{section.2.3}
-\contentsline {chapter}{\numberline {3}Unit\IeC {\`a} di misura inerziale}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Accelerometro}{29}{section.3.1}
-\contentsline {section}{\numberline {3.2}Giroscopio}{31}{section.3.2}
-\contentsline {section}{\numberline {3.3}Magnetometro}{32}{section.3.3}
-\contentsline {section}{\numberline {3.4}Modello di misura}{34}{section.3.4}
-\contentsline {chapter}{\numberline {4}Stima dell'assetto tramite sensor fusion}{38}{chapter.4}
-\contentsline {section}{\numberline {4.1}Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}{38}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Matrice di rotazione}{40}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Angoli di Eulero}{40}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Quaternioni unitari}{43}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Algoritmo di sensor fusion per la stima dell'assetto}{44}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Equazioni di stato del sistema}{45}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Filtro di Kalman a due stadi}{46}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Descrizione dell'algoritmo}{47}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Trasformazione del sistema a tempo discreto}{48}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Riepilogo algoritmo step-by-step}{49}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Settaggio iniziale delle costanti}{50}{subsection.4.2.6}
-\contentsline {chapter}{\numberline {5}Implementazione}{52}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementazione Hardware}{52}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Schema hardware del sistema}{52}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Canali di comunicazione}{54}{subsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.2.1}I2C}{55}{subsubsection.5.1.2.1}
-\contentsline {subsubsection}{\numberline {5.1.2.2}USB CDC}{57}{subsubsection.5.1.2.2}
-\contentsline {section}{\numberline {5.2}Implementazione Software}{61}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Diagramma Comportamentale}{61}{subsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.1.1}Diagramma del Microcontrollore}{61}{subsubsection.5.2.1.1}
-\contentsline {subsubsection}{\numberline {5.2.1.2}Diagramma del modulo APP}{63}{subsubsection.5.2.1.2}
-\contentsline {subsection}{\numberline {5.2.2}Modalit\IeC {\`a} di computazione}{64}{subsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.1}Low Computation mode}{64}{subsubsection.5.2.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2.2}High Computation mode}{68}{subsubsection.5.2.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.3}Testing Computation mode}{69}{subsubsection.5.2.2.3}
-\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{74}{chapter.6}
-\contentsline {section}{\numberline {6.1}Analisi temporale}{74}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{75}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{76}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{77}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Analisi dello zero-offset}{79}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Stima dello zero-g offset}{79}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{82}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{84}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{84}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{88}{chapter.7}
-\contentsline {chapter}{\numberline {A}Script}{89}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Operativi}{89}{section.Alph1.1}
-\contentsline {subsection}{\numberline {A.1.1}Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{89}{subsection.Alph1.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Script di inizializzazione del micro}{91}{subsection.Alph1.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Script per la stima del tempo di trasmissione di dati al modulo App}{92}{subsection.Alph1.1.3}
-\contentsline {subsection}{\numberline {A.1.4}Script Low Computation Mode}{93}{subsection.Alph1.1.4}
-\contentsline {subsection}{\numberline {A.1.5}Script High Computation Mode}{95}{subsection.Alph1.1.5}
-\contentsline {subsection}{\numberline {A.1.6}Script Test Computation Mode per il modulo Microcontrollore}{97}{subsection.Alph1.1.6}
-\contentsline {subsection}{\numberline {A.1.7}Script Test Computation Mode per il modulo APP}{100}{subsection.Alph1.1.7}
-\contentsline {section}{\numberline {A.2}Testing}{103}{section.Alph1.2}
-\contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{103}{subsection.Alph1.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{104}{subsection.Alph1.2.2}
-\contentsline {subsection}{\numberline {A.2.3}Script per il sistema ausiliario Arduino per l'analisi qualitativa}{105}{subsection.Alph1.2.3}
-\contentsline {chapter}{\numberline {B}Filtro di Kalman}{107}{appendix.Alph2}
-\contentsline {section}{\numberline {B.1}Descrizione teorica del filtro di Kalman}{107}{section.Alph2.1}
-\contentsline {section}{\numberline {B.2}L'algoritmo del filtro di Kalman discreto}{109}{section.Alph2.2}
-\contentsline {section}{\numberline {B.3}Il filtro di Kalman esteso}{112}{section.Alph2.3}
-\contentsline {chapter}{Bibliografia}{116}{appendix*.5}
+\contentsline {chapter}{Sommario}{1}{chapter*.4}
+\contentsline {chapter}{Introduzione}{3}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Contesto applicativo }{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}Context-aware computing}{6}{section.1.1}
+\contentsline {section}{\numberline {1.2}Indoor Positioning System Service}{8}{section.1.2}
+\contentsline {section}{\numberline {1.3}Stima della posizione}{10}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Range based}{11}{subsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.1.1}Received Signal Strength Indicator - RSSI}{11}{subsubsection.1.3.1.1}
+\contentsline {subsubsection}{\numberline {1.3.1.2}Time Of Arrival measurements}{13}{subsubsection.1.3.1.2}
+\contentsline {subsubsection}{\numberline {1.3.1.3}Time Difference Of Arrival}{14}{subsubsection.1.3.1.3}
+\contentsline {subsection}{\numberline {1.3.2}Angle Based}{15}{subsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.2.1}Angle of Arrival}{15}{subsubsection.1.3.2.1}
+\contentsline {section}{\numberline {1.4}Tecniche di localizzazione}{17}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}MIN-MAX}{17}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Trilaterazione}{18}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Triangolazione}{19}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Sensor Data Fusion}{20}{section.1.5}
+\contentsline {chapter}{\numberline {2}Descrizione del lavoro}{22}{chapter.2}
+\contentsline {section}{\numberline {2.1}Livello black box}{23}{section.2.1}
+\contentsline {section}{\numberline {2.2}Livello sottosistemi}{24}{section.2.2}
+\contentsline {section}{\numberline {2.3}Livello moduli}{27}{section.2.3}
+\contentsline {chapter}{\numberline {3}Unit\IeC {\`a} di misura inerziale}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}Accelerometro}{31}{section.3.1}
+\contentsline {section}{\numberline {3.2}Giroscopio}{33}{section.3.2}
+\contentsline {section}{\numberline {3.3}Magnetometro}{34}{section.3.3}
+\contentsline {section}{\numberline {3.4}Modello di misura}{36}{section.3.4}
+\contentsline {chapter}{\numberline {4}Stima dell'assetto tramite sensor fusion}{40}{chapter.4}
+\contentsline {section}{\numberline {4.1}Rappresentazione geometrica dell'assetto di un corpo rigido nello spazio}{40}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Matrice di rotazione}{42}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Angoli di Eulero}{42}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Quaternioni unitari}{45}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Algoritmo di sensor fusion per la stima dell'assetto}{46}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Equazioni di stato del sistema}{47}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Filtro di Kalman a due stadi}{48}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Descrizione dell'algoritmo}{49}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Trasformazione del sistema a tempo discreto}{50}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Riepilogo algoritmo step-by-step}{51}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Settaggio iniziale delle costanti}{52}{subsection.4.2.6}
+\contentsline {chapter}{\numberline {5}Implementazione}{54}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementazione Hardware}{54}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Schema hardware del sistema}{54}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Canali di comunicazione}{56}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}I2C}{57}{subsubsection.5.1.2.1}
+\contentsline {subsubsection}{\numberline {5.1.2.2}USB CDC}{59}{subsubsection.5.1.2.2}
+\contentsline {section}{\numberline {5.2}Implementazione Software}{63}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Diagramma Comportamentale}{63}{subsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1.1}Diagramma del Microcontrollore}{63}{subsubsection.5.2.1.1}
+\contentsline {subsubsection}{\numberline {5.2.1.2}Diagramma del modulo APP}{65}{subsubsection.5.2.1.2}
+\contentsline {subsection}{\numberline {5.2.2}Modalit\IeC {\`a} di computazione}{66}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Low Computation mode}{66}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}High Computation mode}{70}{subsubsection.5.2.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.3}Testing Computation mode}{71}{subsubsection.5.2.2.3}
+\contentsline {chapter}{\numberline {6}Analisi e validazione dei risultati}{76}{chapter.6}
+\contentsline {section}{\numberline {6.1}Analisi temporale}{76}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Analisi del tempo di lettura dei dati grezzi dall'IMU}{77}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Analisi del tempo di trasmissione dei dati tramite USB}{78}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Conclusioni analisi temporale}{79}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Analisi dello zero-offset}{81}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Stima dello zero-g offset}{81}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Stima dello zero-rate offset}{84}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Conclusioni stima dello zero-offset}{86}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Analisi qualitativa dell'assetto stimato}{86}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Conclusioni analisi qualitativa}{89}{subsection.6.3.1}
+\contentsline {chapter}{\numberline {7}Conclusioni e prospettive future}{91}{chapter.7}
+\contentsline {chapter}{\numberline {A}Script}{92}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Operativi}{92}{section.Alph1.1}
+\contentsline {subsection}{\numberline {A.1.1}Script per la lettura dei valori misurati da Accelerometro e Giroscopio tramite I2C}{92}{subsection.Alph1.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Script di inizializzazione del micro}{94}{subsection.Alph1.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Script per la stima del tempo di trasmissione di dati al modulo App}{95}{subsection.Alph1.1.3}
+\contentsline {subsection}{\numberline {A.1.4}Script Low Computation Mode}{96}{subsection.Alph1.1.4}
+\contentsline {subsection}{\numberline {A.1.5}Script High Computation Mode}{98}{subsection.Alph1.1.5}
+\contentsline {subsection}{\numberline {A.1.6}Script Test Computation Mode per il modulo Microcontrollore}{100}{subsection.Alph1.1.6}
+\contentsline {subsection}{\numberline {A.1.7}Script Test Computation Mode per il modulo APP}{103}{subsection.Alph1.1.7}
+\contentsline {section}{\numberline {A.2}Testing}{106}{section.Alph1.2}
+\contentsline {subsection}{\numberline {A.2.1}Script per la stima del tempo di lettura di dati provenienti dall'IMU }{106}{subsection.Alph1.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Script per la stima del tempo di trasmissione di dati al modulo App}{107}{subsection.Alph1.2.2}
+\contentsline {subsection}{\numberline {A.2.3}Script per il sistema ausiliario Arduino per l'analisi qualitativa}{108}{subsection.Alph1.2.3}
+\contentsline {chapter}{\numberline {B}Filtro di Kalman}{110}{appendix.Alph2}
+\contentsline {section}{\numberline {B.1}Descrizione teorica del filtro di Kalman}{110}{section.Alph2.1}
+\contentsline {section}{\numberline {B.2}L'algoritmo del filtro di Kalman discreto}{112}{section.Alph2.2}
+\contentsline {section}{\numberline {B.3}Il filtro di Kalman esteso}{115}{section.Alph2.3}
+\contentsline {chapter}{Bibliografia}{119}{appendix*.6}

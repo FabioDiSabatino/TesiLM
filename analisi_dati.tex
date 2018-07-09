@@ -67,7 +67,7 @@ Il tempo necessario per trasmettere un pacchetto, dal modulo \textit{microcontro
 T_{TX\_USB}=  \frac{dim(pack)}{goodput}
 \end{equation}
 Per stimare il \textit{goodput} si è programmato il microcontrollore in modo da inviare 1000 volte un pacchetto contente un \textit{id} (univoco e incrementale) e un contatore incrementato quando il buffer di trasmissione risulta essere ancora occupato. Per il codice si rimanda alla lettura dell'App.\ref{app:stimausb}.
-Eseguendo il test numerose volte, si è osservato che il tempo necessario per trasmettere 1000 pacchetti, per un totale di 8574 Bytes, è di circa $57 ms$. 
+Eseguendo il test svariate volte, si è osservato che il tempo necessario per trasmettere 1000 pacchetti, per un totale di 8574 Bytes, è di circa $57 ms$. 
 Questo implica un \textit{goodput} di $1,2 Mb/s$ pari al $10\%$ della capacità del canale di comunicazione che, essendo un USB 1.1, risulta essere $12 Mb/s$. Ancora una volta questo calo di prestazioni è dovuto a numerosi fattori tra i quali l'overhead del protocollo, l'implementazione della libreria STM utilizzata e la velocità del microcontrollore.\\
 Più complicato è il discorso riguardante la dimensione dei pacchetti da trasmettere, questi infatti sono strettamente correlati a:
  \begin{itemize}
@@ -80,14 +80,14 @@ Con riferimento alle possibili combinazioni dei fattori precedenti e alle rispet
 \begin{enumerate}
 	\item \textbf{LCM}:
 		\begin{enumerate}
-		\item \textit{6DOF} = 48 Bytes
-		\item \textit{9DOF} = 63 Bytes
+		\item \textit{6DOF} = 42 Bytes
+		\item \textit{9DOF} = 60 Bytes
 		\end{enumerate}
-	\item \textbf{HCM} = 21 Bytes
+	\item \textbf{HCM} = 18 Bytes
 	\item \textbf{TCM}:
 			\begin{enumerate}
-			\item \textit{6DOF} = 63 Bytes
-			\item \textit{9DOF} = 84 Bytes
+			\item \textit{6DOF} = 60 Bytes
+			\item \textit{9DOF} = 78 Bytes
 			\end{enumerate}
 \end{enumerate}
 
@@ -96,15 +96,15 @@ Sostituendo questi valori e la stima del \textit{goodput} del canale all'Eq.\ref
 \begin{enumerate}
 	\item \textbf{LCM}:
 	\begin{enumerate}
-		\item \textit{6DOF}: $ T_{TX\_USB}=  \frac{48 Bytes}{1,2 Mbit/s} = 0,32 ms $
-		\item \textit{9DOF} : $ T_{TX\_USB}=  \frac{63 Bytes}{1,2 Mbit/s} = 0,42 ms $
+		\item \textit{6DOF}: $ T_{TX\_USB}=  \frac{42 Bytes}{1,2 Mbit/s} = 0,28 ms $
+		\item \textit{9DOF} : $ T_{TX\_USB}=  \frac{60 Bytes}{1,2 Mbit/s} = 0,40 ms $
 	\end{enumerate}
-	\item \textbf{HCM} : $ T_{TX\_USB}=  \frac{21 Bytes}{1,2 Mbit/s} = 0,16 ms $
+	\item \textbf{HCM} : $ T_{TX\_USB}=  \frac{18 Bytes}{1,2 Mbit/s} = 0,12 ms $
 	
 	\item \textbf{TCM}:
 	\begin{enumerate}
-		\item \textit{6DOF} : $ T_{TX\_USB}=  \frac{63 Bytes}{1,2 Mbit/s} = 0,42 ms $
-		\item \textit{9DOF} : $ T_{TX\_USB}=  \frac{84 Bytes}{1,2 Mbit/s} = 0,56 ms $
+		\item \textit{6DOF} : $ T_{TX\_USB}=  \frac{60 Bytes}{1,2 Mbit/s} = 0,40 ms $
+		\item \textit{9DOF} : $ T_{TX\_USB}=  \frac{78 Bytes}{1,2 Mbit/s} = 0,52 ms $
 	\end{enumerate}
 \end{enumerate}
 
@@ -116,18 +116,18 @@ Sommando i tempi stimati nei paragrafi precedenti (Cap.\ref{analisii2c} e Cap.\r
 \begin{enumerate}
 	\item \textbf{LCM}:
 	\begin{enumerate}
-		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,32 ms = 1,52 ms $
-		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,42 ms = 2,22 ms $
+		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,28 ms = 1,48 ms $
+		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,40 ms = 2,20 ms $
 	\end{enumerate}
 	\item \textbf{HCM} :
 		\begin{enumerate}
-		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,16 ms = 1,36 ms $
-		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,16 ms = 1,96 ms $
+		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,12 ms = 1,32 ms $
+		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,12 ms = 1,92 ms $
 	\end{enumerate}
 	\item \textbf{TCM}:
 	\begin{enumerate}
-		\item \textit{6DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,42 ms = 1,62 ms $
-		\item \textit{9DOF} : $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,56 ms = 2,36 ms $
+		\item \textit{6DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,40 ms = 1,60 ms $
+		\item \textit{9DOF} : $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,52 ms = 2,32 ms $
 	\end{enumerate}
 \end{enumerate}
 
@@ -137,18 +137,18 @@ Quindi le stime aggiornate risultano essere:
 \begin{enumerate}
 	\item \textbf{LCM}:
 	\begin{enumerate}
-		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,32 ms = 1,52 ms $
-		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,42 ms = 2,22 ms $
+		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,2 ms + 0,28 ms = 1,48 ms $
+		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} = 1,8 ms + 0,40 ms = 2,20 ms $
 	\end{enumerate}
 	\item \textbf{HCM} :
 	\begin{enumerate}
-		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX}  = 1,2 ms + 0,16 ms + 3,2ms = 4,56 ms $
-		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,8 ms + 0,16 ms + 3,2ms = 5,16 ms $
+		\item \textit{6DOF}: $T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX}  = 1,2 ms + 0,12 ms + 3,2ms = 4,52 ms $
+		\item \textit{9DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,8 ms + 0,12 ms + 3,2ms = 5,12 ms $
 	\end{enumerate}
 	\item \textbf{TCM}:
 	\begin{enumerate}
-		\item \textit{6DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,2 ms + 0,42 ms + 3,2ms = 4,82 ms $
-		\item \textit{9DOF} : $T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,8 ms + 0,56 ms + 3,2 ms = 5,56 ms $
+		\item \textit{6DOF} : $ T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,2 ms + 0,40 ms + 3,2ms = 4,80 ms $
+		\item \textit{9DOF} : $T_{min} = T_{RX\_I2C} + T_{TX\_USB} + T_{MotionFX} = 1,8 ms + 0,52 ms + 3,2 ms = 5,52 ms $
 	\end{enumerate}
 \end{enumerate}
 
@@ -158,18 +158,18 @@ Che corrispondono alle seguenti frequenze di lavoro massime:
 \begin{enumerate}
 	\item \textbf{LCM}:
 	\begin{enumerate}
-		\item \textit{6DOF}: $f = 657 Hz $
-		\item \textit{9DOF} : $f = 450 Hz $
+		\item \textit{6DOF}: $f = 675 Hz $
+		\item \textit{9DOF} : $f = 454 Hz $
 	\end{enumerate}
 	\item \textbf{HCM} :
 	\begin{enumerate}
-		\item \textit{6DOF}: $f = 219 Hz $
-		\item \textit{9DOF} : $f = 193 Hz $
+		\item \textit{6DOF}: $f = 221 Hz $
+		\item \textit{9DOF} : $f = 195 Hz $
 	\end{enumerate}
 	\item \textbf{TCM}:
 	\begin{enumerate}
-		\item \textit{6DOF} : $f = 207 Hz $
-		\item \textit{9DOF} : $f = 179 Hz $
+		\item \textit{6DOF} : $f = 208 Hz $
+		\item \textit{9DOF} : $f = 181 Hz $
 	\end{enumerate}
 \end{enumerate}
 
@@ -274,16 +274,27 @@ Le stime dello \textit{yaw} ottenute dai due moduli, a partire dagli stessi dati
 	\label{fig:analisiQualitativa}
 \end{sidewaysfigure}
 \newpage
-Come si può notare dalla Fig.\ref{fig:analisiQualitativa}, la risposta generale dei due algoritmi è buona. Infatti entrambi rispondono correttamente ai movimenti rotatori effettuati intorno all'asse $Z$ dell'IMU facendo oscillare lo \textit{yaw} di $\pm 90^{\circ}$ rispetto all'angolo di partenza ( da notare che per il modulo APP è circa  $ 110^{\circ}$ mentre per il micro è  $0^{\circ}$ ).\\
-Tuttavia si nota facilmente come la stima da parte del modulo APP diverga sempre più, muovendo verso l'alto il range dei valori picco-picco. Tale variazione è costante e rappresentata dalla seguente figura:
+
+
+\subsection{Conclusioni analisi qualitativa}
+Come si può notare dalla Fig.\ref{fig:analisiQualitativa}, la risposta generale dei due algoritmi è buona in termini di velocità di convergenza. Infatti entrambi seguono correttamente i movimenti rotatori effettuati dall'IMU, lo \textit{yaw} oscilla di $\pm 90^{\circ}$ rispetto all'angolo di partenza ( da notare che per il modulo APP è circa  $ 110^{\circ}$ mentre per il micro è  $0^{\circ}$ ).\\
+Tuttavia si nota facilmente come la stima da parte del modulo APP diverga sempre più, muovendo verso l'alto il range dei valori picco-picco. Tale variazione è costante e mostrata dalla seguente figura:
 \begin{figure}[H]  
 	\centering 
 	\includegraphics[scale=0.35]{analisi/analisiQualitativaApp.png}
-	\caption{Retta di divergenza della stima dello \textit{yaw} eseguita dal modulo APP.}
+	\caption{Divergenza della stima dello \textit{yaw} eseguita dal modulo APP.}
 	\label{fig:analisiQualitativaApp}
 \end{figure}
-A partire da un angolo stimato di $ 110^{\circ}$ lo \textit{yaw} dopo dieci rotazioni di $\pm 90^{\circ}$ effettuate in $\approx 15 sec$ lo \textit{yaw} finale risulta essere  $ 157^{\circ}$. Da tali valori si calcola facilmente che il coefficiente angolare delle rette di divergenza mostrate in Fig.\ref{fig:analisiQualitativaApp} è di $3,13$. Questo risultato è coerente con quanto emerso nell'analisi dello zero-rate (sez.\ref{zero_rate}), ovvero che lungo l'asse z si ha un \textit{drift} di valore medio pari a $\approx 3,12 dps$.\\
-Alla luce di questa analisi è facile capire come l'algoritmo di \textit{Sensor fusion} (sez.\ref{sensor_fusion}) implementato e utilizzato dal modulo APP non tenga conto di questo fenomeno, cosa che avviene invece all'interno della libreria \textit{MotionFX} utilizzata dal modulo Microcontrollore poiché i valori picco-picco restano confinati all'interno dell'intervallo $[0^{\circ},-90^{\circ}]$ come mostrato dalla Fig.\ref{fig:analisiQualitativa}.
+A partire da un angolo stimato di $ 110^{\circ}$ lo \textit{yaw} dopo dieci rotazioni di $\pm 90^{\circ}$ effettuate in $\approx 15 sec$ lo \textit{yaw} finale risulta essere  $ 157^{\circ}$. Da tali valori si calcola facilmente che il coefficiente angolare delle rette rosse mostrate in Fig.\ref{fig:analisiQualitativaApp} è di $3,13$. 
+Questo risultato è coerente con quanto emerso nell'analisi dello zero-rate (sez.\ref{zero_rate}), ovvero che lungo l'asse z si ha un \textit{drift} di valore medio pari a $\approx 3,12 dps$.\\
+Alla luce di questa analisi si capisce come l'algoritmo di \textit{Sensor fusion} (sez.\ref{sensor_fusion}) implementato e utilizzato dal modulo APP non tenga conto dello zero-rate e di come questo influisca negativamente sulla sua stabilità, rendendolo di fatto non utilizzabile per un'applicazione reale.\\ 
+ Tutt'altro discorso per la stima dello \textit{yaw} ad opera della libreria \textit{MotionFX} utilizzata dal modulo Microcontrollore in quanto i valori picco-picco restano confinati all'interno dell'intervallo $[0^{\circ},-90^{\circ}]$ come mostrato dalla Fig.\ref{fig:analisiQualitativaStm}. 
+ \begin{figure}[H]  
+ 	\centering 
+ 	\includegraphics[scale=0.35]{analisi/analisiQualitativaStm.png}
+ 	\caption{Divergenza della stima dello \textit{yaw} eseguita dal modulo Microcontrollore.}
+ 	\label{fig:analisiQualitativaStm}
+ \end{figure}
 
 
 

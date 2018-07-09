@@ -3,9 +3,11 @@
 \addcontentsline{toc}{chapter}{Sommario}
 \thispagestyle{empty}
 
-Lo scopo di questa tesi è lo sviluppo di un'applicazione mobile cross-platform geolocalizzata, per contesti di disaster management.\\
- Gli utenti possono segnalare la posizione delle emergerze e il proprio stato fisico; queste informazioni vengono inviate ad un main-server, il quale sarà utilizzato dai soccorritori per gestire il disastro e coordinare al meglio le operazioni di salvataggio. Inoltre attraverso l'applicazione è possibile visualizzare lo stato dei propri famigliari, dei luoghi d'interesse e quello generale dell'area colpita.\\
- Per realizzare l'applicazione si sono utilizzati i seguenti framework: Phonegap per renderla cross-platform, Ratchet per realizzare l'interfaccia e la libreria Javascript Leaflet per la mappa interattiva. Le posizioni degli utenti e degli eventi sono mappate in una griglia trasparente all'utente, utilizzando un algoritmo appositamente ideato.
+Lo scopo di questa tesi è lo sviluppo di un sistema per la stima dell'assetto di un'operatore in ambienti indoor privi del segnale GPS.\\
+Il sistema deve essere in grado di stimare gli angoli assunti dall'operatore nel tragitto che egli effettua per raggiungere la persona da soccorrere; queste informazioni verranno poi utilizzate da un sistema più grande, che esula dal lavoro di questa tesi, al fine di creare una rete di nodi all'interno della quale 
+si è in grado di localizzare e guidare i soccorritori.\\
+Per realizzare questo sistema si è utilizzato un microcontrollore della STM con processore ARM-Cortex M4, un'unità di misura inerziale della STM dotato di giroscopio accelerometro e magnetometro e l'applicativo Matlab.\\
+Per stimare l'assetto si utilizzano due algoritmi di \textit{sensor fusion}; uno trovato in letteratura ed implementato sull'applicativo Matlab, un altro facente parte di una libreria appositamente sviluppata da STM per i processori di questa famiglia.
 \\
 \\
 
@@ -16,7 +18,8 @@ Lo scopo di questa tesi è lo sviluppo di un'applicazione mobile cross-platform 
 \\
 \\
 \noindent
-The purpose of this thesis is the development of a cross-platform geolocalized mobile application for disaster management.\\
- Users can signal the position of emergencies and send their physical status; these information are sent to a main-server that will be used by rescuers to manager and optimize the rescue operations. Through this application users can also check the status of their family and other point of interest, moreover they can visualize the general state of the area affected by disaster.\\
- To develop this application, we have used the following framework: Phonegap for the cross-platform requirement, Ratchet to implement the interface and Leaflet library for the interactive map. User's and event's position are match within a trasparent grid, using an algorithm ideate.
-
+The aim of this thesis is the development of a system for estimating the attitude of an operator in indoor environments where the GPS signal is lacking.
+The system must be able to estimate the angles assumed by the operator during the path done to reach the person who has to be rescued; this information will then be used by a larger system, which fall outside the work of this thesis, in order to create a network of nodes within which
+it is possible to locate and drive rescuers for the whole time of their operations. \\
+To realize this system, it was used a microcontroller by STM with ARM-Cortex M4 processor, an inertial measurement unit by STM equipped with an accelerometer gyroscope and a magnetometer and the Matlab application.
+To estimate the attitude two algorithms of \ textit {sensor fusion} are used; one found in the literature and implemented on the Matlab application, another one  which belongs to a library specially developed by STM for the processors of this family.

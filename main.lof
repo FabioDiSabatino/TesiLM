@@ -1,78 +1,79 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Planimetria originale}}{1}{figure.0.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Planimetria alterata}}{1}{figure.0.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Rete allo step 1 dell'esploratore}}{2}{figure.0.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces Rete allo step 2 dell'esploratore}}{2}{figure.0.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Rete allo step 3 dell'esploratore}}{2}{figure.0.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Rete allo step 4 dell'esploratore}}{2}{figure.0.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Rete allo step 5 dell'esploratore}}{3}{figure.0.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Rete allo step 6 dell'esploratore}}{3}{figure.0.8}
+\contentsline {figure}{\numberline {1}{\ignorespaces Planimetria originale}}{3}{figure.0.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Planimetria alterata}}{3}{figure.0.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rete allo step 1 dell'esploratore}}{4}{figure.0.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Rete allo step 2 dell'esploratore}}{4}{figure.0.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Rete allo step 3 dell'esploratore}}{4}{figure.0.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Rete allo step 4 dell'esploratore}}{4}{figure.0.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Rete allo step 5 dell'esploratore}}{5}{figure.0.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Rete allo step 6 dell'esploratore}}{5}{figure.0.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Esempio esplicativo del concetto di contesto}}{5}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Sondaggio tra 74 casi di studio di applicazioni IPS \cite {market}}}{7}{figure.1.2}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces RSSI - Andamento della potenza in funzione della distanza percorsa dal segnale}}{9}{figure.1.3}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces ToA - Principio di funzionamento}}{11}{figure.1.4}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces TDoA - Principio di funzionamento}}{12}{figure.1.5}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces TDoA - Stima della posizione lungo l'iperbole identificata da due nodi}}{13}{figure.1.6}
-\contentsline {figure}{\numberline {1.7}{\ignorespaces AoA - Stima della posizione attraverso l'angolo di incidenza}}{14}{figure.1.7}
-\contentsline {figure}{\numberline {1.8}{\ignorespaces MIN-MAX - Tecnica di posizionamento }}{16}{figure.1.8}
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Trilaterazione - Esempio esplicativo}}{16}{figure.1.9}
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Triangolazione - Esempio esplicativo}}{18}{figure.1.10}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Esempio esplicativo del concetto di contesto}}{7}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Sondaggio tra 74 casi di studio di applicazioni IPS \cite {market}}}{9}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces RSSI - Andamento della potenza in funzione della distanza percorsa dal segnale}}{11}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces ToA - Principio di funzionamento}}{13}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces TDoA - Principio di funzionamento}}{14}{figure.1.5}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces TDoA - Stima della posizione lungo l'iperbole identificata da due nodi}}{15}{figure.1.6}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces AoA - Stima della posizione attraverso l'angolo di incidenza}}{16}{figure.1.7}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces MIN-MAX - Tecnica di posizionamento }}{18}{figure.1.8}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Trilaterazione - Esempio esplicativo}}{18}{figure.1.9}
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Triangolazione - Esempio esplicativo}}{20}{figure.1.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Rappresentazione dei livelli d'astrazione utilizzati per descrivere il sistema }}{20}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Rappresentazione del sistema come black box }}{21}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ambiguit\IeC {\`a} nella georeferenziazione di un secondo nodo utilizzando soltanto la distanza dal precedente }}{23}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Rappresentazione dei sottosistemi necessari per georeferenziare i nodi della rete }}{24}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Rappresentazione dei sottosistemi in moduli}}{25}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 1}}{26}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 2}}{27}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 3}}{27}{figure.2.8}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Rappresentazione dei livelli d'astrazione utilizzati per descrivere il sistema }}{22}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Rappresentazione del sistema come black box }}{23}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ambiguit\IeC {\`a} nella georeferenziazione di un secondo nodo utilizzando soltanto la distanza dal precedente }}{25}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Rappresentazione dei sottosistemi necessari per georeferenziare i nodi della rete }}{26}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Rappresentazione dei sottosistemi in moduli}}{27}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 1}}{28}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 2}}{29}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Rappresentazione del flusso di dati tra i moduli dei sottosistemi, step 3}}{29}{figure.2.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo a riposo}}{30}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo che subisce una forza esterna}}{31}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Rappresentazione di un giroscopio vibrante per la misura della velocit\IeC {\`a} angolare lungo l'asse z}}{32}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Rappresentazione esemplificativa di un magnetometro capacitivo lungo l'asse \textit {z}}}{34}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces in \ref {fig:framesa} il \textit {b-frame} nell'istante $t_1$ e $t_2$ relativamente al \textit {n-frame}, in \ref {fig:framesb} l'\textit {n-frame} in latitudine $\varphi $ e longitudine $\lambda $, l'\textit {e-frame} all'angolo $\alpha (t)= \omega _{ie}t$ e l'\textit {i-frame}}}{35}{figure.3.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}{figure.3.5}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}{figure.3.5}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo a riposo}}{32}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Rappresentazione esemplificativa di un accelerometro capacitivo che subisce una forza esterna}}{33}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Rappresentazione di un giroscopio vibrante per la misura della velocit\IeC {\`a} angolare lungo l'asse z}}{34}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Rappresentazione esemplificativa di un magnetometro capacitivo lungo l'asse \textit {z}}}{36}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces in \ref {fig:framesa} il \textit {b-frame} nell'istante $t_1$ e $t_2$ relativamente al \textit {n-frame}, in \ref {fig:framesb} l'\textit {n-frame} in latitudine $\varphi $ e longitudine $\lambda $, l'\textit {e-frame} all'angolo $\alpha (t)= \omega _{ie}t$ e l'\textit {i-frame}}}{37}{figure.3.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{37}{figure.3.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{37}{figure.3.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rappresentazione degli angoli di roll, pitch e yaw per un velivolo \cite {wikiRoll}}}{41}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Significato geometrico degli angoli di Eulero \cite {assetto2}}}{42}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Rappresentazione del fenomeno di \textit {gimbal lock} \cite {gimbal}}}{43}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Rappresentazione del principio di funzionamento del filtro di Kalman a due stadi \cite {trackingThesis}}}{46}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rappresentazione degli angoli di roll, pitch e yaw per un velivolo \cite {wikiRoll}}}{43}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Significato geometrico degli angoli di Eulero \cite {assetto2}}}{44}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Rappresentazione del fenomeno di \textit {gimbal lock} \cite {gimbal}}}{45}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Rappresentazione del principio di funzionamento del filtro di Kalman a due stadi \cite {trackingThesis}}}{48}{figure.4.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Schema hardware del sistema}}{53}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{55}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{55}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{56}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{58}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{59}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{62}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{63}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 6DOF}}{64}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 9DOF}}{66}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {High Computation Mode}}}{68}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 6DOF}}{69}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 9DOF}}{71}{figure.5.13}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Schema hardware del sistema}}{55}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Foto del canale di comunicazione I2C tra il microcontrollore e l'unit\IeC {\`a} di misura inerziale.}}{57}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Rappresentazione di dispositivi collegati mediante I2C}}{57}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Rappresentazione del flusso di dati generato per la lettura, tramite I2C, di un registro ad 8 bit.}}{58}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Foto del canale di comunicazione USB usato nella classe CDC per la trasmissione dei dati dal microcontrollore all'elaboratore.}}{60}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Rappresentazione di un dispositivo CDC che supporta tre diverse funzionalit\IeC {\`a}.}}{61}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{64}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Rappresentazione del comportamento per il modulo Microcontrollore.}}{65}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 6DOF}}{66}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Low Computation Mode} a 9DOF}}{68}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {High Computation Mode}}}{70}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 6DOF}}{71}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Rappresentazione del pacchetto dati utilizzato in \textit {Test Computation Mode} a 9DOF}}{73}{figure.5.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{75}{figure.6.1}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{75}{figure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{75}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{80}{figure.6.2}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{80}{figure.6.2}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{80}{figure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{80}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{81}{figure.6.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{81}{figure.6.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{81}{figure.6.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{81}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{83}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Schema hardware del sistema ausiliario realizzato per eseguire l'analisi qualitativa}}{85}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Risultati analisi qualitativa}}{86}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Retta di divergenza della stima dello \textit {yaw} eseguita dal modulo APP.}}{87}{figure.6.7}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces In \ref {fig:op1} le operazioni basilari per la modalit\IeC {\`a} \textbf {LCM}, in \ref {fig:op2} le operazioni basilari per le modalit\IeC {\`a} \textbf {HCM} e \textbf {TCM}}}{77}{figure.6.1}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{77}{figure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{77}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces in \ref {fig:x} l'IMU posto parallelamente all'asse \textit {X}, in \ref {fig:y} l'IMU posto parallelamente all'asse \textit {Y} e infine in \ref {fig:z} l'IMU posto parallelamente all'asse \textit {Z}}}{82}{figure.6.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{82}{figure.6.2}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{82}{figure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{82}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces valori degli zero-g offset calcolati rispettivamente sull'asse X \ref {fig:zgx}, sull'asse Y \ref {fig:zgy} e sull'asse \ref {fig:zgz}}}{83}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{83}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{83}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{83}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces valori degli zero-rate offset per i campioni catturati in 2 minuti rispettivamente sull'asse X, Y e Z.}}{85}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Schema hardware del sistema ausiliario realizzato per eseguire l'analisi qualitativa}}{87}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Risultati analisi qualitativa}}{88}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Divergenza della stima dello \textit {yaw} eseguita dal modulo APP.}}{89}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Divergenza della stima dello \textit {yaw} eseguita dal modulo Microcontrollore.}}{90}{figure.6.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{111}{figure.Alph2.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{115}{figure.Alph2.2}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Rappresentazione dell'algoritmo di Kalman per un sistema tempo discreto}}{114}{figure.Alph2.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Rappresentazione dell'algoritmo di Kalman esteso per un sistema tempo discreto non lineare}}{118}{figure.Alph2.2}
